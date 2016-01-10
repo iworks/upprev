@@ -132,17 +132,12 @@ class IworksUpprev
         /**
          * check mobile devices
          */
-        if ( 1 == $this->options->get_option( 'mobile_hide' ) || 1 == $this->options->get_option( 'mobile_tablets' ) ) {
-            require_once $this->base.'/mobile/detect.php';
-            $detect = new Mobile_Detect;
-            if ( $detect->isMobile() && !$detect->isTablet() && 1 == $this->options->get_option( 'mobile_hide' ) ) {
+        if ( 1 == $this->options->get_option( 'mobile_hide' ) ) {
+            $value = false;
+            if ( wp_is_mobile() ) {
                 $value = true;
-                return apply_filters( 'iworks_upprev_check', $value );
             }
-            if ( $detect->isTablet() && 1 == $this->options->get_option( 'mobile_tablets' ) ) {
-                $value = true;
-                return apply_filters( 'iworks_upprev_check', $value );
-            }
+            return apply_filters( 'iworks_upprev_check', $value );
         }
         /**
          * get allowed post types

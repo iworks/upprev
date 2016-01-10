@@ -2,7 +2,7 @@
 Contributors: iworks
 Donate link: http://iworks.pl/donate/upprev.php
 Tags: animated, animation, box, fade, featured, featured, flyout, fly-out, links, new york times, notification, NYTimes, post, posts, previous post, previous posts, related, related content, rtl, seo, slider, thumbnail
-Requires at least: 3.3
+Requires at least: 4.0
 Tested up to: 4.4
 Stable tag: 3.3.30
 License: GPLv2 or later
