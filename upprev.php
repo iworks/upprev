@@ -4,7 +4,7 @@ Plugin Name: upPrev PRO!
 Text Domain: upprev
 Plugin URI: http://upprev.com/
 Description: When scrolling post down upPrev will display a flyout box with a link to post in chosen configuration.
-Version: trunk
+Version: 4.0
 Author: Marcin Pietrzak
 Author URI: http://iworks.pl/
 License: GPLv2 or later
@@ -34,7 +34,7 @@ if ( !defined( 'WPINC' ) ) {
 /**
  * static options
  */
-define( 'IWORKS_UPPREV_VERSION', 'trunk' );
+define( 'IWORKS_UPPREV_VERSION', '4.0' );
 define( 'IWORKS_UPPREV_PREFIX',  'iworks_upprev_' );
 
 require_once dirname(__FILE__).'/includes/common.php';

@@ -3,8 +3,8 @@ Contributors: iworks
 Donate link: http://iworks.pl/donate/upprev.php
 Tags: animated, animation, box, fade, featured, featured, flyout, fly-out, links, new york times, notification, NYTimes, post, posts, previous post, previous posts, related, related content, rtl, seo, slider, thumbnail
 Requires at least: 3.3
-Tested up to: 4.4
-Stable tag: 3.3.30
+Tested up to: 4.4.1
+Stable tag: 4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -134,6 +134,7 @@ Visit: [upPrev: snippet archive](http://upprev.com/tag/snippet)
 
 = 4.0.0 =
 
+* Release date: 2016-01-10
 * BUGFIX: added version number to upprev.css
 * BUGFIX: fixed bug with removing filter name
 * BUGFIX: fixed problem with $('body').offset() by changng it to scrollTop() function
