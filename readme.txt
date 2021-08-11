@@ -111,11 +111,11 @@ Visit: [upPrev: snippet archive](http://upprev.com/tag/snippet)
 
 == Changelog ==
 
-= 4.0.0 =
+= 4.0.0 (2021-08-11) =
 
 * BUGFIX: added version number to upprev.css
 * BUGFIX: fixed bug with removing filter name
-* BUGFIX: fixed problem with $('body').offset() by changng it to scrollTop() function
+* BUGFIX: fixed problem with $('body').offset() by changed it to scrollTop() function
 * IMPROVEMENT: added ajax request to load upPrevBox content
 * IMPROVEMENT: added capability filter *iworks_upprev_capability* - now you can easy change capability (default is manage_options)
 * IMPROVEMENT: added categories exclude (only PRO version)
@@ -136,6 +136,7 @@ Visit: [upPrev: snippet archive](http://upprev.com/tag/snippet)
 * REFACTORING: rebuild options screen, sidebar boxes are now manageable
 * REFACTORING: moved code to class
 # REFACTORING: rewrite on page options to use wp_localize_script
+# REFACTORING: used a proper way to ajax call
 * TYPO: "Anlalitics" should be "Analytics" thx to Knut Sparhell
 
 = 3.3.30 =
