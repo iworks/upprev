@@ -1,16 +1,21 @@
 <?php
 /*
-Plugin Name: upPrev PRO!
-Text Domain: upprev
-Plugin URI: http://upprev.com/
-Description: When scrolling post down upPrev will display a flyout box with a link to post in chosen configuration.
-Version: trunk
-Author: Marcin Pietrzak
-Author URI: http://iworks.pl/
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+/*
+ * Plugin Name:       upPrev
+ * Plugin URI:        http://iworks.pl/upprev/
+ * Description:       Build a House allows to log expenses and events during construction.
+ * Requires at least: 5.0
+ * Requires PHP:      7.2
+ * Version:           PLUGIN_VERSION
+ * Author:            Marcin Pietrzak
+ * Author URI:        http://iworks.pl/
+ * License:           GPLv2 or later
+ * License URI:       http://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain:       upprev
+ * Domain Path:       /languages
+ *
 
-Copyright 2011-2016 Marcin Pietrzak (marcin@iworks.pl)
+Copyright 2011-PLUGIN_TILL_YEAR Marcin Pietrzak (marcin@iworks.pl)
 
 this program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License, version 2, as
@@ -34,7 +39,7 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * static options
  */
-define( 'IWORKS_UPPREV_VERSION', 'trunk' );
+define( 'IWORKS_UPPREV_VERSION', 'PLUGIN_VERSION' );
 define( 'IWORKS_UPPREV_PREFIX', 'iworks_upprev_' );
 
 require_once dirname( __FILE__ ) . '/includes/common.php';

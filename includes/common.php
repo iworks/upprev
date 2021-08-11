@@ -1,13 +1,13 @@
 <?php
 
-$base   = dirname( dirname( __FILE__ ) );
-$vendor = $base . '/vendor';
+$base     = dirname( dirname( __FILE__ ) );
+$includes = $base . '/includes';
 
 /**
  * require: IworksUpprev Class
  */
 if ( ! class_exists( 'IworksUpprev' ) ) {
-	require_once $vendor . '/iworks/upprev.php';
+	require_once $includes . '/iworks/upprev.php';
 }
 /**
  * configuration
@@ -17,7 +17,7 @@ require_once dirname( dirname( __FILE__ ) ) . '/etc/options.php';
  * require: IworksOptions Class
  */
 if ( ! class_exists( 'iworks_options' ) ) {
-	require_once $vendor . '/iworks/options.php';
+	require_once $includes . '/iworks/options.php';
 }
 require_once dirname( __FILE__ ) . '/show_thumbnail_on_admin_post_list.php';
 

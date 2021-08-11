@@ -1,7 +1,7 @@
 <?php
 /*
 
-Copyright 2011-2015 Marcin Pietrzak (marcin@iworks.pl)
+Copyright 2011-PLUGIN_TILL_YEAR  Marcin Pietrzak (marcin@iworks.pl)
 
 this program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License, version 2, as
@@ -32,7 +32,6 @@ class IworksUpprev {
 	private $capability;
 	private $dev;
 	private $dir;
-	private $is_pro;
 	private $options;
 	private $version;
 	private $working_mode;
@@ -46,7 +45,6 @@ class IworksUpprev {
 		$this->base         = dirname( dirname( __FILE__ ) );
 		$this->dir          = basename( dirname( $this->base ) );
 		$this->capability   = apply_filters( 'iworks_upprev_capability', 'manage_options' );
-		$this->is_pro       = $this->is_pro();
 		$this->working_mode = 'site';
 		$this->dev          = ( defined( 'IWORKS_DEV_MODE' ) && IWORKS_DEV_MODE ) ? '.dev' : '';
 		/**
@@ -79,7 +77,6 @@ class IworksUpprev {
 					'thumb_height'     => 96,
 					'thumb_width'      => 96,
 				),
-				'need_pro' => true,
 			),
 			'bloginity'  => array(
 				'name'     => __( '"Bloginity" style', 'upprev' ),
@@ -98,7 +95,6 @@ class IworksUpprev {
 					'thumb_height'      => 84,
 					'thumb_width'       => 84,
 				),
-				'need_pro' => true,
 			),
 		);
 		/**
@@ -107,7 +103,6 @@ class IworksUpprev {
 		add_action( 'after_setup_theme', array( $this, 'after_setup_theme' ) );
 		add_action( 'init', array( $this, 'init' ) );
 		add_action( 'the_content', array( $this, 'the_content' ), PHP_INT_MAX );
-		add_filter( 'iworks_upprev_buy_pro', array( $this, 'buy_pro_page' ) );
 		/**
 		 * global option object
 		 */
@@ -159,10 +154,6 @@ class IworksUpprev {
 		return apply_filters( 'iworks_upprev_check', $value );
 	}
 
-	public function is_pro() {
-		return true;
-	}
-
 	public function get_version( $file = null ) {
 		if ( defined( 'IWORKS_DEV_MODE' ) && IWORKS_DEV_MODE ) {
 			if ( null != $file ) {
@@ -184,13 +175,7 @@ class IworksUpprev {
 		/**
 		 * filters
 		 */
-		add_filter( 'index_iworks_upprev_color_background', array( $this, 'index_iworks_upprev_colors' ) );
-		add_filter( 'index_iworks_upprev_color_border', array( $this, 'index_iworks_upprev_colors' ) );
-		add_filter( 'index_iworks_upprev_color_link', array( $this, 'index_iworks_upprev_colors' ) );
-		add_filter( 'index_iworks_upprev_color_set', array( $this, 'index_iworks_upprev_color_set' ) );
-		add_filter( 'index_iworks_upprev_color', array( $this, 'index_iworks_upprev_colors' ) );
 		add_filter( 'index_iworks_upprev_position_content', array( $this, 'index_iworks_upprev_position_content' ), 10, 5 );
-		add_filter( 'index_iworks_upprev_position_data', array( $this, 'index_iworks_upprev_position_data' ) );
 	}
 
 	public function after_setup_theme() {
@@ -240,23 +225,8 @@ class IworksUpprev {
 			if ( ! is_multisite() && current_user_can( $this->capability ) ) {
 				$links[] = '<a href="themes.php?page=' . $this->dir . '/admin/index.php">' . __( 'Settings' ) . '</a>';
 			}
-			if ( ! $this->is_pro ) {
-				$links[] = '<a href="http://iworks.pl/donate/upprev.php">' . __( 'Donate' ) . '</a>';
-			}
 		}
 		return $links;
-	}
-
-	public function index_iworks_upprev_position_data( $data ) {
-		if ( $this->is_pro ) {
-			return $data;
-		}
-		foreach ( array_keys( $data ) as $key ) {
-			if ( isset( $data[ $key ]['need_pro'] ) && $data[ $key ]['need_pro'] ) {
-				$data[ $key ]['disabled'] = true;
-			}
-		}
-		return $data;
 	}
 
 	private function get_config_javascript() {
@@ -275,7 +245,7 @@ class IworksUpprev {
 			'offset_percent',
 			'url_new_window',
 		);
-		if ( $this->is_pro && $this->options->get_option( 'color_set' ) ) {
+		if ( $this->options->get_option( 'color_set' ) ) {
 			$params = array_merge( $params, array( 'color', 'color_background', 'color_link', 'color_border' ) );
 		}
 		$defaults = $this->get_default_params();
@@ -384,20 +354,16 @@ class IworksUpprev {
 		/**
 		 * exclude categories
 		 */
-		if ( $this->is_pro ) {
-			$exclude_categories = $this->options->get_option( 'exclude_categories' );
-			if ( is_array( $exclude_categories ) && ! empty( $exclude_categories ) ) {
-				$args['category__not_in'] = $exclude_categories;
-			}
+		$exclude_categories = $this->options->get_option( 'exclude_categories' );
+		if ( is_array( $exclude_categories ) && ! empty( $exclude_categories ) ) {
+			$args['category__not_in'] = $exclude_categories;
 		}
 		/**
 		 * exclude tags
 		 */
-		if ( $this->is_pro ) {
-			$exclude_tags = $this->options->get_option( 'exclude_tags' );
-			if ( is_array( $exclude_tags ) && ! empty( $exclude_tags ) ) {
-				$args['tag__not_in'] = $exclude_tags;
-			}
+		$exclude_tags = $this->options->get_option( 'exclude_tags' );
+		if ( is_array( $exclude_tags ) && ! empty( $exclude_tags ) ) {
+			$args['tag__not_in'] = $exclude_tags;
 		}
 		/**
 		 * comparation method
@@ -684,12 +650,6 @@ class IworksUpprev {
 
 	private function sanitize_layout( $layout ) {
 		if ( array_key_exists( $layout, $this->available_layouts ) ) {
-			if ( $this->is_pro ) {
-				return $layout;
-			}
-			if ( isset( $this->available_layouts[ $layout ]['need_pro'] ) && $this->available_layouts[ $layout ]['need_pro'] ) {
-				return 'simple';
-			}
 			return $layout;
 		}
 		return 'simple';
@@ -703,19 +663,12 @@ class IworksUpprev {
 		$options               = array();
 		$set_simple_as_default = false;
 		foreach ( $this->available_layouts as $key => $one ) {
-			$data = array(
+			$data            = array(
 				'name'     => $one['name'],
 				'value'    => preg_replace( '/id="upprev_box" class="/', 'class="upprev_box ', $this->get_box( $key ) ),
 				'checked'  => $key == $this->sanitize_layout( $layout ),
 				'disabled' => false,
 			);
-			if ( ! $this->is_pro && isset( $one['need_pro'] ) && $one['need_pro'] ) {
-				$data['disabled'] = true;
-				if ( $data['checked'] ) {
-					$data['checked']       = false;
-					$set_simple_as_default = true;
-				}
-			}
 			$options[ $key ] = $data;
 		}
 		if ( $set_simple_as_default ) {
@@ -778,10 +731,7 @@ class IworksUpprev {
 	}
 
 	public function index_iworks_upprev_position_content( $content, $data, $html_element_name, $option_name, $option_value ) {
-		$content = '';
-		if ( ! $this->is_pro ) {
-			$content .= '<p class="error-message">' . __( 'All positions are available in PRO version!', 'upprev' ) . '</p>';
-		}
+		$content  = '';
 		$content .= sprintf( '<table id="%s"><tbody><tr>', esc_attr( $html_element_name ) );
 		foreach ( array( 'left-top', 'top', 'right-top' ) as $key ) {
 			$content .= $this->position_one_radio( $key, $data[ $key ], $html_element_name, $option_name, $option_value );
@@ -799,20 +749,6 @@ class IworksUpprev {
 		$content .= '</tr><tr>';
 		$content .= '</tr></tbody></table>';
 		return $content;
-	}
-
-	public function index_iworks_upprev_colors( $content ) {
-		if ( ! $this->is_pro ) {
-			return $content;
-		}
-		return preg_replace( '/ disabled="disabled"/', '', $content );
-	}
-
-	public function index_iworks_upprev_color_set( $content ) {
-		if ( ! $this->is_pro ) {
-			return '<p class="error-message">' . __( 'Colors setup is available in PRO version!', 'upprev' ) . '</p>' . $content;
-		}
-		return preg_replace( '/ disabled="disabled"/', '', $content );
 	}
 
 	public function print_custom_style() {
@@ -842,10 +778,7 @@ class IworksUpprev {
 
 	private function sanitize_position( $position ) {
 		$positions = $this->options->get_values( 'position' );
-		if ( $this->is_pro && array_key_exists( $position, $positions ) ) {
-			return $position;
-		}
-		if ( isset( $positions[ $position ] ) && ( ! isset( $positions[ $position ]['need_pro'] ) || isset( $positions[ $position ]['need_pro'] ) && ! $positions[ $position ]['need_pro'] ) ) {
+		if ( array_key_exists( $position, $positions ) ) {
 			return $position;
 		}
 		return 'right';
@@ -871,15 +804,11 @@ class IworksUpprev {
 	 * exclude categories
 	 */
 	public function build_exclude_categories( $values ) {
-		$args    = array(
+		$args       = array(
 			'hide_empty'   => false,
 			'hierarchical' => false,
 		);
-		$content = '';
-		if ( ! $this->is_pro ) {
-			$args['number'] = 3;
-			$content       .= '<li class="error-message">' . __( 'Exclude categories available in PRO version!', 'upprev' ) . '</li>';
-		}
+		$content    = '';
 		$categories = get_categories( $args );
 		foreach ( $categories as $category ) {
 			$id       = sprintf( 'category_%04d', $category->term_id );
@@ -888,14 +817,11 @@ class IworksUpprev {
 				esc_attr( $category->term_id ),
 				esc_attr( $id ),
 				is_array( $values ) && in_array( $category->term_id, $values ) ? ' checked="checked"' : '',
-				$this->is_pro ? '' : ' disabled="disabled"',
+				'',
 				esc_attr( $id ),
 				$category->name,
 				$category->count
 			);
-		}
-		if ( ! $this->is_pro ) {
-			$content .= '<li>...</li>';
 		}
 		return '<ul>' . $content . '</li>';
 	}
@@ -909,11 +835,7 @@ class IworksUpprev {
 			'hierarchical' => false,
 		);
 		$content = '';
-		if ( ! $this->is_pro ) {
-			$args['number'] = 3;
-			$content       .= '<li class="error-message">' . __( 'Exclude tags available in PRO version!', 'upprev' ) . '</li>';
-		}
-		$tags = get_tags( $args );
+		$tags    = get_tags( $args );
 		foreach ( $tags as $category ) {
 			$id       = sprintf( 'category_%04d', $category->term_id );
 			$content .= sprintf(
@@ -921,43 +843,13 @@ class IworksUpprev {
 				esc_attr( $category->term_id ),
 				esc_attr( $id ),
 				is_array( $values ) && in_array( $category->term_id, $values ) ? ' checked="checked"' : '',
-				$this->is_pro ? '' : ' disabled="disabled"',
+				'',
 				esc_attr( $id ),
 				$category->name,
 				$category->count
 			);
 		}
-		if ( ! $this->is_pro ) {
-			$content .= '<li>...</li>';
-		}
 		return '<ul>' . $content . '</li>';
-	}
-
-	/**
-	 * Buy PRO page
-	 */
-	public function buy_pro_page( $content = '' ) {
-		if ( $this->is_pro ) {
-			return;
-		}
-		return include dirname( $this->base ) . '/admin/buy_pro.php';
-	}
-
-	/**
-	 * Buy PRO link
-	 */
-	public function link_buy( $type = 'this-site' ) {
-		$params = array();
-		$link   = 'http://upprev.com/buy/';
-		if ( defined( 'WPLANG' ) && WPLANG ) {
-			$params['lang'] = WPLANG;
-		}
-		$params['admin_email'] = get_option( 'admin_email' );
-		$params['home_url']    = home_url();
-		$params['language']    = get_option( 'language' );
-		$params['type']        = $type;
-		$params['version']     = get_option( 'version' );
-		echo add_query_arg( 'iworks_upprev', urlencode( base64_encode( gzcompress( serialize( $params ) ) ) ), $link );
 	}
 
 	/**

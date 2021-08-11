@@ -9,8 +9,8 @@ function iworks_upprev_options() {
 	$iworks_upprev_options['index'] = array(
 		'use_tabs'        => true,
 		'version'         => '0.0',
-		'page_title'      => __( 'upPrev Pro! configuration', 'upprev' ),
-		'menu_title'      => __( 'upPrev Pro!', 'upprev' ),
+		'page_title'      => __( 'upPrev configuration', 'upprev' ),
+		'menu_title'      => __( 'upPrev', 'upprev' ),
 		'menu'            => 'theme',
 		'enqueue_scripts' => array(
 			'upprev-admin-js',
@@ -65,28 +65,22 @@ function iworks_upprev_options() {
 					'right'        => array( 'label' => __( 'bottom right', 'upprev' ) ),
 					'left'         => array( 'label' => __( 'bottom left', 'upprev' ) ),
 					'bottom'       => array(
-						'label'    => __( 'bottom', 'upprev' ),
-						'need_pro' => true,
+						'label' => __( 'bottom', 'upprev' ),
 					),
 					'right-top'    => array(
-						'label'    => __( 'top right', 'upprev' ),
-						'need_pro' => true,
+						'label' => __( 'top right', 'upprev' ),
 					),
 					'top'          => array(
-						'label'    => __( 'top', 'upprev' ),
-						'need_pro' => true,
+						'label' => __( 'top', 'upprev' ),
 					),
 					'left-top'     => array(
-						'label'    => __( 'top left', 'upprev' ),
-						'need_pro' => true,
+						'label' => __( 'top left', 'upprev' ),
 					),
 					'right-middle' => array(
-						'label'    => __( 'middle right', 'upprev' ),
-						'need_pro' => true,
+						'label' => __( 'middle right', 'upprev' ),
 					),
 					'left-middle'  => array(
-						'label'    => __( 'middle left', 'upprev' ),
-						'need_pro' => true,
+						'label' => __( 'middle left', 'upprev' ),
 					),
 				),
 				'configuration'     => 'both',
@@ -120,28 +114,22 @@ function iworks_upprev_options() {
 					'right'        => array( 'label' => __( 'bottom right', 'upprev' ) ),
 					'left'         => array( 'label' => __( 'bottom left', 'upprev' ) ),
 					'bottom'       => array(
-						'label'    => __( 'bottom', 'upprev' ),
-						'need_pro' => true,
+						'label' => __( 'bottom', 'upprev' ),
 					),
 					'right-top'    => array(
-						'label'    => __( 'top right', 'upprev' ),
-						'need_pro' => true,
+						'label' => __( 'top right', 'upprev' ),
 					),
 					'top'          => array(
-						'label'    => __( 'top', 'upprev' ),
-						'need_pro' => true,
+						'label' => __( 'top', 'upprev' ),
 					),
 					'left-top'     => array(
-						'label'    => __( 'top left', 'upprev' ),
-						'need_pro' => true,
+						'label' => __( 'top left', 'upprev' ),
 					),
 					'right-middle' => array(
-						'label'    => __( 'middle right', 'upprev' ),
-						'need_pro' => true,
+						'label' => __( 'middle right', 'upprev' ),
 					),
 					'left-middle'  => array(
-						'label'    => __( 'middle left', 'upprev' ),
-						'need_pro' => true,
+						'label' => __( 'middle left', 'upprev' ),
 					),
 				),
 				'configuration'     => 'both',
@@ -234,7 +222,6 @@ function iworks_upprev_options() {
 				'label'             => __( 'Turn on custom colors.', 'upprev' ),
 				'default'           => 0,
 				'sanitize_callback' => 'absint',
-				'need_pro'          => true,
 			),
 			array(
 				'name'              => 'color',
@@ -244,7 +231,6 @@ function iworks_upprev_options() {
 				'default'           => '#000',
 				'sanitize_callback' => 'esc_html',
 				'use_name_as_id'    => true,
-				'need_pro'          => true,
 			),
 			array(
 				'name'              => 'color_background',
@@ -254,7 +240,6 @@ function iworks_upprev_options() {
 				'default'           => '#fff',
 				'sanitize_callback' => 'esc_html',
 				'use_name_as_id'    => true,
-				'need_pro'          => true,
 			),
 			array(
 				'name'              => 'color_link',
@@ -264,7 +249,6 @@ function iworks_upprev_options() {
 				'sanitize_callback' => 'esc_html',
 				'default'           => '#000',
 				'use_name_as_id'    => true,
-				'need_pro'          => true,
 			),
 			array(
 				'name'              => 'color_border',
@@ -274,7 +258,6 @@ function iworks_upprev_options() {
 				'sanitize_callback' => 'esc_html',
 				'default'           => '#000',
 				'use_name_as_id'    => true,
-				'need_pro'          => true,
 			),
 			/**
 			 * Content: advance
@@ -605,14 +588,6 @@ function iworks_upprev_sanitize_callback_ga_account( $value = 'UA-XXXXX-X' ) {
 }
 
 /**
- * buy pro page
- */
-function iworks_upprev_buy_pro() {
-	global $iworks_upprev;
-	return $iworks_upprev->buy_pro_page();
-}
-
-/**
  * exclude_categories
  */
 function iworks_upprev_exclude_categories( $values = array() ) {
@@ -663,13 +638,6 @@ function iworks_upprev_sanitize_callback_configuration( $option_value ) {
 function iworks_upprev_callback_layout( $value ) {
 	global $iworks_upprev;
 	return $iworks_upprev->build_layout_chooser( $value );
-}
-/**
- * callback: donate
- */
-function iworks_upprev_callback_is_pro() {
-	global $iworks_upprev;
-	return ! $iworks_upprev->is_pro();
 }
 
 function iworks_upprev_options_choose_configuration_mode( $iworks_upprev ) {
