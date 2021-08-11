@@ -1,0 +1,10 @@
+.sass-cache
+.smbdelete*
+local.*
+prepros.json
+*.tmp
+*.log
+node_modules
+release
+tests/php/readme.txt
+package-lock.json
