@@ -71,93 +71,106 @@ jQuery(function($) {
         }
     }
     $(document).ready(function() {
-        $.get(iworks_upprev.url, function(data) {
-            /**
-             * append data
-             */
-            $('body').append(data);
-            /**
-             * bind scroll
-             */
-            $(window).bind('scroll', function() {
-                upprev_show_box();
-            });
-            $('#upprev_rise').click(function() {
-                $(this).fadeOut(upprev_fade_duration, function() {
+        var data = {
+            'action': 'upprev',
+            'p': iworks_upprev.p,
+            '_wpnonce': iworks_upprev.nonce
+        }
+        $.post(
+            iworks_upprev.ajaxurl,
+            data,
+            function( response ) {
+                var data;
+                if ( false === response.success ) {
+                    return;
+                }
+                data = response.data.html;
+                /**
+                 * append data
+                 */
+                $('body').append(data);
+                /**
+                 * bind scroll
+                 */
+                $(window).bind('scroll', function() {
                     upprev_show_box();
-                    $(window).bind('scroll', function() {
+                });
+                $('#upprev_rise').click(function() {
+                    $(this).fadeOut(upprev_fade_duration, function() {
                         upprev_show_box();
+                        $(window).bind('scroll', function() {
+                            upprev_show_box();
+                        });
                     });
                 });
-            });
-            /**
-             * bind close function
-             */
-            $("#upprev_close").click(function() {
-                $('#upprev_box').fadeOut("slow", function() {
-                    $(window).unbind('scroll');
-                    $('#upprev_rise').css({
-                        bottom: 0,
-                        right: 0
-                    }).fadeIn(upprev_fade_duration);
+                /**
+                 * bind close function
+                 */
+                $("#upprev_close").click(function() {
+                    $('#upprev_box').fadeOut("slow", function() {
+                        $(window).unbind('scroll');
+                        $('#upprev_rise').css({
+                            bottom: 0,
+                            right: 0
+                        }).fadeIn(upprev_fade_duration);
+                    });
+                    return false;
                 });
-                return false;
-            });
-            /**
-             * force links to open in new window if needed
-             */
-            if (iworks_upprev.url_new_window == 1 || iworks_upprev.ga_track_clicks == 1) {
-                $('#upprev_box a[id!=upprev_close]').click(function() {
-                    $(this).attr('style', 'bacground-color:lime');
-                    if (iworks_upprev.url_new_window == 1) {
-                        window.open($(this).attr('href'));
-                    }
-                    if (upprev_ga && iworks_upprev.ga_track_clicks == 1) {
-                        _gaq.push(['_trackEvent', 'upPrev', iworks_upprev.title, $(this).html(), 1, upprev_ga_opt_noninteraction]);
-                    }
-                    if (iworks_upprev.url_new_window == 1) {
-                        return false;
-                    }
-                });
-            }
-            /**
-             * setup width
-             */
-            box = $('#upprev_box');
-            box.css({
-                width: iworks_upprev.css_width,
-                borderWidth: iworks_upprev.css_border_width
-            });
-            /**
-             * apply custom colors
-             */
-            if (iworks_upprev.color_set) {
-                iworks_upprev_add_style(box, 'background-color: ' + iworks_upprev.color_background + ' !important;color: ' + iworks_upprev.color + ' !important;border-color:' + iworks_upprev.color_border + ' !important;');
-                $('#upprev_box a').each(function() {
-                    iworks_upprev_add_style($(this), 'color:' + iworks_upprev.color_link + ' !important');
-                });
-            }
-            /**
-             * default
-             */
-            upprev_horizontal = iworks_upprev_get_horizontal(box);
-            upprev_vertical = iworks_upprev_get_vertical(box);
-            /**
-             * out, is fade
-             */
-            if ('fade' == iworks_upprev.animation) {
-                upprev_vertical = iworks_upprev.css_side;
-                upprev_horizontal = iworks_upprev.css_bottom;
+                /**
+                 * force links to open in new window if needed
+                 */
+                if (iworks_upprev.url_new_window == 1 || iworks_upprev.ga_track_clicks == 1) {
+                    $('#upprev_box a[id!=upprev_close]').click(function() {
+                        $(this).attr('style', 'bacground-color:lime');
+                        if (iworks_upprev.url_new_window == 1) {
+                            window.open($(this).attr('href'));
+                        }
+                        if (upprev_ga && iworks_upprev.ga_track_clicks == 1) {
+                            _gaq.push(['_trackEvent', 'upPrev', iworks_upprev.title, $(this).html(), 1, upprev_ga_opt_noninteraction]);
+                        }
+                        if (iworks_upprev.url_new_window == 1) {
+                            return false;
+                        }
+                    });
+                }
+                /**
+                 * setup width
+                 */
+                box = $('#upprev_box');
                 box.css({
-                    display: 'none'
+                    width: iworks_upprev.css_width,
+                    borderWidth: iworks_upprev.css_border_width
                 });
-            }
-            box.css(iworks_upprev_setup_position(upprev_horizontal, upprev_vertical));
-            /**
-             * maybe show?
-             */
-            upprev_show_box();
-        });
+                /**
+                 * apply custom colors
+                 */
+                if (iworks_upprev.color_set) {
+                    iworks_upprev_add_style(box, 'background-color: ' + iworks_upprev.color_background + ' !important;color: ' + iworks_upprev.color + ' !important;border-color:' + iworks_upprev.color_border + ' !important;');
+                    $('#upprev_box a').each(function() {
+                        iworks_upprev_add_style($(this), 'color:' + iworks_upprev.color_link + ' !important');
+                    });
+                }
+                /**
+                 * default
+                 */
+                upprev_horizontal = iworks_upprev_get_horizontal(box);
+                upprev_vertical = iworks_upprev_get_vertical(box);
+                /**
+                 * out, is fade
+                 */
+                if ('fade' == iworks_upprev.animation) {
+                    upprev_vertical = iworks_upprev.css_side;
+                    upprev_horizontal = iworks_upprev.css_bottom;
+                    box.css({
+                        display: 'none'
+                    });
+                }
+                box.css(iworks_upprev_setup_position(upprev_horizontal, upprev_vertical));
+                /**
+                 * maybe show?
+                 */
+                upprev_show_box();
+            });
     });
 
     function iworks_upprev_get_horizontal(box) {

@@ -104,6 +104,11 @@ class IworksUpprev {
 		add_action( 'init', array( $this, 'init' ) );
 		add_action( 'the_content', array( $this, 'the_content' ), PHP_INT_MAX );
 		/**
+		 * handle ajax request
+		 */
+		add_action( 'wp_ajax_upprev', array( $this, 'ajax_get_box' ) );
+		add_action( 'wp_ajax_nopriv_upprev', array( $this, 'ajax_get_box' ) );
+		/**
 		 * global option object
 		 */
 		global $iworks_upprev_options;
@@ -174,10 +179,10 @@ class IworksUpprev {
 	public function init() {
 		add_action( 'admin_init', array( $this, 'admin_init' ) );
 		add_action( 'admin_init', 'iworks_upprev_options_init' );
-        add_action( 'wp_head', array( $this, 'print_custom_style' ), PHP_INT_MAX );
-        /**
-         * assets
-         */
+		add_action( 'wp_head', array( $this, 'print_custom_style' ), PHP_INT_MAX );
+		/**
+		 * assets
+		 */
 		add_action( 'wp_enqueue_scripts', array( $this, 'register_assets' ), 0 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_assets' ) );
 		/**
@@ -199,35 +204,35 @@ class IworksUpprev {
 				}
 			}
 		}
-    }
+	}
 
 	/**
 	 * register styles
 	 *
 	 * @since 4.0.0
 	 */
-    public function register_assets() {
-        $name = $this->options->get_option_name( 'frontend' );
-        /**
-         * styles
-         */
-        $file = '/assets/styles/frontend' . $this->dev . '.css';
-        wp_register_style(
-            $name,
-            plugins_url( $file, $this->base ),
-            array(),
-            $this->get_version( $file )
-        );
-        /**
-         * JS
-         */
+	public function register_assets() {
+		$name = $this->options->get_option_name( 'frontend' );
+		/**
+		 * styles
+		 */
+		$file = '/assets/styles/frontend' . $this->dev . '.css';
+		wp_register_style(
+			$name,
+			plugins_url( $file, $this->base ),
+			array(),
+			$this->get_version( $file )
+		);
+		/**
+		 * JS
+		 */
 		$file = '/assets/scripts/upprev' . $this->dev . '.js';
-        wp_register_script(
-            $name,
-            plugins_url( $file, $this->base ),
-            array( 'jquery' ),
-            $this->get_version( $file )
-        );
+		wp_register_script(
+			$name,
+			plugins_url( $file, $this->base ),
+			array( 'jquery' ),
+			$this->get_version( $file )
+		);
 	}
 
 	/**
@@ -235,15 +240,15 @@ class IworksUpprev {
 	 *
 	 * @since 1.3.0
 	 */
-    public function enqueue_assets() {
-        if ( $this->iworks_upprev_check() ) {
-            return;
-        }
-        $name = $this->options->get_option_name( 'frontend' );
-        wp_enqueue_style( $name );
-        wp_enqueue_script( $name );
-        wp_localize_script( $name, 'iworks_upprev', $this->get_config_javascript() );
-    }
+	public function enqueue_assets() {
+		if ( $this->iworks_upprev_check() ) {
+			return;
+		}
+		$name = $this->options->get_option_name( 'frontend' );
+		wp_enqueue_style( $name );
+		wp_enqueue_script( $name );
+		wp_localize_script( $name, 'iworks_upprev', $this->get_config_javascript() );
+	}
 
 	public function admin_init() {
 		$this->update();
@@ -302,11 +307,20 @@ class IworksUpprev {
 		}
 		$data['position']['all'] = $position;
 		$data['title']           = esc_attr( get_the_title() );
-		$data['url']             = add_query_arg( 'p', get_the_ID(), plugins_url( 'box.php', $this->base ) );
+		$data['p']               = get_the_ID();
+		$data['nonce']           = wp_create_nonce( 'upprev' );
+		$data['ajaxurl']         = admin_url( 'admin-ajax.php' );
+		// $data['url']             = add_query_arg( 'p', get_the_ID(), plugins_url( 'box.php', $this->base ) );
 		return $data;
 	}
 
-	private function get_box( $layout = false ) {
+	/**
+	 * get box
+	 *
+	 * @since 1.0.0
+	 * @since 4.0.0 param $post_id
+	 */
+	private function get_box( $layout = false, $post_id = 0 ) {
 		/**
 		 * get current post title and convert special characters to HTML entities
 		 */
@@ -375,11 +389,10 @@ class IworksUpprev {
 		/**
 		 * exclude one id if singular
 		 */
-		$post_ID = 0;
-		if ( isset( $_GET['p'] ) && preg_match( '/^\d+$/', $_GET['p'] ) ) {
-			$post_ID            = $args['post__not_in'] = array( $_GET['p'] );
-			$this->current_post = get_post( intval( $_GET['p'] ) );
+		if ( empty( $post_id ) && isset( $_GET['p'] ) && preg_match( '/^\d+$/', $_GET['p'] ) ) {
+			$post_id = $args['post__not_in'] = array( $_GET['p'] );
 		}
+			$this->current_post = get_post( $post_id );
 		/**
 		 * check & set post type
 		 */
@@ -421,7 +434,7 @@ class IworksUpprev {
 			 * category
 			 */
 			case 'category':
-				$categories = get_the_category( $post_ID );
+				$categories = get_the_category( $post_id );
 				if ( ! $categories ) {
 					break;
 				}
@@ -502,6 +515,12 @@ class IworksUpprev {
 				'post__in'            => $yarpp_posts,
 				'ignore_sticky_posts' => 1,
 			);
+		}
+		/**
+		 * always! exlude self
+		 */
+		if ( ! empty( $post_id ) ) {
+			$args['post__not_in'] = array( $post_id );
 		}
 		$upprev_query = new WP_Query( $args );
 		if ( ! $upprev_query->have_posts() ) {
@@ -613,7 +632,7 @@ class IworksUpprev {
 				$item_class[] = 'no-image';
 			}
 			$item .= '<div';
-			if ( !empty( $item ) ) {
+			if ( ! empty( $item ) ) {
 				$item .= sprintf( ' class="%s"', esc_attr( implode( ' ', $item_class ) ) );
 			}
 			$item .= '>';
@@ -677,17 +696,6 @@ class IworksUpprev {
 			);
 		}
 		return $where;
-	}
-	public function the_box() {
-		echo "\n";
-		printf( '<!-- upPrev: %s/%s -->', IWORKS_UPPREV_VERSION, $this->version );
-		echo "\n";
-		echo $this->get_box();
-		$layout = $this->sanitize_layout( $this->options->get_option( 'layout' ) );
-		extract( $this->get_default_params( $layout ) );
-		if ( ! isset( $show_close_button ) || $show_close_button ) {
-			echo '<a id="upprev_rise">&clubs;</a>';
-		}
 	}
 
 	private function sanitize_layout( $layout ) {
@@ -929,5 +937,36 @@ class IworksUpprev {
 			return plugin_dir_url( dirname( dirname( __FILE__ ) ) ) . '/assets/images/upprev-logo.svg';
 		}
 		return $logo;
+	}
+
+	/**
+	 * get box using ajax
+	 *
+	 * @since 4.0.0
+	 */
+	public function ajax_get_box() {
+		$nonce = filter_input( INPUT_POST, '_wpnonce', FILTER_SANITIZE_STRING );
+		if ( wp_verify_nonce( $nonce, 'upprev' ) ) {
+			wp_send_json_error();
+		}
+		$post_id = filter_input( INPUT_POST, 'p', FILTER_VALIDATE_INT );
+		if ( empty( $post_id ) ) {
+			wp_send_json_error();
+		}
+		$box = $this->get_box( false, $post_id );
+		if ( empty( $box ) ) {
+			wp_send_json_error();
+		}
+		$content  = sprintf( '<!-- upPrev: %s/%s -->', IWORKS_UPPREV_VERSION, $this->version );
+		$content .= $box;
+		$layout   = $this->sanitize_layout( $this->options->get_option( 'layout' ) );
+		extract( $this->get_default_params( $layout ) );
+		if ( ! isset( $show_close_button ) || $show_close_button ) {
+			$content .= '<a id="upprev_rise">&clubs;</a>';
+		}
+		$data = array(
+			'html' => $content,
+		);
+		wp_send_json_success( $data );
 	}
 }
