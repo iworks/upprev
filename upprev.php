@@ -51,3 +51,14 @@ $iworks_upprev = new IworksUpprev();
  */
 register_activation_hook( __FILE__, 'iworks_upprev_activate' );
 register_deactivation_hook( __FILE__, 'iworks_upprev_deactivate' );
+
+/**
+ * Buy me a coffe!
+ */
+include_once $includes . '/iworks/rate/rate.php';
+do_action(
+	'iworks-register-plugin',
+	plugin_basename( __FILE__ ),
+	__( 'upPrev', 'upprev' ),
+	'upprev'
+);

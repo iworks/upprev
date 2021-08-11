@@ -1,18 +1,18 @@
-=== upPrev PRO!===
+=== PLUGIN_NAME ===
 Contributors: iworks
 Donate link: http://iworks.pl/donate/upprev.php
-Tags: animated, animation, box, fade, featured, featured, flyout, fly-out, links, new york times, notification, NYTimes, post, posts, previous post, previous posts, related, related content, rtl, seo, slider, thumbnail
-Requires at least: 4.0
-Tested up to: 4.4
-Stable tag: 3.3.30
+Tags: box, notification, related, seo, thumbnail
+Requires at least: 5.0
+Tested up to: 5.8
+Stable tag: PLUGIN_VERSION
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Display cool, animated fly-out or fade box with related content. Just like New York Times.
+Display cool, animated fly-out or fade box with related content.
 
 == Description ==
 
-Display cool, animated fly-out or fade box with related content. Just like New York Times.
+Display cool, animated fly-out or fade box with related content.
 
 When a reader scrolls to the bottom of a single post, page or custom post
 type, a button animates in the page’s bottom right or left corner,
@@ -25,27 +25,6 @@ in the selected configuration:
 4. Random
 5. Related using YARPP (only post/pages)
 
-= Translators =
-
-* Brazilian Portuguese (pt_BR) - [Leonardo Antonioli](http://www.tobeguarany.com/)
-* Bulgarian (bg_BG) - [Martin Halachev](http://wordpress.org/support/profile/mhalachev)
-* Czech (cs_CZ) - [Michal Bláha](http://michalblaha.cz/)
-* Dutch (nl_NL) - [Ruud Kok](http://www.ruudkok.nl/)
-* French (fr_FR) - Eva, [Agence web - My Client is Rich](http://myclientisrich-leblog.com/)
-* German (de_DE) - [Mario Wolf](http://wolfmedien.de/)
-* Hebrew (he_IL) - [עמיעד](http://hatul.info), [של אודי בורג](http://blog.udiburg.com)
-* Italian (it_IT) - [Francesco Giossi](http://www.giossi.com)
-* Polish (pl_PL) - [Marcin Pietrzak](http://iworks.pl/)
-* Romanian (ro_RO) - [Florin Arjocu](http://drumliber.ro/)
-* Russian (ru_RU) - [Вадим Сохин](http://webbizreshenie.ru/)
-* Simplified Chinese - [Leo](http://smallseotips.com/)
-* Slovak (sk_SK) - [Daniel Schmidt](http://wordpress.org/support/profile/danielschmidtsk)
-* Spanish (es_ES) - [Apasionados del Marketing](http://www.apasionadosdelmarketing.es)
-* Tagalog (tl_TL) - [Kel DC](https://profiles.wordpress.org/kel-dc)
-* Turkish (tr_TR) - [wpdestek](http://wordpress.org/support/profile/wpdestek/)
-* Vietnamese (vi_VI) - [Xman](http://thegioimanguon.com/)
-
-If you have created your own language pack, or have an update of an existing one, you can send [gettext PO and MO files](http://codex.wordpress.org/Translating_WordPress) to me so that I can bundle it into upPrev. You can [download the latest POT file from here](http://plugins.svn.wordpress.org/upprev/trunk/languages/upprev.pot).
 
 == Installation ==
 

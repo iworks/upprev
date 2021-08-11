@@ -1,0 +1,33 @@
+#iworks_upprev_position {
+    label {
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        border-style: solid;
+        border-width: 1px;
+        display: block;
+        height: 126px;
+        padding: 1px;
+        width: 140px;
+    }
+    input {
+        margin: 0 10px;
+    }
+    td {
+        &.disabled {
+            opacity: .5;
+        }
+    }
+    span {
+        line-height: 3em;
+        display: none;
+    }
+    .bottom       label { background-image: url(../images/position-bottom.png);       }
+    .left-middle  label { background-image: url(../images/position-left-middle.png);  }
+    .left-top     label { background-image: url(../images/position-left-top.png);     }
+    .left         label { background-image: url(../images/position-left.png);         }
+    .right-middle label { background-image: url(../images/position-right-middle.png); }
+    .right-top    label { background-image: url(../images/position-right-top.png);    }
+    .right        label { background-image: url(../images/position-right.png);        }
+    .top          label { background-image: url(../images/position-top.png);          }
+}
+

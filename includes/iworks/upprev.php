@@ -46,7 +46,7 @@ class IworksUpprev {
 		$this->dir          = basename( dirname( $this->base ) );
 		$this->capability   = apply_filters( 'iworks_upprev_capability', 'manage_options' );
 		$this->working_mode = 'site';
-		$this->dev          = ( defined( 'IWORKS_DEV_MODE' ) && IWORKS_DEV_MODE ) ? '.dev' : '';
+		$this->dev          = ( defined( 'IWORKS_DEV_MODE' ) && IWORKS_DEV_MODE ) ? '' : '.min';
 		/**
 		 * layouts settings
 		 */
@@ -108,6 +108,10 @@ class IworksUpprev {
 		 */
 		global $iworks_upprev_options;
 		$this->options = $iworks_upprev_options;
+		/**
+		 * iWorks Rate Class
+		 */
+		add_filter( 'iworks_rate_notice_logo_style', array( $this, 'filter_plugin_logo' ), 10, 2 );
 	}
 
 	/**
@@ -170,8 +174,12 @@ class IworksUpprev {
 	public function init() {
 		add_action( 'admin_init', array( $this, 'admin_init' ) );
 		add_action( 'admin_init', 'iworks_upprev_options_init' );
-		add_action( 'wp_enqueue_scripts', array( $this, 'wp_enqueue_scripts' ) );
-		add_action( 'wp_head', array( $this, 'print_custom_style' ), PHP_INT_MAX );
+        add_action( 'wp_head', array( $this, 'print_custom_style' ), PHP_INT_MAX );
+        /**
+         * assets
+         */
+		add_action( 'wp_enqueue_scripts', array( $this, 'register_assets' ), 0 );
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_assets' ) );
 		/**
 		 * filters
 		 */
@@ -191,17 +199,51 @@ class IworksUpprev {
 				}
 			}
 		}
+    }
+
+	/**
+	 * register styles
+	 *
+	 * @since 4.0.0
+	 */
+    public function register_assets() {
+        $name = $this->options->get_option_name( 'frontend' );
+        /**
+         * styles
+         */
+        $file = '/assets/styles/frontend' . $this->dev . '.css';
+        wp_register_style(
+            $name,
+            plugins_url( $file, $this->base ),
+            array(),
+            $this->get_version( $file )
+        );
+        /**
+         * JS
+         */
+		$file = '/assets/scripts/upprev' . $this->dev . '.js';
+        wp_register_script(
+            $name,
+            plugins_url( $file, $this->base ),
+            array( 'jquery' ),
+            $this->get_version( $file )
+        );
 	}
 
-	public function wp_enqueue_scripts() {
-		if ( $this->iworks_upprev_check() ) {
-			return;
-		}
-		$file = '/scripts/upprev' . $this->dev . '.js';
-		wp_enqueue_script( 'upprev-js', plugins_url( $file, $this->base ), array( 'jquery' ), $this->get_version( $file ) );
-		wp_localize_script( 'upprev-js', 'iworks_upprev', $this->get_config_javascript() );
-		$this->enqueue_style( 'upprev' );
-	}
+	/**
+	 * Enquque styles
+	 *
+	 * @since 1.3.0
+	 */
+    public function enqueue_assets() {
+        if ( $this->iworks_upprev_check() ) {
+            return;
+        }
+        $name = $this->options->get_option_name( 'frontend' );
+        wp_enqueue_style( $name );
+        wp_enqueue_script( $name );
+        wp_localize_script( $name, 'iworks_upprev', $this->get_config_javascript() );
+    }
 
 	public function admin_init() {
 		$this->update();
@@ -214,9 +256,9 @@ class IworksUpprev {
 			$scripts,
 			$this->get_version()
 		);
-		$file = '/styles/upprev' . $this->dev . '.css';
+		$file = 'assets/styles/frontend' . $this->dev . '.css';
 		wp_enqueue_style( 'upprev', plugins_url( $file, $this->base ), array(), $this->get_version( $file ) );
-		$file = '/styles/upprev-admin' . $this->dev . '.css';
+		$file = 'assets/styles/admin' . $this->dev . '.css';
 		wp_enqueue_style( 'upprev-admin', plugins_url( $file, $this->base ), array( 'farbtastic' ), $this->get_version( $file ) );
 	}
 
@@ -571,7 +613,7 @@ class IworksUpprev {
 				$item_class[] = 'no-image';
 			}
 			$item .= '<div';
-			if ( count( $item ) ) {
+			if ( !empty( $item ) ) {
 				$item .= sprintf( ' class="%s"', esc_attr( implode( ' ', $item_class ) ) );
 			}
 			$item .= '>';
@@ -771,11 +813,6 @@ class IworksUpprev {
 		return array();
 	}
 
-	private function enqueue_style( $name, $deps = null ) {
-		$file = '/styles/' . $name . $this->dev . '.css';
-		wp_enqueue_style( $name, plugins_url( $file, $this->base ), $deps, $this->get_version( $file ) );
-	}
-
 	private function sanitize_position( $position ) {
 		$positions = $this->options->get_values( 'position' );
 		if ( array_key_exists( $position, $positions ) ) {
@@ -876,4 +913,21 @@ class IworksUpprev {
 		return $content;
 	}
 
+	/**
+	 * Plugin logo for rate messages
+	 *
+	 * @since 4.0.0
+	 *
+	 * @param string $logo Logo, can be empty.
+	 * @param object $plugin Plugin basic data.
+	 */
+	public function filter_plugin_logo( $logo, $plugin ) {
+		if ( is_object( $plugin ) ) {
+			$plugin = (array) $plugin;
+		}
+		if ( 'upprev' === $plugin['slug'] ) {
+			return plugin_dir_url( dirname( dirname( __FILE__ ) ) ) . '/assets/images/upprev-logo.svg';
+		}
+		return $logo;
+	}
 }
