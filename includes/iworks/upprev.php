@@ -253,18 +253,17 @@ class IworksUpprev {
 	public function admin_init() {
 		$this->update();
 		add_filter( 'plugin_row_meta', array( $this, 'plugin_row_meta' ), 10, 2 );
-
 		$scripts = array( 'jquery-ui-tabs', 'farbtastic' );
 		wp_register_script(
-			'upprev-admin-js',
-			plugins_url( '/scripts/upprev-admin.js', $this->base ),
+			'upprev-admin',
+			plugins_url( 'assets/scripts/admin.' . $this->dev . 'js', $this->base ),
 			$scripts,
 			$this->get_version()
 		);
 		$file = 'assets/styles/frontend' . $this->dev . '.css';
-		wp_enqueue_style( 'upprev', plugins_url( $file, $this->base ), array(), $this->get_version( $file ) );
+		wp_register_style( 'upprev', plugins_url( $file, $this->base ), array(), $this->get_version( $file ) );
 		$file = 'assets/styles/admin' . $this->dev . '.css';
-		wp_enqueue_style( 'upprev-admin', plugins_url( $file, $this->base ), array( 'farbtastic' ), $this->get_version( $file ) );
+		wp_register_style( 'upprev-admin', plugins_url( $file, $this->base ), array( 'farbtastic' ), $this->get_version( $file ) );
 	}
 
 	public function plugin_row_meta( $links, $file ) {
@@ -946,16 +945,16 @@ class IworksUpprev {
 	 */
 	public function ajax_get_box() {
 		$nonce = filter_input( INPUT_POST, '_wpnonce', FILTER_SANITIZE_STRING );
-		if ( wp_verify_nonce( $nonce, 'upprev' ) ) {
-			wp_send_json_error();
+		if ( ! wp_verify_nonce( $nonce, 'upprev' ) ) {
+			wp_send_json_error( 1 );
 		}
 		$post_id = filter_input( INPUT_POST, 'p', FILTER_VALIDATE_INT );
 		if ( empty( $post_id ) ) {
-			wp_send_json_error();
+			wp_send_json_error( 2 );
 		}
 		$box = $this->get_box( false, $post_id );
 		if ( empty( $box ) ) {
-			wp_send_json_error();
+			wp_send_json_error( 3 );
 		}
 		$content  = sprintf( '<!-- upPrev: %s/%s -->', IWORKS_UPPREV_VERSION, $this->version );
 		$content .= $box;

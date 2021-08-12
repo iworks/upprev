@@ -13,7 +13,7 @@ function iworks_upprev_options() {
 		'menu_title'      => __( 'upPrev', 'upprev' ),
 		'menu'            => 'theme',
 		'enqueue_scripts' => array(
-			'upprev-admin-js',
+			'upprev-admin',
 		),
 		'enqueue_styles'  => array(
 			'upprev-admin',
@@ -528,9 +528,15 @@ function iworks_upprev_options() {
 				'context'  => 'side',
 				'priority' => 'core',
 			),
-			'need_assistance'    => array(
-				'title'    => __( 'Need Assistance?', 'upprev' ),
+			'assistance'         => array(
+				'title'    => __( 'We are waiting for your message', 'upprev' ),
 				'callback' => 'iworks_upprev_options_need_assistance',
+				'context'  => 'side',
+				'priority' => 'core',
+			),
+			'love'               => array(
+				'title'    => __( 'I love what I do!', 'upprev' ),
+				'callback' => 'iworks_upprev_options_loved_this_plugin',
 				'context'  => 'side',
 				'priority' => 'core',
 			),
@@ -648,24 +654,36 @@ function iworks_upprev_options_choose_configuration_mode( $iworks_upprev ) {
 	<li><input type="radio" name="iworks_upprev_configuration" value="simple" id="iworks_upprev_configuration_simple"   <?php checked( $configuration, 'simple' ); ?>/> <label for="iworks_upprev_configuration_simple"><?php _e( 'simple', 'upprev' ); ?></label></li>
 	<li><input type="radio" name="iworks_upprev_configuration" value="advance" id="iworks_upprev_configuration_advance" <?php checked( $configuration, 'advance' ); ?>/> <label for="iworks_upprev_configuration_advance"><?php _e( 'advance', 'upprev' ); ?></label></li>
 </ul>
-	<?php
-}
-
-function iworks_upprev_options_loved_this_plugin( $iworks_upprev ) {
-	?>
-<p><?php _e( 'Below are some links to help spread this plugin to other users', 'upprev' ); ?></p>
-<ul>
-	<li><a href="http://wordpress.org/support/view/plugin-reviews/upprev#postform"><?php _e( 'Give it a five stars on Wordpress.org', 'upprev' ); ?></a></li>
-	<li><a href="http://wordpress.org/extend/plugins/upprev/"><?php _e( 'Link to it so others can easily find it', 'upprev' ); ?></a></li>
-</ul>
+</p>
 	<?php
 }
 
 function iworks_upprev_options_need_assistance( $iworks_upprev ) {
+	$content = apply_filters( 'iworks_rate_assistance', '', 'upprev' );
+	if ( ! empty( $content ) ) {
+		echo $content;
+		return;
+	}
+
 	?>
-<p><?php _e( 'Problems? The links bellow can be very helpful to you', 'upprev' ); ?></p>
+<p><?php _e( 'We are waiting for your message', 'upprev' ); ?></p>
 <ul>
-	<li><a href="<?php _e( 'http://wordpress.org/tags/upprev', 'upprev' ); ?>"><?php _e( 'WordPress Help Forum', 'upprev' ); ?></a></li>
+	<li><a href="<?php _ex( 'https://wordpress.org/support/plugin/upprev/', 'link to support forum on WordPress.org', 'upprev' ); ?>"><?php _e( 'WordPress Help Forum', 'upprev' ); ?></a></li>
+</ul>
+	<?php
+}
+
+function iworks_upprev_options_loved_this_plugin( $iworks_upprev ) {
+	$content = apply_filters( 'iworks_rate_love', '', 'upprev' );
+	if ( ! empty( $content ) ) {
+		echo $content;
+		return;
+	}
+	?>
+<p><?php _e( 'Below are some links to help spread this plugin to other users', 'upprev' ); ?></p>
+<ul>
+	<li><a href="https://wordpress.org/support/plugin/upprev/reviews/#new-post"><?php _e( 'Give it a five stars on WordPress.org', 'upprev' ); ?></a></li>
+	<li><a href="<?php _ex( 'https://wordpress.org/plugins/upprev/', 'plugin home page on WordPress.org', 'upprev' ); ?>"><?php _e( 'Link to it so others can easily find it', 'upprev' ); ?></a></li>
 </ul>
 	<?php
 }
