@@ -1,6 +1,6 @@
-=== PLUGIN_NAME ===
+=== PLUGIN_TITLE ===
 Contributors: iworks
-Donate link: http://iworks.pl/donate/upprev.php
+Donate link: https://ko-fi.com/iworks?utm_source=upprev&utm_medium=readme-donate
 Tags: box, notification, related, seo, thumbnail
 Requires at least: 5.0
 Tested up to: 5.8
@@ -14,10 +14,7 @@ Display cool, animated fly-out or fade box with related content.
 
 Display cool, animated fly-out or fade box with related content.
 
-When a reader scrolls to the bottom of a single post, page or custom post
-type, a button animates in the page’s bottom right or left corner,
-allowing the reader to select the previous or random available post or posts
-in the selected configuration:
+When a reader scrolls to the bottom of a single post, page or custom post type, a button animates in the page’s bottom right or left corner, allowing the reader to select the previous or random available post or posts in the selected configuration:
 
 1. Just previous
 2. Previous in category
@@ -56,38 +53,17 @@ There are 3 ways to install this plugin:
 
 First of all, check your template. To proper work plugin requires function `wp_head` and `wp_footer`. If your template don't use one of theme, upPrev will not work. If you cant check this action in your templates manually use this code to check it: https://gist.github.com/378450
 
-= My website is not in English, will upPrev work? =
-
-upPrev plugin will work on websites in the following languages:
-
-* Deutsch
-* Español
-* Français
-* Italiano
-* Nederlandse
-* Polski
-* Português do Brasil
-* Română
-* Slovenský
-* Tiếng Việt
-* Türkçe
-* Čeština
-* Български
-* Русский
-* עברית
-* 简体中文
-
 = How to add default image to post without thumbnail? =
 
 Use the `iworks_upprev_image` action, read more:
 
-[How to add default image to post without thumbnail?](http://upprev.com/faq/how-to-add-default-image-to-post-without-thumbnail.html)
+[How to add default image to post without thumbnail?](http://upprev.iworks.pl/faq/how-to-add-default-image-to-post-without-thumbnail.html)
 
 = How to change post thumbnail to other image? =
 
 Use the `iworks_upprev_get_the_post_thumbnail` filter, read more:
 
-[How to change post thumbnail to other image?](http://upprev.com/faq/how-to-change-post-thubnail-to-other-image.html)
+[How to change post thumbnail to other image?](http://upprev.iworks.pl/faq/how-to-change-post-thubnail-to-other-image.html)
 
 = How to add upPrev for pages or custom post types? =
 
@@ -95,11 +71,11 @@ Yes. Just select post types on `Appearance -> upPrev -> Content` page in `Select
 
 = How I can customize with my own styles? =
 
-See here: [How I can customize with my own styles?](http://upprev.com/faq/how-i-can-customize-with-my-own-styles.html)
+See here: [How I can customize with my own styles?](http://upprev.iworks.pl/faq/how-i-can-customize-with-my-own-styles.html)
 
 = Need more snippets? =
 
-Visit: [upPrev: snippet archive](http://upprev.com/tag/snippet)
+Visit: [upPrev: snippet archive](http://upprev.iworks.pl/tag/snippet)
 
 == Screenshots ==
 
@@ -165,7 +141,7 @@ Visit: [upPrev: snippet archive](http://upprev.com/tag/snippet)
 = 3.3.25 =
 
 * IMPROVEMENT: updated Simplified Chinese translation by [Leo](http://smallseotips.com/)
-* IMPROVEMENT: added filter '[iworks_upprev_box_title](http://upprev.com/documentation/filter-reference/iworks_upprev_box_title)' for box title, return false to remove title
+* IMPROVEMENT: added filter '[iworks_upprev_box_title](http://upprev.iworks.pl/documentation/filter-reference/iworks_upprev_box_title)' for box title, return false to remove title
 
 = 3.3.24 =
 
@@ -180,7 +156,7 @@ Visit: [upPrev: snippet archive](http://upprev.com/tag/snippet)
 
 = 3.3.22 =
 
-* IMPROVEMENT: add [iworks_upprev_check filter](http://upprev.com/documentation/filter-reference/iworks_upprev_check), see documentation: [Filter Reference – iworks_upprev_check](http://upprev.com/fiter_reference_iworks_upprev_check.html)
+* IMPROVEMENT: add [iworks_upprev_check filter](http://upprev.iworks.pl/documentation/filter-reference/iworks_upprev_check), see documentation: [Filter Reference – iworks_upprev_check](http://upprev.iworks.pl/fiter_reference_iworks_upprev_check.html)
 
 = 3.3.21 =
 
@@ -281,7 +257,7 @@ Visit: [upPrev: snippet archive](http://upprev.com/tag/snippet)
 
 = 3.2 =
 
-* IMPROVEMENT: added action *[iworks_upprev_image](http://upprev.com/documentation/action-reference/iworks_upprev_image)* - you can add own code to produce icon, when them don't support post-thumbnails
+* IMPROVEMENT: added action *[iworks_upprev_image](http://upprev.iworks.pl/documentation/action-reference/iworks_upprev_image)* - you can add own code to produce icon, when them don't support post-thumbnails
 * IMPROVEMENT: added thumbnail filter *iworks_upprev_get_the_post_thumbnail* - now you can easy change thumbnail
 * IMPROVEMENT: added purging transient cache entries from $wpdb->options table when turn off this cache [forum](http://wordpress.org/support/topic/plugin-upprev-crazy-number-of-wp-options-database-entries)
 * IMPROVEMENT: add check _gaq object exist
@@ -308,7 +284,7 @@ Visit: [upPrev: snippet archive](http://upprev.com/tag/snippet)
 * BUGFIX: fixed problem with unchecking 'Excerpts'. [forum](http://wordpress.org/support/topic/plugin-upprev-bugs-no-box-in-firefox-6-offset-doesnt-work-disable-excerpts-doesnt-work) thx [benjamin](http://wordpress.org/support/profile/kbenjamin)
 * BUGFIX: fixed sticky posts display loop
 * BUGFIX: fixed thumbnail display problem
-* IMPROVEMENT: added filter '[iworks_upprev_box_item](http://upprev.com/documentation/filter-reference/iworks-upprev-box-item)' for any item excerpt YARPPs
+* IMPROVEMENT: added filter '[iworks_upprev_box_item](http://upprev.iworks.pl/documentation/filter-reference/iworks-upprev-box-item)' for any item excerpt YARPPs
 * IMPROVEMENT: added GA track: view box and click link
 * IMPROVEMENT: added option *ignore sticky posts*
 * IMPROVEMENT: added sanitize function for offset
