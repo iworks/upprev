@@ -3,7 +3,7 @@
 /*
  * Plugin Name:       upPrev
  * Plugin URI:        http://iworks.pl/upprev/
- * Description:       Build a House allows to log expenses and events during construction.
+ * Description:       PLUGIN_DESCRIPTION
  * Requires at least: 5.0
  * Requires PHP:      7.2
  * Version:           PLUGIN_VERSION

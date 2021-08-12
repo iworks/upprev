@@ -70,6 +70,7 @@ module.exports = function(grunt) {
             patterns: [
                 { match: /PLUGIN_TITLE/g, replace: '<%= pkg.title %>' },
                 { match: /PLUGIN_VERSION/g, replace: '<%= pkg.version %>' },
+                { match: /PLUGIN_DESCRIPTION/g, replace: '<%= pkg.description %>' },
                 { match: /BUILDTIME/g, replace: buildtime },
                 { match: /PLUGIN_TILL_YEAR/g, replace: buildyear },
                 { match: /IWORKS_OPTIONS_TEXTDOMAIN/g, replace: '<%= pkg.name %>' },
