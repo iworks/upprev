@@ -14,7 +14,7 @@ Display cool, animated fly-out or fade box with related content.
 
 Display cool, animated fly-out or fade box with related content.
 
-When a reader scrolls to the bottom of a single post, page or custom post type, a button animates in the page’s bottom right or left corner, allowing the reader to select the previous or random available post or posts in the selected configuration:
+When a reader scrolls to the bottom of a single post, page, or custom post type, an animate box will be shown allowing the reader to select the previous or random available post or posts in the selected configuration:
 
 1. Just previous
 2. Previous in category

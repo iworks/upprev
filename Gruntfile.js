@@ -39,7 +39,7 @@ module.exports = function(grunt) {
         },
         css_files_concat: {
             'assets/styles/admin.css': ['assets/styles/admin/*.css'],
-            'assets/styles/frontend.css': [ 'assets/styles/frontend/*.css' ]
+            'assets/styles/frontend.css': ['assets/styles/frontend/*.css']
         },
 
         // Regex patterns to exclude from transation.
@@ -67,15 +67,28 @@ module.exports = function(grunt) {
 
         // BUILD patterns to exclude code for specific builds.
         replaces: {
-            patterns: [
-                { match: /PLUGIN_TITLE/g, replace: '<%= pkg.title %>' },
-                { match: /PLUGIN_VERSION/g, replace: '<%= pkg.version %>' },
-                { match: /PLUGIN_DESCRIPTION/g, replace: '<%= pkg.description %>' },
-                { match: /BUILDTIME/g, replace: buildtime },
-                { match: /PLUGIN_TILL_YEAR/g, replace: buildyear },
-                { match: /IWORKS_OPTIONS_TEXTDOMAIN/g, replace: '<%= pkg.name %>' },
-                { match: /IWORKS_RATE_TEXTDOMAIN/g, replace: '<%= pkg.name %>' }
-            ],
+            patterns: [{
+                match: /PLUGIN_TITLE/g,
+                replace: '<%= pkg.title %>'
+            }, {
+                match: /PLUGIN_VERSION/g,
+                replace: '<%= pkg.version %>'
+            }, {
+                match: /PLUGIN_DESCRIPTION/g,
+                replace: '<%= pkg.description %>'
+            }, {
+                match: /BUILDTIME/g,
+                replace: buildtime
+            }, {
+                match: /PLUGIN_TILL_YEAR/g,
+                replace: buildyear
+            }, {
+                match: /IWORKS_OPTIONS_TEXTDOMAIN/g,
+                replace: '<%= pkg.name %>'
+            }, {
+                match: /IWORKS_RATE_TEXTDOMAIN/g,
+                replace: '<%= pkg.name %>'
+            }],
 
             // Files to apply above patterns to (not only php files).
             files: {
@@ -419,7 +432,7 @@ module.exports = function(grunt) {
     grunt.registerTask('build', ['release']);
     grunt.registerTask('js', ['jshint', 'concat', 'uglify']);
     grunt.registerTask('css', ['concat_css', 'sass', 'autoprefixer', 'cssmin']);
-    grunt.registerTask('i18n', ['makepot', 'po2mo']);
+    // grunt.registerTask('i18n', ['makepot', 'po2mo']);
     //grunt.registerTask( 'test', ['phpunit', 'jshint'] );
 
     grunt.task.run('clear');
