@@ -19,7 +19,6 @@ require_once dirname( dirname( __FILE__ ) ) . '/etc/options.php';
 if ( ! class_exists( 'iworks_options' ) ) {
 	require_once $includes . '/iworks/options/options.php';
 }
-require_once dirname( __FILE__ ) . '/show_thumbnail_on_admin_post_list.php';
 
 /**
  * i18n

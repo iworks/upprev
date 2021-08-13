@@ -39,6 +39,11 @@ class IworksUpprev {
 
 	public function __construct() {
 		/**
+		 * global option object
+		 */
+		global $iworks_upprev_options;
+		$this->options = $iworks_upprev_options;
+		/**
 		 * static settings
 		 */
 		$this->version      = '4.0';
@@ -108,11 +113,6 @@ class IworksUpprev {
 		 */
 		add_action( 'wp_ajax_upprev', array( $this, 'ajax_get_box' ) );
 		add_action( 'wp_ajax_nopriv_upprev', array( $this, 'ajax_get_box' ) );
-		/**
-		 * global option object
-		 */
-		global $iworks_upprev_options;
-		$this->options = $iworks_upprev_options;
 		/**
 		 * iWorks Rate Class
 		 */
@@ -192,6 +192,9 @@ class IworksUpprev {
 	}
 
 	public function after_setup_theme() {
+		if ( ! is_object( $this->options ) ) {
+			return;
+		}
 		if ( 'simple' == $this->sanitize_layout( $this->options->get_option( 'layout' ) ) ) {
 			foreach ( $this->available_layouts as $key => $layout ) {
 				if ( isset( $layout['defaults']['thumb_width'] ) and isset( $layout['defaults']['thumb_height'] ) ) {
@@ -636,7 +639,6 @@ class IworksUpprev {
 			}
 			$item .= '>';
 			$item .= $image;
-
 			$title = get_the_title();
 			if ( ! empty( $title ) ) {
 				$item .= sprintf(

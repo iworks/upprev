@@ -87,6 +87,10 @@ Visit: [upPrev: snippet archive](http://upprev.iworks.pl/tag/snippet)
 
 == Changelog ==
 
+= 4.0.1 (2021-08-12) =
+* Fixed wrong plugin description. Props for [Patrick_D1985](https://wordpress.org/support/users/patrick_d1985/)
+* Fixed WP CLI error. Props for [Patrick_D1985](https://wordpress.org/support/users/patrick_d1985/)
+
 = 4.0.0 (2021-08-11) =
 
 * BUGFIX: added version number to upprev.css
@@ -111,8 +115,8 @@ Visit: [upPrev: snippet archive](http://upprev.iworks.pl/tag/snippet)
 * IMPROVEMENT: updated Hebrew translation by [של אודי בורג](http://blog.udiburg.com)
 * REFACTORING: rebuild options screen, sidebar boxes are now manageable
 * REFACTORING: moved code to class
-# REFACTORING: rewrite on page options to use wp_localize_script
-# REFACTORING: used a proper way to ajax call
+* REFACTORING: rewrite on page options to use wp_localize_script
+* REFACTORING: used a proper way to ajax call
 * TYPO: "Anlalitics" should be "Analytics" thx to Knut Sparhell
 
 = 3.3.30 =
@@ -398,7 +402,7 @@ Visit: [upPrev: snippet archive](http://upprev.iworks.pl/tag/snippet)
 
 = 4.0 =
 
-Added simple configuration screen. Rebuild option page to easier configuration. Created PRO version.
+Added simple configuration screen. Rebuild option page to easier configuration.
 
 = 3.3.13 =
 

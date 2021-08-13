@@ -2,7 +2,7 @@
 /*
 /*
  * Plugin Name:       upPrev
- * Plugin URI:        http://iworks.pl/upprev/
+ * Plugin URI:        http://upprev.iworks.pl/
  * Description:       PLUGIN_DESCRIPTION
  * Requires at least: 5.0
  * Requires PHP:      7.2
