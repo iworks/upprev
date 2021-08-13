@@ -301,6 +301,8 @@ module.exports = function(grunt) {
                     '*',
                     '**',
                     '!languages/*~',
+                    '!languages/*.po',
+                    '!languages/*.mo',
                     '!node_modules',
                     '!node_modules/*',
                     '!node_modules/**',
