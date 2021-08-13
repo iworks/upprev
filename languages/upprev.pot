@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: upPrev PLUGIN_VERSION\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/upprev\n"
-"POT-Creation-Date: 2021-08-12 08:28:53+00:00\n"
+"POT-Creation-Date: 2021-08-13 07:00:55+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -452,11 +452,11 @@ msgid "Link to it so others can easily find it"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "http://iworks.pl/upprev/"
+msgid "http://upprev.iworks.pl/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "Build a House allows to log expenses and events during construction."
+msgid "PLUGIN_DESCRIPTION"
 msgstr ""
 
 #. Author of the plugin/theme
