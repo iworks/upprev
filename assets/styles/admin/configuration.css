@@ -9,7 +9,7 @@
   width: 140px;
 }
 #iworks_upprev_position input {
-  margin: 0 10px;
+  margin: 10px;
 }
 #iworks_upprev_position td.disabled {
   opacity: .5;

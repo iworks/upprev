@@ -87,6 +87,14 @@ Visit: [upPrev: snippet archive](http://upprev.iworks.pl/tag/snippet)
 
 == Changelog ==
 
+= 4.0.2 (2021-08-16) =
+* Added option to hide re-open badge.
+* Fixed double headers on configuration screen. Props for [George](https://wordpress.org/support/users/giorgos93/)
+* Fixed missing custom element to open box. Props for [George](https://wordpress.org/support/users/giorgos93/)
+* Fixed to greedy defaults.
+* Minor configuration screen tweaking.
+* Updated iWorks Option Class to version: 2.7.0
+
 = 4.0.1 (2021-08-12) =
 * Fixed wrong plugin description. Props for [Patrick_D1985](https://wordpress.org/support/users/patrick_d1985/)
 * Fixed WP CLI error. Props for [Patrick_D1985](https://wordpress.org/support/users/patrick_d1985/)
@@ -111,7 +119,7 @@ Visit: [upPrev: snippet archive](http://upprev.iworks.pl/tag/snippet)
 * IMPROVEMENT: javascript & css files are minifized
 * IMPROVEMENT: replace moble detection function to [Mobile_Detect](http://mobiledetect.net)
 * IMPROVEMENT: rework option page to easier configuration
-* IMPROVEMENT: upgrade iWorks Option Class to version: 1.7.4
+* IMPROVEMENT: upgrade iWorks Option Class to version: 2.7.0
 * IMPROVEMENT: upgrade YARPP integration, minimum YARPP version: 3.5.x
 * IMPROVEMENT: updated Hebrew translation by [של אודי בורג](http://blog.udiburg.com)
 * REFACTORING: rebuild options screen, sidebar boxes are now manageable

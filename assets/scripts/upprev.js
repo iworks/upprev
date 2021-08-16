@@ -1,4 +1,4 @@
-/*! upPrev - v4.0.1
+/*! upPrev - v4.0.2
  * https://iworks.pl/
  * Copyright (c) 2021; * Licensed GPLv2+
  */
@@ -15,8 +15,17 @@ jQuery(function($) {
     var upprev_animate_duration = 600;
 
     function upprev_show_box() {
+        var box;
         var upprev_last_screen = false;
         var iworks_upprev_offset_element = '#upprev-trigger';
+        /**
+         * check custom element
+         */
+        if (iworks_upprev.offset_element) {
+            if (0 < parseInt($(iworks_upprev.offset_element).length)) {
+                iworks_upprev_offset_element = iworks_upprev.offset_element;
+            }
+        }
         if (iworks_upprev_offset_element && $(iworks_upprev_offset_element)) {
             if ($(iworks_upprev_offset_element).length > 0) {
                 upprev_last_screen = $(window).scrollTop() + $(window).height() > $(iworks_upprev_offset_element).offset().top;
@@ -31,8 +40,8 @@ jQuery(function($) {
             /**
              * calculate position
              */
-            upprev_horizontal = iworks_upprev.css_side + 'px';
-            upprev_vertical = iworks_upprev.css_bottom + 'px';
+            var upprev_horizontal = iworks_upprev.css_side + 'px';
+            var upprev_vertical = iworks_upprev.css_bottom + 'px';
             switch (iworks_upprev.position.all) {
                 case 'bottom':
                 case 'top':
@@ -49,7 +58,7 @@ jQuery(function($) {
             if ('fade' == iworks_upprev.animation) {
                 box.fadeIn(upprev_fade_duration);
             } else {
-                box.css( 'display','block' );
+                box.css('display', 'block');
                 box.stop().animate(iworks_upprev_setup_position(upprev_horizontal, upprev_vertical), upprev_animate_duration);
             }
             upprev_hidden = false;
@@ -79,9 +88,9 @@ jQuery(function($) {
         $.post(
             iworks_upprev.ajaxurl,
             data,
-            function( response ) {
+            function(response) {
                 var data;
-                if ( false === response.success ) {
+                if (false === response.success) {
                     return;
                 }
                 data = response.data.html;

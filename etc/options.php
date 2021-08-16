@@ -207,6 +207,15 @@ function iworks_upprev_options() {
 				'default'           => 1,
 				'sanitize_callback' => 'absint',
 			),
+			array(
+				'name'              => 'reopen_button_show',
+				'type'              => 'checkbox',
+				'th'                => __( 'Re-open badge', 'upprev' ),
+				'label'             => __( 'Show re-open badge.', 'upprev' ),
+				'description'       => __( 'Tiny indicator on bottom right corner to re-open box.', 'upprev' ),
+				'default'           => 1,
+				'sanitize_callback' => 'absint',
+			),
 			/**
 			 * Colors: both
 			 */
@@ -472,10 +481,6 @@ function iworks_upprev_options() {
 			 * Advance: mobile devices
 			 */
 			array(
-				'type'  => 'subheading',
-				'label' => __( 'Mobile devices', 'upprev' ),
-			),
-			array(
 				'name'              => 'mobile_hide',
 				'type'              => 'checkbox',
 				'th'                => __( 'Mobile devices', 'upprev' ),
@@ -487,13 +492,9 @@ function iworks_upprev_options() {
 			 * Advance: css
 			 */
 			array(
-				'type'  => 'subheading',
-				'label' => __( 'Custom CSS', 'upprev' ),
-			),
-			array(
 				'name'              => 'css',
 				'type'              => 'textarea',
-				'class'             => 'large-text code',
+				'classes'           => array( 'large-text', 'code' ),
 				'th'                => __( 'Custom CSS', 'upprev' ),
 				'sanitize_callback' => 'esc_html',
 				'rows'              => 10,

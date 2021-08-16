@@ -279,27 +279,13 @@ class IworksUpprev {
 	}
 
 	private function get_config_javascript() {
-		$params = array(
-			'animation',
-			'color_set',
-			'compare',
-			'css_border_width',
-			'css_bottom',
-			'css_side',
-			'css_width',
-			'ga_opt_noninteraction',
-			'ga_track_clicks',
-			'ga_track_views',
-			'offset_element',
-			'offset_percent',
-			'url_new_window',
-		);
-		if ( $this->options->get_option( 'color_set' ) ) {
-			$params = array_merge( $params, array( 'color', 'color_background', 'color_link', 'color_border' ) );
-		}
+		$params   = $this->get_params();
 		$defaults = $this->get_default_params();
 		foreach ( $params as $key ) {
-			$value        = isset( $defaults[ $key ] ) ? $defaults[ $key ] : $this->options->get_option( $key );
+			$value = $this->options->get_option( $key );
+			if ( empty( $value ) && isset( $defaults[ $key ] ) && $defaults[ $key ] ) {
+				$value = $defaults[ $key ];
+			}
 			$data[ $key ] = $value;
 		}
 		$position = $this->sanitize_position( $this->options->get_option( 'position' ) );
@@ -312,7 +298,6 @@ class IworksUpprev {
 		$data['p']               = get_the_ID();
 		$data['nonce']           = wp_create_nonce( 'upprev' );
 		$data['ajaxurl']         = admin_url( 'admin-ajax.php' );
-		// $data['url']             = add_query_arg( 'p', get_the_ID(), plugins_url( 'box.php', $this->base ) );
 		return $data;
 	}
 
@@ -338,20 +323,8 @@ class IworksUpprev {
 		/**
 		 * get used params
 		 */
-		foreach ( array(
-			'animation',
-			'compare',
-			'configuration',
-			'excerpt_length',
-			'excerpt_show',
-			'ignore_sticky_posts',
-			'number_of_posts',
-			'show_thumb',
-			'taxonomy_limit',
-			'thumb_width',
-			'url_prefix',
-			'url_suffix',
-		) as $key ) {
+		$params = $this->get_params();
+		foreach ( $params as $key ) {
 			$$key = $this->options->get_option( $key );
 		}
 		/**
@@ -958,11 +931,13 @@ class IworksUpprev {
 		if ( empty( $box ) ) {
 			wp_send_json_error( 3 );
 		}
-		$content  = sprintf( '<!-- upPrev: %s/%s -->', IWORKS_UPPREV_VERSION, $this->version );
-		$content .= $box;
-		$layout   = $this->sanitize_layout( $this->options->get_option( 'layout' ) );
-		extract( $this->get_default_params( $layout ) );
-		if ( ! isset( $show_close_button ) || $show_close_button ) {
+		$content       = sprintf( '<!-- upPrev: %s/%s -->', IWORKS_UPPREV_VERSION, $this->version );
+		$content      .= $box;
+		$configuration = $this->get_config_javascript();
+		if (
+			isset( $configuration['close_button_show'] ) && $configuration['close_button_show']
+			&& isset( $configuration['reopen_button_show'] ) && $configuration['reopen_button_show']
+		) {
 			$content .= '<a id="upprev_rise">&clubs;</a>';
 		}
 		$data = array(
@@ -970,4 +945,44 @@ class IworksUpprev {
 		);
 		wp_send_json_success( $data );
 	}
+
+	/**
+	 * get params
+	 *
+	 * @since 4.0.2
+	 */
+	private function get_params() {
+		$params = array(
+			'animation',
+			'close_button_show',
+			'color_set',
+			'compare',
+			'configuration',
+			'css_border_width',
+			'css_bottom',
+			'css_side',
+			'css_width',
+			'excerpt_length',
+			'excerpt_show',
+			'ga_opt_noninteraction',
+			'ga_track_clicks',
+			'ga_track_views',
+			'ignore_sticky_posts',
+			'number_of_posts',
+			'offset_element',
+			'offset_percent',
+			'reopen_button_show',
+			'show_thumb',
+			'taxonomy_limit',
+			'thumb_width',
+			'url_new_window',
+			'url_prefix',
+			'url_suffix',
+		);
+		if ( $this->options->get_option( 'color_set' ) ) {
+			$params = array_merge( $params, array( 'color', 'color_background', 'color_link', 'color_border' ) );
+		}
+		return $params;
+	}
+
 }
