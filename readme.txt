@@ -8,20 +8,19 @@ Stable tag: PLUGIN_VERSION
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Display cool, animated fly-out or fade box with related content.
+PLUGIN_DESCRIPTION
 
 == Description ==
 
-Display cool, animated fly-out or fade box with related content.
+PLUGIN_DESCRIPTION
 
 When a reader scrolls to the bottom of a single post, page, or custom post type, an animate box will be shown allowing the reader to select the previous or random available post or posts in the selected configuration:
 
 1. Just previous
-2. Previous in category
-3. Previous in tag
-4. Random
-5. Related using YARPP (only post/pages)
-
+1. Previous in category
+1. Previous in tag
+1. Random
+1. Related using YARPP (only post/pages)
 
 == Installation ==
 
@@ -87,7 +86,7 @@ Visit: [upPrev: snippet archive](http://upprev.iworks.pl/tag/snippet)
 
 == Changelog ==
 
-= 4.0.2 (2021-08-18) =
+= 4.0.3 (2021-08-18) =
 * Fixed categories limit to display.
 * Fixed opacity issue when we click "close" button and scroll. Props for [George](https://wordpress.org/support/users/giorgos93/)
 * Fixed `post_type` mismatch. Props for [George](https://wordpress.org/support/users/giorgos93/)
