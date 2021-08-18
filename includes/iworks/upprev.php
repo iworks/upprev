@@ -125,6 +125,16 @@ class IworksUpprev {
 	 */
 	private function iworks_upprev_check() {
 		/**
+		 * check post type
+		 */
+		if ( is_singular() && $this->options->get_option( 'match_post_type' ) ) {
+			$post_types = $this->options->get_option( 'post_type' );
+			if ( empty( $post_types ) ) {
+				$post_types = array( 'post' );
+			}
+			return ! in_array( get_post_type(), $post_types );
+		}
+		/**
 		 * check base and exclude streams
 		 */
 		if ( ! is_singular() && 'page' != get_option( 'show_on_front' ) ) {
@@ -315,22 +325,33 @@ class IworksUpprev {
 		/**
 		 * set defaults
 		 */
-		$box_classes       = array( 'default' );
-		$header_show       = $this->options->get_option( 'header_show' );
-		$make_break        = true;
-		$show_close_button = $this->options->get_option( 'close_button_show' );
-		$thumb_height      = 9999;
+		$box_classes  = array( 'default' );
+		$make_break   = true;
+		$thumb_height = 9999;
 		/**
 		 * get used params
 		 */
-		$params = $this->get_params();
+		$setttings = array();
+		$params    = $this->get_params();
 		foreach ( $params as $key ) {
-			$$key = $this->options->get_option( $key );
+			$setttings[ $key ] = $this->options->get_option( $key );
 		}
+		/**
+		 * allow to change configuration
+		 *
+		 * @since 4.0.3
+		 *
+		 * @param array $setttings upPrev settings for box
+		 */
+		$setttings = apply_filters( 'iworks_upprev_settings', $setttings );
+		/**
+		 * set some extra
+		 */
+		$compare = $setttings['compare'];
 		/**
 		 * if simple or admin mode setup defaults
 		 */
-		if ( 'simple' == $configuration or 'admin' == $this->working_mode ) {
+		if ( 'simple' == $setttings['configuration'] or 'admin' == $this->working_mode ) {
 			if ( 'admin' == $this->working_mode ) {
 				$compare = 'simple';
 			} else {
@@ -347,17 +368,17 @@ class IworksUpprev {
 		 * upprev_box class
 		 */
 		$box_classes[] = 'compare-' . $compare;
-		$box_classes[] = 'animation-' . $animation;
+		$box_classes[] = 'animation-' . $setttings['animation'];
 		/**
 		 * admin mode?
 		 */
 		$show_taxonomy = true;
 		$siblings      = array();
 		$args          = array(
-			'ignore_sticky_posts' => $ignore_sticky_posts,
+			'ignore_sticky_posts' => $setttings['ignore_sticky_posts'],
 			'orderby'             => 'date',
 			'order'               => 'DESC',
-			'posts_per_page'      => $number_of_posts,
+			'posts_per_page'      => $setttings['number_of_posts'],
 			'post_status'         => 'publish',
 			'post_type'           => array(),
 		);
@@ -414,15 +435,19 @@ class IworksUpprev {
 					break;
 				}
 				$max = count( $categories );
-				if ( $taxonomy_limit > 0 && $taxonomy_limit > $max ) {
-					$max = $taxonomy_limit;
+				if ( 0 < $setttings['taxonomy_limit'] && $setttings['taxonomy_limit'] < $max ) {
+					$max = $setttings['taxonomy_limit'];
 				}
-				$ids = array();
 				for ( $i = 0; $i < $max; $i++ ) {
 					$siblings[ get_category_link( $categories[ $i ]->term_id ) ] = $categories[ $i ]->name;
-					$ids[] = $categories[ $i ]->cat_ID;
 				}
-				$args['cat'] = implode( ',', $ids );
+				/**
+				 * get categories to WP_Query
+				 */
+				$args['category__and'] = array();
+				foreach ( $categories as $cat ) {
+					$args['category__and'][] = $cat->term_id;
+				}
 				break;
 			/**
 			 * tag
@@ -433,23 +458,27 @@ class IworksUpprev {
 					break;
 				}
 				$max = count( $tags );
-				if ( $max < 1 ) {
+				if ( 1 > $max ) {
 					break;
 				}
-				if ( $taxonomy_limit > 0 && $taxonomy_limit < $max ) {
+				if ( 0 < $setttings['taxonomy_limit'] && $setttings['taxonomy_limit'] < $max ) {
 					$max = $taxonomy_limit;
 				}
 				if ( count( $tags ) ) {
-					$ids = array();
-					$i   = 1;
+					$i = 1;
 					foreach ( $tags as $tag ) {
 						if ( ++$i > $max ) {
 							continue;
 						}
 						$siblings[ get_tag_link( $tag->term_id ) ] = $tag->name;
-						$ids[]                                     = $tag->term_id;
 					}
-					$args['tag__in'] = $ids;
+				}
+				/**
+				 * get tags to WP_Query
+				 */
+				$args['tag__and'] = array();
+				foreach ( $tags as $tag ) {
+					$args['tag__and'][] = $tag->term_id;
 				}
 				break;
 			/**
@@ -469,7 +498,7 @@ class IworksUpprev {
 				$a             = yarpp_get_related( $args );
 				$yarpp_posts   = array();
 				foreach ( $a as $b ) {
-					if ( $b->ID == $post->ID ) {
+					if ( $b->ID === $post->ID ) {
 						continue;
 					}
 					$yarpp_posts[] = $b->ID;
@@ -499,7 +528,31 @@ class IworksUpprev {
 		}
 		$upprev_query = new WP_Query( $args );
 		if ( ! $upprev_query->have_posts() ) {
-			return;
+			/**
+			 * exception for taxonomies
+			 */
+			if ( preg_match( '/^(category|tag)$/', $compare ) ) {
+				switch ( $compare ) {
+					case 'category':
+						if ( 1 === sizeof( $args['category__and'] ) ) {
+							$args['cat'] = intval( $args['category__and'][0] );
+						} else {
+							$args['cat'] = implode( ',', $args['category__and'] );
+						}
+						unset( $args['category__and'] );
+						break;
+					case 'tag':
+						$args['tag__in'] = $args['tag__and'];
+						unset( $args['tag__and'] );
+						break;
+				}
+				$upprev_query = new WP_Query( $args );
+				if ( ! $upprev_query->have_posts() ) {
+					return;
+				}
+			} else {
+				return;
+			}
 		}
 		/**
 		 * remove any filter if needed
@@ -517,10 +570,9 @@ class IworksUpprev {
 		 * box title
 		 */
 		$title = '';
-		if ( $header_show ) {
-			$header_text = $this->options->get_option( 'header_text' );
-			if ( ! empty( $header_text ) ) {
-				$title .= $header_text;
+		if ( $setttings['header_show'] ) {
+			if ( ! empty( $setttings['header_text'] ) ) {
+				$title .= $setttings['header_text'];
 			} elseif ( count( $siblings ) ) {
 				$title .= sprintf( '%s ', __( 'More in', 'upprev' ) );
 				$a      = array();
@@ -552,25 +604,25 @@ class IworksUpprev {
 			$item = '';
 			$upprev_query->the_post();
 			$item_class = array();
-			if ( $excerpt_show ) {
+			if ( $setttings['excerpt_show'] ) {
 				$item_class[] = 'upprev_excerpt';
 			}
-			if ( $i > $number_of_posts ) {
+			if ( $i > $setttings['number_of_posts'] ) {
 				break;
 			}
 			if ( ! preg_match( '/^(vertical 3)$/', $layout ) ) {
-				if ( $i < $number_of_posts ) {
+				if ( $i < $setttings['number_of_posts'] ) {
 					$item_class[] = 'upprev_space';
 				}
 			}
 			$image     = '';
 			$permalink = sprintf(
 				'%s%s%s',
-				$url_prefix,
+				$setttings['url_prefix'],
 				get_permalink(),
-				$url_suffix
+				$setttings['url_suffix']
 			);
-			if ( current_theme_supports( 'post-thumbnails' ) && $show_thumb && has_post_thumbnail( get_the_ID() ) ) {
+			if ( current_theme_supports( 'post-thumbnails' ) && $setttings['show_thumb'] && has_post_thumbnail( get_the_ID() ) ) {
 				$a_class = '';
 				if ( ! preg_match( '/^(vertical 3)$/', $layout ) ) {
 					$item_class[] = 'upprev_thumbnail';
@@ -589,7 +641,7 @@ class IworksUpprev {
 							get_the_ID(),
 							apply_filters(
 								'iworks_upprev_thumbnail_size',
-								array( $thumb_width, $thumb_height )
+								array( $setttings['thumb_width'], $setttings['thumb_height'] )
 							),
 							array(
 								'title' => get_the_title(),
@@ -622,7 +674,7 @@ class IworksUpprev {
 					$title
 				);
 			}
-			if ( $excerpt_show != 0 && $excerpt_length > 0 ) {
+			if ( $setttings['excerpt_show'] && 0 < $setttings['excerpt_length'] ) {
 				$excerpt = wp_trim_words(
 					strip_shortcodes( get_the_excerpt() ),
 					$this->options->get_option( 'excerpt_length' ),
@@ -645,7 +697,7 @@ class IworksUpprev {
 			$value .= apply_filters( 'iworks_upprev_box_item', $item );
 			$i++;
 		}
-		if ( $show_close_button ) {
+		if ( $setttings['close_button_show'] ) {
 			$value .= sprintf( '<a id="upprev_close" href="#" rel="close">%s</a>', __( 'Close', 'upprev' ) );
 		}
 		if ( $this->options->get_option( 'promote' ) ) {
@@ -967,6 +1019,8 @@ class IworksUpprev {
 			'ga_opt_noninteraction',
 			'ga_track_clicks',
 			'ga_track_views',
+			'header_show',
+			'header_text',
 			'ignore_sticky_posts',
 			'number_of_posts',
 			'offset_element',
@@ -974,6 +1028,7 @@ class IworksUpprev {
 			'reopen_button_show',
 			'show_thumb',
 			'taxonomy_limit',
+			'thumb_height',
 			'thumb_width',
 			'url_new_window',
 			'url_prefix',

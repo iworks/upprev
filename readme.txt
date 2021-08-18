@@ -87,6 +87,12 @@ Visit: [upPrev: snippet archive](http://upprev.iworks.pl/tag/snippet)
 
 == Changelog ==
 
+= 4.0.2 (2021-08-18) =
+* Fixed categories limit to display.
+* Fixed opacity issue when we click "close" button and scroll. Props for [George](https://wordpress.org/support/users/giorgos93/)
+* Fixed `post_type` mismatch. Props for [George](https://wordpress.org/support/users/giorgos93/)
+* Improved category/tag select, first to try get entries from all, then, from any category/tag.
+
 = 4.0.2 (2021-08-16) =
 * Added option to hide re-open badge.
 * Fixed double headers on configuration screen. Props for [George](https://wordpress.org/support/users/giorgos93/)

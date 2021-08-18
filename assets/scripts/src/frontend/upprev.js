@@ -51,7 +51,7 @@ jQuery(function($) {
             /**
              * add animation
              */
-            if ('fade' == iworks_upprev.animation) {
+            if ('fade' === iworks_upprev.animation) {
                 box.fadeIn(upprev_fade_duration);
             } else {
                 box.css('display', 'block');
@@ -66,11 +66,12 @@ jQuery(function($) {
             upprev_closed = false;
         } else if (!upprev_hidden) {
             upprev_hidden = true;
-            if (iworks_upprev.animation == 'fade') {
+            if ('fade' === iworks_upprev.animation) {
                 box.fadeOut(upprev_fade_duration);
             } else {
                 upprev_horizontal = iworks_upprev_get_horizontal(box);
                 upprev_vertical = iworks_upprev_get_vertical(box);
+                box.css('opacity', 1);
                 box.stop().animate(iworks_upprev_setup_position(upprev_horizontal, upprev_vertical), upprev_animate_duration);
             }
         }
