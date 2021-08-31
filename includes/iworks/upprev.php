@@ -132,45 +132,44 @@ class IworksUpprev {
 			if ( empty( $post_types ) ) {
 				$post_types = array( 'post' );
 			}
-			return ! in_array( get_post_type(), $post_types );
+			if ( ! in_array( get_post_type(), $post_types ) ) {
+				return apply_filters( 'iworks_upprev_check', true );
+			}
 		}
 		/**
 		 * check base and exclude streams
 		 */
 		if ( ! is_singular() && 'page' != get_option( 'show_on_front' ) ) {
-			$value = true;
-			return apply_filters( 'iworks_upprev_check', $value );
+			return apply_filters( 'iworks_upprev_check', true );
 		}
 		/**
 		 * check mobile devices
 		 */
-		if ( 1 == $this->options->get_option( 'mobile_hide' ) ) {
-			$value = false;
-			if ( wp_is_mobile() ) {
-				$value = true;
+		if ( 1 === intval( $this->options->get_option( 'mobile_hide' ) ) ) {
+			include_once dirname( $this->base ) . '/vendor/Mobile_Detect.php';
+			$detect = new Mobile_Detect;
+			if ( $detect->isMobile() ) {
+				return apply_filters( 'iworks_upprev_check', true );
 			}
-			return apply_filters( 'iworks_upprev_check', $value );
+			if ( 1 === intval( $this->options->get_option( 'mobile_tablets' ) ) ) {
+				if ( $detect->isTablet() ) {
+					return apply_filters( 'iworks_upprev_check', true );
+				}
+			}
 		}
 		/**
 		 * get allowed post types
 		 */
 		$post_types = $this->options->get_option( 'post_type' );
 		/**
-		 * check front page
-		 */
-		if ( is_front_page() && $this->options->get_option( 'match_post_type' ) && is_array( $post_types ) ) {
-			$value = ! in_array( 'post', $post_types );
-			return apply_filters( 'iworks_upprev_check', $value );
-		}
-		/**
 		 * check post types
 		 */
 		if ( $this->options->get_option( 'match_post_type' ) && is_array( $post_types ) ) {
-			$value = ! is_singular( array_values( $post_types ) );
-			return apply_filters( 'iworks_upprev_check', $value );
+			if ( ! is_singular( array_values( $post_types ) ) ) {
+				return apply_filters( 'iworks_upprev_check', $value );
+			}
 		}
-		$value = ! is_single();
-		return apply_filters( 'iworks_upprev_check', $value );
+		return apply_filters( 'iworks_upprev_check', ! is_single() );
 	}
 
 	public function get_version( $file = null ) {

@@ -488,6 +488,15 @@ function iworks_upprev_options() {
 				'default'           => 1,
 				'sanitize_callback' => 'absint',
 			),
+			array(
+				'name'              => 'mobile_tablets',
+				'type'              => 'checkbox',
+				'th'                => __( 'Tablets', 'upprev' ),
+				'label'             => __( 'Hide for tablets too.', 'upprev' ),
+				'description'       => __( 'Works only when hidding for mobile devices is turn on.', 'upprev' ),
+				'default'           => 0,
+				'sanitize_callback' => 'absint',
+			),
 			/**
 			 * Advance: css
 			 */
