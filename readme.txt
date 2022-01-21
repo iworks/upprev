@@ -3,7 +3,7 @@ Contributors: iworks
 Donate link: https://ko-fi.com/iworks?utm_source=upprev&utm_medium=readme-donate
 Tags: box, notification, related, seo, thumbnail
 Requires at least: 5.0
-Tested up to: 5.8
+Tested up to: 5.9
 Stable tag: PLUGIN_VERSION
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -85,6 +85,11 @@ Visit: [upPrev: snippet archive](http://upprev.iworks.pl/tag/snippet)
 5. upPrev options: cache
 
 == Changelog ==
+
+= 4.0.5 (2022-01-21) =
+* Fixed "Settings" link on Plugins page.
+* Updated iWorks Options to 2.8.0.
+* Updated iWorks Rate to 2.0.6.
 
 = 4.0.4 (2021-08-31) =
 * Restored option "Hide on tablets".

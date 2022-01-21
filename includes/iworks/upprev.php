@@ -37,6 +37,13 @@ class IworksUpprev {
 	private $working_mode;
 	private $current_post = null;
 
+	/**
+	 * plugin file
+	 *
+	 * @since 4.0.5
+	 */
+	private $plugin_file;
+
 	public function __construct() {
 		/**
 		 * global option object
@@ -52,6 +59,12 @@ class IworksUpprev {
 		$this->capability   = apply_filters( 'iworks_upprev_capability', 'manage_options' );
 		$this->working_mode = 'site';
 		$this->dev          = ( defined( 'IWORKS_DEV_MODE' ) && IWORKS_DEV_MODE ) ? '' : '.min';
+		/**
+		 * plugin ID
+		 *
+		 * @since 4.0.6
+		 */
+		$this->plugin_file = plugin_basename( dirname( $this->base ) . '/upprev.php' );
 		/**
 		 * layouts settings
 		 */
@@ -264,7 +277,6 @@ class IworksUpprev {
 
 	public function admin_init() {
 		$this->update();
-		add_filter( 'plugin_row_meta', array( $this, 'plugin_row_meta' ), 10, 2 );
 		$scripts = array( 'jquery-ui-tabs', 'farbtastic' );
 		wp_register_script(
 			'upprev-admin',
@@ -276,15 +288,26 @@ class IworksUpprev {
 		wp_register_style( 'upprev', plugins_url( $file, $this->base ), array(), $this->get_version( $file ) );
 		$file = 'assets/styles/admin' . $this->dev . '.css';
 		wp_register_style( 'upprev-admin', plugins_url( $file, $this->base ), array( 'farbtastic' ), $this->get_version( $file ) );
+		/**
+		 * Settings on plugin page
+		 *
+		 * @since 4.0.5
+		 */
+		add_filter( 'plugin_action_links_' . $this->plugin_file, array( $this, 'add_settings_link' ), 0 );
 	}
 
-	public function plugin_row_meta( $links, $file ) {
-		if ( $this->dir . '/upprev.php' == $file ) {
-			if ( ! is_multisite() && current_user_can( $this->capability ) ) {
-				$links[] = '<a href="themes.php?page=' . $this->dir . '/admin/index.php">' . __( 'Settings' ) . '</a>';
-			}
-		}
-		return $links;
+	/**
+	 * Add settings link to plugin_action_links.
+	 *
+	 * @since 4.0.5
+	 *
+	 * @param array  $actions     An array of plugin action links.
+	 */
+	public function add_settings_link( $actions ) {
+		$page      = $this->options->get_pagehook();
+		$url       = add_query_arg( 'page', $page, admin_url( 'themes.php' ) );
+		$actions[] = sprintf( '<a href="%s">%s</a>', esc_url( $url ), esc_html__( 'Settings', 'sierotki' ) );
+		return $actions;
 	}
 
 	private function get_config_javascript() {
