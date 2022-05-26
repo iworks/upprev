@@ -179,7 +179,7 @@ class IworksUpprev {
 		 */
 		if ( $this->options->get_option( 'match_post_type' ) && is_array( $post_types ) ) {
 			if ( ! is_singular( array_values( $post_types ) ) ) {
-				return apply_filters( 'iworks_upprev_check', $value );
+				return apply_filters( 'iworks_upprev_check', true );
 			}
 		}
 		return apply_filters( 'iworks_upprev_check', ! is_single() );
@@ -993,7 +993,7 @@ class IworksUpprev {
 	 * @since 4.0.0
 	 */
 	public function ajax_get_box() {
-		$nonce = filter_input( INPUT_POST, '_wpnonce', FILTER_SANITIZE_STRING );
+		$nonce = filter_input( INPUT_POST, '_wpnonce', FILTER_DEFAULT );
 		if ( ! wp_verify_nonce( $nonce, 'upprev' ) ) {
 			wp_send_json_error( 1 );
 		}

@@ -3,7 +3,7 @@ Contributors: iworks
 Donate link: https://ko-fi.com/iworks?utm_source=upprev&utm_medium=readme-donate
 Tags: box, notification, related, seo, thumbnail
 Requires at least: 5.0
-Tested up to: 5.9
+Tested up to: 6.0
 Stable tag: PLUGIN_VERSION
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -85,6 +85,13 @@ Visit: [upPrev: snippet archive](http://upprev.iworks.pl/tag/snippet)
 5. upPrev options: cache
 
 == Changelog ==
+
+= 4.0.6 (2022-05-26) =
+* Fixed undefined `$value`. Props for [Robert](https://wordpress.org/support/users/robertmindroi/)
+* Replaced `FILTER_SANITIZE_STRING` by `FILTER_DEFAULT` to avoid warning in PHP 8.1.
+* Updated [iWorks Options](https://github.com/iworks/wordpress-options-class) to 2.8.4.
+* Updated iWorks Rate to 2.1.0.
+* Updated [Mobile Detect](http://mobiledetect.net/) to 2.8.39.
 
 = 4.0.5 (2022-01-21) =
 * Fixed "Settings" link on Plugins page.

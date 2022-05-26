@@ -1,4 +1,4 @@
-/*! upPrev - v4.0.5
+/*! upPrev - v4.0.6
  * https://iworks.pl/
  * Copyright (c) 2022; * Licensed GPLv2+
  */
