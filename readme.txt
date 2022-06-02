@@ -86,7 +86,8 @@ Visit: [upPrev: snippet archive](http://upprev.iworks.pl/tag/snippet)
 
 == Changelog ==
 
-= 4.0.7 (2022-06-01) =
+= 4.0.7 (2022-06-02) =
+* Fixed fade effect. Props for [George](https://wordpress.org/support/users/giorgos93/).
 * Fixed wrong admin area JavaScript name. Props for [George](https://wordpress.org/support/users/giorgos93/).
 
 = 4.0.6 (2022-05-26) =

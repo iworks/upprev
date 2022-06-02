@@ -41,21 +41,49 @@ jQuery(function($) {
             switch (iworks_upprev.position.all) {
                 case 'bottom':
                 case 'top':
-                    box.css('left', (($(window).width() - box.width() - parseInt(box.css('padding-left').replace(/px$/, '')) - parseInt(box.css('padding-right').replace(/px$/, ''))) / 2) + 'px')
+                    box.css('left', (($(window).width() - box.width() - parseInt(box.css('padding-left').replace(/px$/, '')) - parseInt(box.css('padding-right').replace(/px$/, ''))) / 2) + 'px');
                     break;
                 case 'left-middle':
                 case 'right-middle':
-                    box.css('top', (($(window).height() - box.height() - parseInt(box.css('padding-top').replace(/px$/, '')) - parseInt(box.css('padding-bottom').replace(/px$/, ''))) / 2) + 'px')
+                    box.css('top', (($(window).height() - box.height() - parseInt(box.css('padding-top').replace(/px$/, '')) - parseInt(box.css('padding-bottom').replace(/px$/, ''))) / 2) + 'px');
                     break;
             }
             /**
              * add animation
              */
             if ('fade' === iworks_upprev.animation) {
-                box.fadeIn(upprev_fade_duration);
+                if (upprev_hidden) {
+                    switch (iworks_upprev.position.all) {
+                        case 'left-middle':
+                            box.css('left', upprev_horizontal);
+                            break;
+                        case 'left-top':
+                            box.css('left', upprev_horizontal);
+                            box.css('top', upprev_vertical);
+                            break;
+                        case 'left':
+                            box.css('left', upprev_horizontal);
+                            box.css('bottom', upprev_vertical);
+                            break;
+                        case 'right':
+                            box.css('right', upprev_horizontal);
+                            box.css('bottom', upprev_vertical);
+                            break;
+                        case 'right-top':
+                            box.css('top', upprev_vertical);
+                            box.css('right', upprev_horizontal);
+                            break;
+                        case 'right-middle':
+                            box.css('right', upprev_horizontal);
+                            break;
+                    }
+                    box.stop().fadeIn(upprev_fade_duration);
+                }
             } else {
-                box.css('display', 'block');
-                box.stop().animate(iworks_upprev_setup_position(upprev_horizontal, upprev_vertical), upprev_animate_duration);
+                if (upprev_hidden) {
+                    box.css('display', 'block');
+                    box.stop().animate(iworks_upprev_setup_position(upprev_vertical, upprev_horizontal), upprev_animate_duration);
+                }
             }
             upprev_hidden = false;
             if (upprev_ga && upprev_ga_track_view && iworks_upprev.ga_track_views == 1) {
@@ -67,12 +95,12 @@ jQuery(function($) {
         } else if (!upprev_hidden) {
             upprev_hidden = true;
             if ('fade' === iworks_upprev.animation) {
-                box.fadeOut(upprev_fade_duration);
+                box.stop().fadeOut(upprev_fade_duration);
             } else {
                 upprev_horizontal = iworks_upprev_get_horizontal(box);
                 upprev_vertical = iworks_upprev_get_vertical(box);
                 box.css('opacity', 1);
-                box.stop().animate(iworks_upprev_setup_position(upprev_horizontal, upprev_vertical), upprev_animate_duration);
+                box.stop().animate(iworks_upprev_setup_position(upprev_vertical, upprev_horizontal), upprev_animate_duration);
             }
         }
     }
@@ -171,7 +199,7 @@ jQuery(function($) {
                         display: 'none'
                     });
                 }
-                box.css(iworks_upprev_setup_position(upprev_horizontal, upprev_vertical));
+                box.css(iworks_upprev_setup_position(upprev_vertical, upprev_horizontal));
                 /**
                  * maybe show?
                  */

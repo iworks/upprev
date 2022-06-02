@@ -280,7 +280,7 @@ class IworksUpprev {
 		$scripts = array( 'jquery-ui-tabs', 'farbtastic' );
 		wp_register_script(
 			'upprev-admin',
-			plugins_url( 'assets/scripts/admin.' . $this->dev . 'js', $this->base ),
+			plugins_url( 'assets/scripts/admin' . $this->dev . '.js', $this->base ),
 			$scripts,
 			$this->get_version()
 		);
@@ -320,7 +320,8 @@ class IworksUpprev {
 			}
 			$data[ $key ] = $value;
 		}
-		$position = $this->sanitize_position( $this->options->get_option( 'position' ) );
+        $position = $this->sanitize_position( $this->options->get_option( 'position' ) );
+        $data['position']['raw'] = $position;
 		foreach ( array( 'top', 'left', 'center', 'middle' ) as $key ) {
 			$re                       = sprintf( '/%s/', $key );
 			$data['position'][ $key ] = preg_match( $re, $position );
