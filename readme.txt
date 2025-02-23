@@ -86,6 +86,10 @@ Visit: [upPrev: snippet archive](http://upprev.iworks.pl/tag/snippet)
 
 == Changelog ==
 
+= 4.0.8 (2025-02-23) =
+* The [iWorks Options](https://github.com/iworks/wordpress-options-class) module has been updated to 2.9.6.
+* The [iWorks Rate](https://github.com/iworks/iworks-rate) module has been updated to 2.2.3.
+
 = 4.0.7 (2022-06-02) =
 * Fixed fade effect. Props for [George](https://wordpress.org/support/users/giorgos93/).
 * Fixed wrong admin area JavaScript name. Props for [George](https://wordpress.org/support/users/giorgos93/).
