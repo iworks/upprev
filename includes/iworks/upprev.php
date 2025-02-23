@@ -44,12 +44,13 @@ class IworksUpprev {
 	 */
 	private $plugin_file;
 
+	/**
+	 * layotuts
+	 *
+	 */
+	private array $available_layouts = array();
+
 	public function __construct() {
-		/**
-		 * global option object
-		 */
-		global $iworks_upprev_options;
-		$this->options = $iworks_upprev_options;
 		/**
 		 * static settings
 		 */
@@ -66,66 +67,14 @@ class IworksUpprev {
 		 */
 		$this->plugin_file = plugin_basename( dirname( $this->base ) . '/upprev.php' );
 		/**
-		 * layouts settings
-		 */
-		$this->available_layouts = array(
-			'simple'     => array(
-				'name'     => __( 'Default simple layout', 'upprev' ),
-				'defaults' => array(
-					'class'            => 'simple',
-					'compare'          => 'simple_or_yarpp',
-					'css_border_width' => '2px 0 0 0',
-					'css_bottom'       => 10,
-					'css_side'         => 10,
-					'number_of_posts'  => 1,
-				),
-			),
-			'vertical 3' => array(
-				'name'     => __( 'Vertical Three', 'upprev' ),
-				'defaults' => array(
-					'class'            => 'vertical-3',
-					'compare'          => 'simple_or_yarpp',
-					'css_border_width' => '2px 0 0 0',
-					'css_bottom'       => 10,
-					'css_side'         => 10,
-					'excerpt_show'     => false,
-					'make_break'       => false,
-					'number_of_posts'  => 3,
-					'show_thumb'       => true,
-					'thumb_height'     => 96,
-					'thumb_width'      => 96,
-				),
-			),
-			'bloginity'  => array(
-				'name'     => __( '"Bloginity" style', 'upprev' ),
-				'defaults' => array(
-					'class'             => 'bloginity',
-					'compare'           => 'simple_or_yarpp',
-					'css_bottom'        => 0,
-					'css_side'          => 0,
-					'css_width'         => 376,
-					'excerpt_show'      => false,
-					'header_show'       => false,
-					'make_break'        => false,
-					'number_of_posts'   => 4,
-					'show_close_button' => false,
-					'show_thumb'        => true,
-					'thumb_height'      => 84,
-					'thumb_width'       => 84,
-				),
-			),
-		);
-		/**
-		 * generate
+		 * WordPress Hooks
 		 */
 		add_action( 'after_setup_theme', array( $this, 'after_setup_theme' ) );
-		add_action( 'init', array( $this, 'init' ) );
+		add_action( 'init', array( $this, 'action_init_register_iworks_rate' ), PHP_INT_MAX );
+		add_action( 'init', array( $this, 'init' ), 11 );
 		add_action( 'the_content', array( $this, 'the_content' ), PHP_INT_MAX );
-		/**
-		 * handle ajax request
-		 */
-		add_action( 'wp_ajax_upprev', array( $this, 'ajax_get_box' ) );
 		add_action( 'wp_ajax_nopriv_upprev', array( $this, 'ajax_get_box' ) );
+		add_action( 'wp_ajax_upprev', array( $this, 'ajax_get_box' ) );
 		/**
 		 * iWorks Rate Class
 		 */
@@ -137,6 +86,7 @@ class IworksUpprev {
 	 * return true to hide
 	 */
 	private function iworks_upprev_check() {
+		$this->check_option_object();
 		/**
 		 * check post type
 		 */
@@ -199,24 +149,69 @@ class IworksUpprev {
 	}
 
 	public function init() {
+		$this->check_option_object();
 		add_action( 'admin_init', array( $this, 'admin_init' ) );
-		add_action( 'admin_init', 'iworks_upprev_options_init' );
 		add_action( 'wp_head', array( $this, 'print_custom_style' ), PHP_INT_MAX );
-		/**
-		 * assets
-		 */
 		add_action( 'wp_enqueue_scripts', array( $this, 'register_assets' ), 0 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_assets' ) );
 		/**
 		 * filters
 		 */
 		add_filter( 'index_iworks_upprev_position_content', array( $this, 'index_iworks_upprev_position_content' ), 10, 5 );
+		/**
+		 * layouts settings
+		 */
+		$this->available_layouts = array(
+			'simple'     => array(
+				'name'     => __( 'Default simple layout', 'upprev' ),
+				'defaults' => array(
+					'class'            => 'simple',
+					'compare'          => 'simple_or_yarpp',
+					'css_border_width' => '2px 0 0 0',
+					'css_bottom'       => 10,
+					'css_side'         => 10,
+					'number_of_posts'  => 1,
+				),
+			),
+			'vertical 3' => array(
+				'name'     => __( 'Vertical Three', 'upprev' ),
+				'defaults' => array(
+					'class'            => 'vertical-3',
+					'compare'          => 'simple_or_yarpp',
+					'css_border_width' => '2px 0 0 0',
+					'css_bottom'       => 10,
+					'css_side'         => 10,
+					'excerpt_show'     => false,
+					'make_break'       => false,
+					'number_of_posts'  => 3,
+					'show_thumb'       => true,
+					'thumb_height'     => 96,
+					'thumb_width'      => 96,
+				),
+			),
+			'bloginity'  => array(
+				'name'     => __( '"Bloginity" style', 'upprev' ),
+				'defaults' => array(
+					'class'             => 'bloginity',
+					'compare'           => 'simple_or_yarpp',
+					'css_bottom'        => 0,
+					'css_side'          => 0,
+					'css_width'         => 376,
+					'excerpt_show'      => false,
+					'header_show'       => false,
+					'make_break'        => false,
+					'number_of_posts'   => 4,
+					'show_close_button' => false,
+					'show_thumb'        => true,
+					'thumb_height'      => 84,
+					'thumb_width'       => 84,
+				),
+			),
+		);
 	}
 
 	public function after_setup_theme() {
-		if ( ! is_object( $this->options ) ) {
-			return;
-		}
+		$this->check_option_object();
 		if ( 'simple' == $this->sanitize_layout( $this->options->get_option( 'layout' ) ) ) {
 			foreach ( $this->available_layouts as $key => $layout ) {
 				if ( isset( $layout['defaults']['thumb_width'] ) and isset( $layout['defaults']['thumb_height'] ) ) {
@@ -237,6 +232,7 @@ class IworksUpprev {
 	 * @since 4.0.0
 	 */
 	public function register_assets() {
+		$this->check_option_object();
 		$name = $this->options->get_option_name( 'frontend' );
 		/**
 		 * styles
@@ -266,6 +262,7 @@ class IworksUpprev {
 	 * @since 1.3.0
 	 */
 	public function enqueue_assets() {
+		$this->check_option_object();
 		if ( $this->iworks_upprev_check() ) {
 			return;
 		}
@@ -304,6 +301,7 @@ class IworksUpprev {
 	 * @param array  $actions     An array of plugin action links.
 	 */
 	public function add_settings_link( $actions ) {
+		$this->check_option_object();
 		$page      = $this->options->get_pagehook();
 		$url       = add_query_arg( 'page', $page, admin_url( 'themes.php' ) );
 		$actions[] = sprintf( '<a href="%s">%s</a>', esc_url( $url ), esc_html__( 'Settings', 'sierotki' ) );
@@ -311,6 +309,7 @@ class IworksUpprev {
 	}
 
 	private function get_config_javascript() {
+		$this->check_option_object();
 		$params   = $this->get_params();
 		$defaults = $this->get_default_params();
 		foreach ( $params as $key ) {
@@ -320,8 +319,8 @@ class IworksUpprev {
 			}
 			$data[ $key ] = $value;
 		}
-        $position = $this->sanitize_position( $this->options->get_option( 'position' ) );
-        $data['position']['raw'] = $position;
+		$position                = $this->sanitize_position( $this->options->get_option( 'position' ) );
+		$data['position']['raw'] = $position;
 		foreach ( array( 'top', 'left', 'center', 'middle' ) as $key ) {
 			$re                       = sprintf( '/%s/', $key );
 			$data['position'][ $key ] = preg_match( $re, $position );
@@ -341,6 +340,7 @@ class IworksUpprev {
 	 * @since 4.0.0 param $post_id
 	 */
 	private function get_box( $layout = false, $post_id = 0 ) {
+		$this->check_option_object();
 		/**
 		 * get current post title and convert special characters to HTML entities
 		 */
@@ -514,17 +514,16 @@ class IworksUpprev {
 				 * YARPP
 				 */
 			case 'yarpp':
-				if ( ! yarpp_related_exist( $args ) ) {
-					return;
-				}
-				$args['limit'] = $number_of_posts;
-				$a             = yarpp_get_related( $args );
-				$yarpp_posts   = array();
-				foreach ( $a as $b ) {
-					if ( $b->ID === $post->ID ) {
-						continue;
+				if ( function_exists( 'yarpp_get_related' ) ) {
+					$args['limit'] = $number_of_posts;
+					$a             = yarpp_get_related( $args );
+					$yarpp_posts   = array();
+					foreach ( $a as $b ) {
+						if ( $b->ID === $post->ID ) {
+							continue;
+						}
+						$yarpp_posts[] = $b->ID;
 					}
-					$yarpp_posts[] = $b->ID;
 				}
 				break;
 			default:
@@ -549,6 +548,12 @@ class IworksUpprev {
 		if ( ! empty( $post_id ) ) {
 			$args['post__not_in'] = array( $post_id );
 		}
+		/**
+		 * filter WP_Query args
+		 *
+		 * @since 4.1.0
+		 */
+		$args         = apply_filters( 'iworks/upprev/wp_query/args', $args );
 		$upprev_query = new WP_Query( $args );
 		if ( ! $upprev_query->have_posts() ) {
 			/**
@@ -793,6 +798,7 @@ class IworksUpprev {
 	}
 
 	public function update() {
+		$this->check_option_object();
 		$version = $this->options->get_option( 'version' );
 		if ( version_compare( $this->version, $version, '>' ) ) {
 			if ( version_compare( $version, '2.0', '<' ) ) {
@@ -871,6 +877,7 @@ class IworksUpprev {
 	}
 
 	private function sanitize_position( $position ) {
+		$this->check_option_object();
 		$positions = $this->options->get_values( 'position' );
 		if ( array_key_exists( $position, $positions ) ) {
 			return $position;
@@ -1063,4 +1070,32 @@ class IworksUpprev {
 		return $params;
 	}
 
+	/**
+	 * register plugin to iWorks Rate Helper
+	 *
+	 * @since 4.1.0
+	 */
+	public function action_init_register_iworks_rate() {
+		if ( ! class_exists( 'iworks_rate' ) ) {
+			include_once dirname( __FILE__ ) . '/rate/rate.php';
+		}
+		do_action(
+			'iworks-register-plugin',
+			plugin_basename( $this->plugin_file ),
+			__( 'upPrev', 'upprev' ),
+			'upprev'
+		);
+	}
+
+	/**
+	 * check option object
+	 *
+	 * @since 4.1.0
+	 */
+	private function check_option_object() {
+		if ( is_a( $this->options, 'iworks_options' ) ) {
+			return;
+		}
+		$this->options = iworks_upprev_get_options();
+	}
 }

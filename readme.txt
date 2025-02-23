@@ -86,9 +86,11 @@ Visit: [upPrev: snippet archive](http://upprev.iworks.pl/tag/snippet)
 
 == Changelog ==
 
-= 4.0.8 (2025-02-23) =
+= 4.1.0 (2025-02-23) =
 * The [iWorks Options](https://github.com/iworks/wordpress-options-class) module has been updated to 2.9.6.
 * The [iWorks Rate](https://github.com/iworks/iworks-rate) module has been updated to 2.2.3.
+* The `iworks/upprev/wp_query/args` filter has been added.
+* The `_load_textdomain_just_in_time()` notice has been fixed.
 
 = 4.0.7 (2022-06-02) =
 * Fixed fade effect. Props for [George](https://wordpress.org/support/users/giorgos93/).

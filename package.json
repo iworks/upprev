@@ -1,8 +1,8 @@
 {
     "name": "upprev",
     "title": "upPrev",
-    "homepage": "https://iworks.pl/",
-    "version": "4.0.7",
+    "homepage": "http://iworks.pl/",
+    "version": "4.1.0",
     "description": "Display cool, animated fly-out or fade box with related content.",
     "repository": {
         "type": "git",
