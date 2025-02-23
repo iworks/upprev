@@ -99,14 +99,14 @@ Visit: [upPrev: snippet archive](http://upprev.iworks.pl/tag/snippet)
 = 4.0.6 (2022-05-26) =
 * Fixed undefined `$value`. Props for [Robert](https://wordpress.org/support/users/robertmindroi/).
 * Replaced `FILTER_SANITIZE_STRING` by `FILTER_DEFAULT` to avoid warning in PHP 8.1.
-* Updated [iWorks Options](https://github.com/iworks/wordpress-options-class) to 2.8.4.
-* Updated iWorks Rate to 2.1.0.
+* The [iWorks Options](https://github.com/iworks/wordpress-options-class) module has been updated to 2.9.4.
+* The [iWorks Rate](https://github.com/iworks/iworks-rate) module has been updated to 2.1.0.
 * Updated [Mobile Detect](http://mobiledetect.net/) to 2.8.39.
 
 = 4.0.5 (2022-01-21) =
 * Fixed "Settings" link on Plugins page.
-* Updated iWorks Options to 2.8.0.
-* Updated iWorks Rate to 2.0.6.
+* The [iWorks Options](https://github.com/iworks/wordpress-options-class) module has been updated to 2.8.0.
+* The [iWorks Rate](https://github.com/iworks/iworks-rate) module has been updated to 2.0.6.
 
 = 4.0.4 (2021-08-31) =
 * Restored option "Hide on tablets".
