@@ -1,4 +1,4 @@
-/*! upPrev - 4.1.0
+/*! upPrev - 4.1.1
  * https://github.com/iworks/upprev
  * Copyright (c) 2025
  * Licensed GPL-3.0 */
