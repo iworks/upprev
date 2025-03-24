@@ -86,6 +86,9 @@ Visit: [upPrev: snippet archive](http://upprev.iworks.pl/tag/snippet)
 
 == Changelog ==
 
+= 4.1.1 (2025-02-23) =
+* Updated the [iWorks Options](https://github.com/iworks/wordpress-options-class) module to version 2.9.9.
+
 = 4.1.0 (2025-02-23) =
 * The [iWorks Options](https://github.com/iworks/wordpress-options-class) module has been updated to 2.9.6.
 * The [iWorks Rate](https://github.com/iworks/iworks-rate) module has been updated to 2.2.3.
