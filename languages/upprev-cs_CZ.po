@@ -1,28 +1,18 @@
-# Copyright (C) 2025 Marcin Pietrzak
-# This file is distributed under the GPLv3 or later.
+# Translation of Plugins - upPrev - Stable (latest release) in Czech
+# This file is distributed under the same license as the Plugins - upPrev - Stable (latest release) package.
 msgid ""
 msgstr ""
-"Project-Id-Version: 4.1.0\n"
+"Project-Id-Version: Plugins - upPrev - Stable (latest release)\n"
 "Report-Msgid-Bugs-To: http://iworks.pl\n"
-"POT-Creation-Date: 2025-03-24 18:09:31+00:00\n"
+"POT-Creation-Date: 2025-03-24 17:49:15+00:00\n"
+"PO-Revision-Date: 2018-01-16 10:14:19+0000\n"
+"Language: cs_CZ\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2025-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Marcin Pietrzak <marcin@iworks.pl>\n"
-"Language-Team: iWorks <support@iworks.pl>\n"
-"Language: en\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-Country: United States\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: "
-"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
-"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
-"X-Poedit-Basepath: ../\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-Bookmarks: \n"
-"X-Textdomain-Support: yes\n"
-"X-Generator: grunt-wp-i18n 1.0.3\n"
+"Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ((n >= 2 && n <= 4) ? 1 : "
+"2);\n"
+"X-Generator: GlotPress/4.0.1\n"
 
 #: etc/options.php:12
 msgid "upPrev configuration"
@@ -30,7 +20,7 @@ msgstr ""
 
 #. Plugin Name of the plugin/theme
 msgid "upPrev"
-msgstr ""
+msgstr "upPrev"
 
 #: etc/options.php:41 etc/options.php:94
 msgid "Appearance"
@@ -42,7 +32,7 @@ msgstr ""
 
 #: etc/options.php:56 etc/options.php:62 etc/options.php:111
 msgid "Position"
-msgstr ""
+msgstr "Umístění"
 
 #: etc/options.php:65 etc/options.php:114
 msgid "bottom right"
@@ -78,66 +68,69 @@ msgstr ""
 
 #: etc/options.php:100
 msgid "Animation style"
-msgstr ""
+msgstr "Typ animace"
 
 #: etc/options.php:103
 msgid "flyout"
-msgstr ""
+msgstr "vyjížděcí"
 
 #: etc/options.php:104
 msgid "fade in/out"
-msgstr ""
+msgstr "Plynulé objevení/zmizení"
 
 #: etc/options.php:142
 msgid "Margin bottom"
-msgstr ""
+msgstr "Mezera dole"
 
 #: etc/options.php:143 etc/options.php:152 etc/options.php:162
 msgid "px"
-msgstr ""
+msgstr "pixelů"
 
 #: etc/options.php:151
 msgid "Margin side"
-msgstr ""
+msgstr "Mezera na straně"
 
 #: etc/options.php:153
 msgid "Left or right depending on position."
-msgstr ""
+msgstr "Vlevo nebo vpraaco podle umístění."
 
 #: etc/options.php:161
 msgid "Box width"
-msgstr ""
+msgstr "Šířka bubliny"
 
 #: etc/options.php:170
 msgid "Offset"
-msgstr ""
+msgstr "Velikost posunu"
 
 #: etc/options.php:171
 msgid "%"
-msgstr ""
+msgstr "%"
 
 #: etc/options.php:172
 msgid "Percentage of the page required to be scrolled to display a box."
-msgstr ""
+msgstr "Kolik procent stránky musí být posunuto, než se objeví bublina."
 
 #: etc/options.php:180
 msgid "Before HTML element."
-msgstr ""
+msgstr "Před HTML elementem."
 
 #: etc/options.php:181
 msgid ""
 "If empty, all page length is taken for calculation. If not empty, make sure "
-"to use the ID or class of an existing element. Put # \"hash\" before the "
-"ID, or . \"dot\" before a class name."
+"to use the ID or class of an existing element. Put # \"hash\" before the ID, "
+"or . \"dot\" before a class name."
 msgstr ""
+"Pokud je prázdné, je pro kalkulaci použita celá délka strany. Pokud je "
+"vyplněno, ujisti se, že jde o ID existujícího prvku nebo CSS třídy. Dej znak "
+"# před ID prvku, a . (tečku) před jméno CSS třídy."
 
 #: etc/options.php:188
 msgid "Box header"
-msgstr ""
+msgstr "Hlavička bubliny"
 
 #: etc/options.php:189
 msgid "Show box header."
-msgstr ""
+msgstr "Ukázat hlavičku bubliny."
 
 #: etc/options.php:197
 msgid "Header text."
@@ -149,11 +142,11 @@ msgstr ""
 
 #: etc/options.php:205
 msgid "Close button"
-msgstr ""
+msgstr "Tlačítko Zavřít."
 
 #: etc/options.php:206
 msgid "Show close button."
-msgstr ""
+msgstr "Ukaž tlačítko Zavřít."
 
 #: etc/options.php:213
 msgid "Re-open badge"
@@ -189,7 +182,7 @@ msgstr ""
 
 #: etc/options.php:257 etc/options.php:399
 msgid "Links"
-msgstr ""
+msgstr "Odkazy"
 
 #: etc/options.php:266
 msgid "Border"
@@ -197,7 +190,7 @@ msgstr ""
 
 #: etc/options.php:276
 msgid "Content"
-msgstr ""
+msgstr "Obsah"
 
 #: etc/options.php:283
 msgid "Number of posts to show"
@@ -209,121 +202,123 @@ msgstr ""
 
 #: etc/options.php:291
 msgid "Content filters"
-msgstr ""
+msgstr "Filtrování obsahu"
 
 #: etc/options.php:292
 msgid "Remove all filters."
-msgstr ""
+msgstr "Odstranit všechny filtry"
 
 #: etc/options.php:293
 msgid ""
-"Untick this if you have some strange things in upPrev box, but unticked "
-"have a lot of chances breaks your layout."
+"Untick this if you have some strange things in upPrev box, but unticked have "
+"a lot of chances breaks your layout."
 msgstr ""
+"Zruš zaskrtnutí, pokud je v bublině podivný obsah. Ale pozor, může to "
+"rozbořit celou stránku."
 
 #: etc/options.php:300
 msgid "Previous entry choose method"
-msgstr ""
+msgstr "Způsob výběru předchozích příspěvků"
 
 #: etc/options.php:303
 msgid "Just previous."
-msgstr ""
+msgstr "Předchozí podle času"
 
 #: etc/options.php:304
 msgid "Previous in category."
-msgstr ""
+msgstr "Předchozí v kategorii"
 
 #: etc/options.php:305
 msgid "Previous in tag."
-msgstr ""
+msgstr "Předchozí podle štítku"
 
 #: etc/options.php:306
 msgid "Random entry."
-msgstr ""
+msgstr "Náhodný"
 
 #: etc/options.php:315
 msgid "Taxonomy limit"
-msgstr ""
+msgstr "Počet klasifikačních značek"
 
 #: etc/options.php:316
 msgid "Number of taxonomies (tags or categories) to show."
-msgstr ""
+msgstr "Počet zobrazovaných štítků nebo kategorií."
 
 #: etc/options.php:317
 msgid "Default value: 0 (no limit)."
-msgstr ""
+msgstr "Výchozí hodnota: 0 (bez omezení)."
 
 #: etc/options.php:324
 msgid "Match post type"
-msgstr ""
+msgstr "Stejný typ příspěvků"
 
 #: etc/options.php:325
 msgid "Display only for selected post types."
-msgstr ""
+msgstr "Zobrazuj pouze vybrané typy příspěvků"
 
 #: etc/options.php:332
 msgid "Select post types"
-msgstr ""
+msgstr "Vyber typy příspěvků"
 
 #: etc/options.php:333
 msgid "Show posts."
-msgstr ""
+msgstr "Ukaž příspěvky."
 
 #: etc/options.php:334
 msgid "If not any, then default value is \"post\"."
-msgstr ""
+msgstr "Pokud není vybráno nic, pak se zobrazí běžné příspěvky."
 
 #: etc/options.php:337
 msgid "Posts."
-msgstr ""
+msgstr "Příspěvky."
 
 #: etc/options.php:338
 msgid "Pages."
-msgstr ""
+msgstr "Stránky."
 
 #: etc/options.php:339
 msgid "Any post type (include custom post types)."
-msgstr ""
+msgstr "Všechny typy příspěvků včetně vlastních typů."
 
 #: etc/options.php:349
 msgid "Sticky posts"
-msgstr ""
+msgstr "Zvýrazněné příspěvky"
 
 #: etc/options.php:350
 msgid "Ignore sticky posts."
-msgstr ""
+msgstr "Ignoruj zvýrazněné příspěvky."
 
 #: etc/options.php:360
 msgid "Excerpt"
-msgstr ""
+msgstr "Stručný obsah"
 
 #: etc/options.php:361
 msgid "Show excerpt."
-msgstr ""
+msgstr "Zobraz stručný obsah příspěvku."
 
 #: etc/options.php:370
 msgid "Number of words to show."
-msgstr ""
+msgstr "Zobrazit počet slov z příspěvku. "
 
 #: etc/options.php:379
 msgid "Featured image"
-msgstr ""
+msgstr "Náhledový obrázek"
 
 #: etc/options.php:380
 msgid "Show featured image."
-msgstr ""
+msgstr "Ukaž náhledový obrázek"
 
 #: etc/options.php:389
 msgid "Featured image width."
-msgstr ""
+msgstr "Šířka náhledového obrázku."
 
 #: etc/options.php:405
 msgid "URL prefix"
-msgstr ""
+msgstr "Prefix odkazu"
 
 #: etc/options.php:407
 msgid "Will be added before link."
-msgstr ""
+msgstr "Bude přidán před link."
 
 #: etc/options.php:414
 msgid "URL suffix"
@@ -331,15 +326,15 @@ msgstr ""
 
 #: etc/options.php:416
 msgid "Will be added after link."
-msgstr ""
+msgstr "Bude přidán za odkaz."
 
 #: etc/options.php:423
 msgid "Open link"
-msgstr ""
+msgstr "Otevři odkaz."
 
 #: etc/options.php:424
 msgid "Open link in new window."
-msgstr ""
+msgstr "Otevři odkaz v novém okně."
 
 #: etc/options.php:425
 msgid "Not recommended!"
@@ -351,11 +346,11 @@ msgstr ""
 
 #: etc/options.php:433
 msgid "I don't have GA tracking on site."
-msgstr ""
+msgstr "I nepoužívám GA pro měření návštěvnosti."
 
 #: etc/options.php:434 etc/options.php:460
 msgid "Turn it on if you don't use any other GA tracking plugin."
-msgstr ""
+msgstr "Zapni, pokud nepoužíváš jiné plugin pro Google Analytics."
 
 #: etc/options.php:441
 msgid "Google Analytics Account"
@@ -363,57 +358,60 @@ msgstr ""
 
 #: etc/options.php:442
 msgid "Replace UA-XXXXX-X with your web property ID."
-msgstr ""
+msgstr "Přepiš UA-XXXXX-X hodnotou GA ID pro tento web."
 
 #: etc/options.php:451
 msgid "Track views"
-msgstr ""
+msgstr "Sledovat zobrazení."
 
 #: etc/options.php:452
 msgid "Track showing of upPrev box."
-msgstr ""
+msgstr "Sleduj zobrazování upPrev bubliny."
 
 #: etc/options.php:459
 msgid "Track clicks"
-msgstr ""
+msgstr "Sleduj kliky."
 
 #: etc/options.php:467
 msgid "Prevent bounce-rate"
-msgstr ""
+msgstr "Zabránit započítávání bounce-rate."
 
 #: etc/options.php:468
 msgid ""
 "Turn it on to indicate that the event hit will not be used in bounce-rate "
 "calculation."
 msgstr ""
+"Zapni pro zajištění, že použítí bubliny nebude počítáno jako bounce-rate "
+"(bounce-rate - udává, kolik procent návštěvníků odejde z webu po zhlédnutí "
+"pouze jediné (první) stránky)"
 
 #: etc/options.php:477
 msgid "Other"
-msgstr ""
+msgstr "Ostatní"
 
 #: etc/options.php:486
 msgid "Mobile devices"
-msgstr ""
+msgstr "Mobily"
 
 #: etc/options.php:487
 msgid "Hide for mobile devices."
-msgstr ""
+msgstr "Skrýt pro mobily."
 
 #: etc/options.php:494
 msgid "Tablets"
-msgstr ""
+msgstr "Tablety"
 
 #: etc/options.php:495
 msgid "Hide for tablets too."
-msgstr ""
+msgstr "Skrýt také pro tablety."
 
 #: etc/options.php:496
 msgid "Works only when hidding for mobile devices is turn on."
-msgstr ""
+msgstr "Funguje jen tehdy, když je aktivní skrývání pro mobily."
 
 #: etc/options.php:507
 msgid "Custom CSS"
-msgstr ""
+msgstr "Vlastní CSS"
 
 #: etc/options.php:516
 msgid "Excludes"
@@ -441,19 +439,19 @@ msgstr ""
 
 #: etc/options.php:565
 msgid "Custom post type: "
-msgstr ""
+msgstr "Vlastní typ příspěvku: "
 
 #: etc/options.php:575 etc/options.php:578
 msgid "Related Posts (YARPP)"
-msgstr ""
+msgstr "Související příspěvky (YARPP)"
 
 #: etc/options.php:576
 msgid ". Works only with post and/or pages."
-msgstr ""
+msgstr ". Funguje pouze s příspěvky a stránkami."
 
 #: etc/options.php:662 etc/options.php:693
 msgid "Below are some links to help spread this plugin to other users"
-msgstr ""
+msgstr "Níže je pár odkazů, které pomohou upozornit na plugin i ostatní."
 
 #: etc/options.php:664
 msgid "simple"
@@ -473,7 +471,7 @@ msgstr ""
 
 #: etc/options.php:696
 msgid "Link to it so others can easily find it"
-msgstr ""
+msgstr "Odkaž na plugin, aby ho ostatní snadno našli."
 
 #: includes/iworks/options/options.php:263
 msgid "An error occurred while getting the configuration."
@@ -490,7 +488,7 @@ msgstr ""
 
 #: includes/iworks/options/options.php:955
 msgid "Save Changes"
-msgstr ""
+msgstr "Uložit změny"
 
 #: includes/iworks/options/options.php:1859
 msgid "Country"
@@ -522,15 +520,15 @@ msgstr ""
 
 #: includes/iworks/rate/rate.php:133 includes/iworks/upprev.php:307
 msgid "Settings"
-msgstr ""
+msgstr "Nastavení"
 
 #: includes/iworks/rate/rate.php:147
 #: includes/iworks/rate/templates/thanks.php:39
 msgid "Provide us a coffee"
 msgstr ""
 
-#: includes/iworks/rate/rate.php:446
 #. translators: %s: plugin id
+#: includes/iworks/rate/rate.php:446
 msgid "There is no plugin with id: %s."
 msgstr ""
 
@@ -550,23 +548,23 @@ msgstr ""
 msgid "Would you like to boost your website sharing abilities?"
 msgstr ""
 
-#: includes/iworks/rate/templates/plugins/og.php:9
 #. translators: %s is a plugin name with url
+#: includes/iworks/rate/templates/plugins/og.php:9
 msgid "Don't wait, install plugin %s!"
 msgstr ""
 
-#: includes/iworks/rate/templates/plugins/og.php:20
 #. translators: %s is a plugin wp home name, %s plugin name
+#: includes/iworks/rate/templates/plugins/og.php:20
 msgid "Install"
 msgstr ""
 
-#: includes/iworks/rate/templates/thanks.php:23
 #. translators: %s is a plugin name wrapped by strong html tag
+#: includes/iworks/rate/templates/thanks.php:23
 msgid "Thank you for using our plugin %s!"
 msgstr ""
 
-#: includes/iworks/rate/templates/thanks.php:31
 #. translators: %1$s: open anchor tag, %2$s: close anchor tag
+#: includes/iworks/rate/templates/thanks.php:31
 msgid ""
 "Please let us know what you think about our plugin. It is important that we "
 "can develop this tool. Thank you for all the ratings, reviews and donates. "
@@ -607,14 +605,14 @@ msgstr ""
 
 #: includes/iworks/rate/templates/widgets/support.php:4
 msgid ""
-"Do you have a technical problem? Please contact us. We will be happy to "
-"help you. Or maybe you have an idea for a new feature? Please let us know "
-"about it by filling the support form. We will try to add it!"
+"Do you have a technical problem? Please contact us. We will be happy to help "
+"you. Or maybe you have an idea for a new feature? Please let us know about "
+"it by filling the support form. We will try to add it!"
 msgstr ""
 
-#: includes/iworks/rate/templates/widgets/support.php:11
 #. translators: %1$s: open anchor tag, %2$s: close anchor tag, %3$s: open
 #. anchor tag, %4$s: close anchor tag
+#: includes/iworks/rate/templates/widgets/support.php:11
 msgid ""
 "Please %1$scheck our FAQ%2$s before adding a thread with technical problem. "
 "If you do not find help there, %3$scheck support forum%4$s for similar "
@@ -624,8 +622,8 @@ msgstr ""
 #: includes/iworks/rate/templates/widgets/support.php:26
 msgid ""
 "Do you like our plugin? Could you rate him? Please let us know what you "
-"think about our plugin. It is important that we can develop this tool. "
-"Thank you for all the ratings, reviews and donates."
+"think about our plugin. It is important that we can develop this tool. Thank "
+"you for all the ratings, reviews and donates."
 msgstr ""
 
 #: includes/iworks/upprev.php:166
@@ -642,26 +640,27 @@ msgstr ""
 
 #: includes/iworks/upprev.php:605
 msgid "More in"
-msgstr ""
+msgstr "Více v"
 
 #: includes/iworks/upprev.php:617
 msgid "Read more:"
-msgstr ""
+msgstr "Více:"
 
 #: includes/iworks/upprev.php:619
 msgid "Read previous post:"
-msgstr ""
+msgstr "Starší příspěvky:"
 
 #: includes/iworks/upprev.php:729
 msgid "Close"
-msgstr ""
+msgstr "Zavřít"
 
 #: includes/iworks/upprev.php:732
 msgid ""
-"Previous posts box brought to you by <a "
-"href=\"http://iworks.pl/produkty/wordpress/wtyczki/upprev/en/\">upPrev "
-"plugin</a>."
+"Previous posts box brought to you by <a href=\"http://iworks.pl/produkty/"
+"wordpress/wtyczki/upprev/en/\">upPrev plugin</a>."
 msgstr ""
+"Starší příspěvky přináší <a href=\"http://iworks.pl/produkty/wordpress/"
+"wtyczki/upprev/en/\">upPrev plugin</a>."
 
 #. Plugin URI of the plugin/theme
 msgid "PLUGIN_URI"
@@ -689,14 +688,14 @@ msgctxt "plugin home page on WordPress.org"
 msgid "https://wordpress.org/plugins/upprev/"
 msgstr ""
 
-#: includes/iworks/rate/rate.php:469
 #. translators: %s: plugin slug
+#: includes/iworks/rate/rate.php:469
 msgctxt "plugins home"
 msgid "https://wordpress.org/plugins/%s"
 msgstr ""
 
-#: includes/iworks/rate/rate.php:476
 #. translators: %s: plugin slug
+#: includes/iworks/rate/rate.php:476
 msgctxt "plugins support home"
 msgid "https://wordpress.org/support/plugin/%s"
 msgstr ""

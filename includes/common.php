@@ -21,6 +21,17 @@ if ( ! class_exists( 'iworks_options' ) ) {
 }
 
 /**
+ * load github class
+ *
+ * @since 4.1.1
+ */
+$filename = __DIR__ . '/iworks/upprev/class-iworks-upprev-github.php';
+if ( is_file( $filename ) ) {
+	include_once $filename;
+	new iworks_upprev_github();
+}
+
+/**
  * load options
  */
 global $iworks_upprev_options;
@@ -37,7 +48,7 @@ function iworks_upprev_get_options() {
 	if ( method_exists( $iworks_upprev_options, 'set_plugin' ) ) {
 		$iworks_upprev_options->set_plugin( basename( __FILE__ ) );
 	}
-	$iworks_upprev_options->init();
+	$iworks_upprev_options->options_init();
 	return $iworks_upprev_options;
 }
 

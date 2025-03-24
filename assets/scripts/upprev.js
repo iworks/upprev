@@ -1,7 +1,7 @@
-/*! upPrev - v4.1.0
- * http://iworks.pl/
- * Copyright (c) 2025; * Licensed GPLv2+
- */
+/*! upPrev - 4.1.0
+ * https://github.com/iworks/upprev
+ * Copyright (c) 2025
+ * Licensed GPL-3.0 */
 jQuery(function($) {
     if ('undefined' == typeof(iworks_upprev)) {
         return;

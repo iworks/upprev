@@ -304,7 +304,7 @@ class IworksUpprev {
 		$this->check_option_object();
 		$page      = $this->options->get_pagehook();
 		$url       = add_query_arg( 'page', $page, admin_url( 'themes.php' ) );
-		$actions[] = sprintf( '<a href="%s">%s</a>', esc_url( $url ), esc_html__( 'Settings', 'sierotki' ) );
+		$actions[] = sprintf( '<a href="%s">%s</a>', esc_url( $url ), esc_html__( 'Settings', 'upprev' ) );
 		return $actions;
 	}
 
@@ -799,7 +799,7 @@ class IworksUpprev {
 
 	public function update() {
 		$this->check_option_object();
-		$version = $this->options->get_option( 'version' );
+		$version = strval( $this->options->get_option( 'version' ) );
 		if ( version_compare( $this->version, $version, '>' ) ) {
 			if ( version_compare( $version, '2.0', '<' ) ) {
 				$this->options->add_option( 'salt', wp_generate_password( 256, false, false ), false );

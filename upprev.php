@@ -1,19 +1,14 @@
 <?php
 /*
-/*
- * Plugin Name:       upPrev
- * Plugin URI:        http://upprev.iworks.pl/
- * Description:       PLUGIN_DESCRIPTION
- * Requires at least: 5.0
- * Requires PHP:      7.2
- * Version:           PLUGIN_VERSION
- * Author:            Marcin Pietrzak
- * Author URI:        http://iworks.pl/
- * License:           GPLv2 or later
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       upprev
- * Domain Path:       /languages
- *
+Plugin Name: upPrev
+Text Domain: upprev
+Plugin URI: PLUGIN_URI
+Description: PLUGIN_TAGLINE
+Version: PLUGIN_VERSION
+Author: Marcin Pietrzak
+Author URI: http://iworks.pl/
+License: GPLv3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 Copyright 2011-PLUGIN_TILL_YEAR Marcin Pietrzak (marcin@iworks.pl)
 
@@ -31,11 +26,7 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
  */
-
-if ( ! defined( 'WPINC' ) ) {
-	die;
-}
-
+defined( 'ABSPATH' ) || exit; // Exit if accessed directly
 /**
  * static options
  */

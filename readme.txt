@@ -86,12 +86,19 @@ Visit: [upPrev: snippet archive](http://upprev.iworks.pl/tag/snippet)
 
 == Changelog ==
 
+Project maintained on GitHub at [iworks/upprev](https://github.com/iworks/upprev).
+
 = 4.1.1 (2025-02-23) =
-* Updated the [iWorks Options](https://github.com/iworks/wordpress-options-class) module to version 2.9.9.
+* **Translation Support Added**: Implemented translation support for GitHub releases, making the plugin more accessible to a global audience.
+* **Enhanced Plugin Update Mechanism**: Improved the plugin update process for smoother and more reliable updates directly from GitHub releases.
+* **Optimized Build Process**: Refactored the build process to deliver enhanced performance and improved efficiency.
+* **Plugin Repository Migration**: The plugin repository has been successfully migrated to a new home on GitHub. This move will ensure continued maintenance and streamlined updates going forward.
+* **iWorks Options Module Updated**: Updated the integrated iWorks Options module to the latest version 2.9.9.
+* **Null Version Issue Resolved**: Fixed a bug that could cause issues with null version values, improving overall stability.
 
 = 4.1.0 (2025-02-23) =
-* The [iWorks Options](https://github.com/iworks/wordpress-options-class) module has been updated to 2.9.6.
-* The [iWorks Rate](https://github.com/iworks/iworks-rate) module has been updated to 2.2.3.
+* Updated the [iWorks Options](https://github.com/iworks/wordpress-options-class) module to version 2.9.6.
+* Updated the [iWorks Rate](https://github.com/iworks/iworks-rate) module to version 2.2.3.
 * The `iworks/upprev/wp_query/args` filter has been added.
 * The `_load_textdomain_just_in_time()` notice has been fixed.
 
@@ -102,14 +109,14 @@ Visit: [upPrev: snippet archive](http://upprev.iworks.pl/tag/snippet)
 = 4.0.6 (2022-05-26) =
 * Fixed undefined `$value`. Props for [Robert](https://wordpress.org/support/users/robertmindroi/).
 * Replaced `FILTER_SANITIZE_STRING` by `FILTER_DEFAULT` to avoid warning in PHP 8.1.
-* The [iWorks Options](https://github.com/iworks/wordpress-options-class) module has been updated to 2.9.4.
-* The [iWorks Rate](https://github.com/iworks/iworks-rate) module has been updated to 2.1.0.
+* Updated the [iWorks Options](https://github.com/iworks/wordpress-options-class) module to version 2.9.4.
+* Updated the [iWorks Rate](https://github.com/iworks/iworks-rate) module to version 2.1.0.
 * Updated [Mobile Detect](http://mobiledetect.net/) to 2.8.39.
 
 = 4.0.5 (2022-01-21) =
 * Fixed "Settings" link on Plugins page.
-* The [iWorks Options](https://github.com/iworks/wordpress-options-class) module has been updated to 2.8.0.
-* The [iWorks Rate](https://github.com/iworks/iworks-rate) module has been updated to 2.0.6.
+* Updated the [iWorks Options](https://github.com/iworks/wordpress-options-class) module to version 2.8.0.
+* Updated the [iWorks Rate](https://github.com/iworks/iworks-rate) module to version 2.0.6.
 
 = 4.0.4 (2021-08-31) =
 * Restored option "Hide on tablets".
@@ -127,7 +134,7 @@ Visit: [upPrev: snippet archive](http://upprev.iworks.pl/tag/snippet)
 * Fixed missing custom element to open box. Props for [George](https://wordpress.org/support/users/giorgos93/).
 * Fixed to greedy defaults.
 * Minor configuration screen tweaking.
-* Updated iWorks Option Class to version: 2.7.0.
+* Updated the [iWorks Options](https://github.com/iworks/wordpress-options-class) module to version 2.7.0.
 
 = 4.0.1 (2021-08-12) =
 * Fixed wrong plugin description. Props for [Patrick_D1985](https://wordpress.org/support/users/patrick_d1985/).
@@ -153,7 +160,7 @@ Visit: [upPrev: snippet archive](http://upprev.iworks.pl/tag/snippet)
 * IMPROVEMENT: javascript & CSS files are minifized.
 * IMPROVEMENT: replace moble detection function to [Mobile_Detect](http://mobiledetect.net).
 * IMPROVEMENT: rework option page to easier configuration
-* Upgrade iWorks Option Class to version: 2.7.0.
+* Updated the [iWorks Options](https://github.com/iworks/wordpress-options-class) module to version 2.6.0.
 * Upgrade YARPP integration, minimum YARPP version: 3.5.x.
 * Updated Hebrew translation by [של אודי בורג](http://blog.udiburg.com)
 * REFACTORING: rebuild options screen, sidebar boxes are now manageable.
