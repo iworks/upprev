@@ -88,12 +88,16 @@ Visit: [upPrev: snippet archive](http://upprev.iworks.pl/tag/snippet)
 
 Project maintained on GitHub at [iworks/upprev](https://github.com/iworks/upprev).
 
-= 4.1.1 (2025-02-23) =
+= 4.1.2 (2025-06-16) =
+* **iWorks Options Module Updated**: Updated the integrated [iWorks Options](https://github.com/iworks/wordpress-options-class) module to the latest version 3.0.7.
+* **iWorks Rate Module Updated**: Updated the integrated [iWorks Rate](https://github.com/iworks/iworks-rate) module to the latest version 2.9.9.
+
+= 4.1.1 (2025-03-24) =
 * **Translation Support Added**: Implemented translation support for GitHub releases, making the plugin more accessible to a global audience.
 * **Enhanced Plugin Update Mechanism**: Improved the plugin update process for smoother and more reliable updates directly from GitHub releases.
 * **Optimized Build Process**: Refactored the build process to deliver enhanced performance and improved efficiency.
 * **Plugin Repository Migration**: The plugin repository has been successfully migrated to a new home on GitHub. This move will ensure continued maintenance and streamlined updates going forward.
-* **iWorks Options Module Updated**: Updated the integrated iWorks Options module to the latest version 2.9.9.
+* **iWorks Options Module Updated**: Updated the integrated [iWorks Options](https://github.com/iworks/wordpress-options-class) module to the latest version 2.9.9.
 * **Null Version Issue Resolved**: Fixed a bug that could cause issues with null version values, improving overall stability.
 
 = 4.1.0 (2025-02-23) =
