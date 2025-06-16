@@ -1,21 +1,22 @@
-# Translation of Plugins - upPrev - Stable (latest release) in Hebrew
+# Translation of Plugins - upPrev - Stable (latest release) in Ukrainian
 # This file is distributed under the same license as the Plugins - upPrev - Stable (latest release) package.
 msgid ""
 msgstr ""
 "Project-Id-Version: Plugins - upPrev - Stable (latest release)\n"
 "Report-Msgid-Bugs-To: http://iworks.pl\n"
 "POT-Creation-Date: 2025-06-16 07:19:40+00:00\n"
-"PO-Revision-Date: 2021-08-13 07:29:03+0000\n"
-"Language: he_IL\n"
+"PO-Revision-Date: 2024-09-05 09:23:56+0000\n"
+"Language: uk_UA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=3; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : ((n % "
+"10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
 "X-Generator: GlotPress/4.0.1\n"
 
 #: etc/options.php:12
 msgid "upPrev configuration"
-msgstr ""
+msgstr "конфігурація upPrev"
 
 #. Plugin Name of the plugin/theme
 msgid "upPrev"
@@ -23,83 +24,83 @@ msgstr "upPrev"
 
 #: etc/options.php:41 etc/options.php:94
 msgid "Appearance"
-msgstr "מראה"
+msgstr "Вигляд"
 
 #: etc/options.php:47
 msgid "Layout"
-msgstr "סידור"
+msgstr "Компонування"
 
 #: etc/options.php:56 etc/options.php:62 etc/options.php:111
 msgid "Position"
-msgstr "מיקום"
+msgstr "Позиція"
 
 #: etc/options.php:65 etc/options.php:114
 msgid "bottom right"
-msgstr "ימני תחתון"
+msgstr "внизу праворуч"
 
 #: etc/options.php:66 etc/options.php:115
 msgid "bottom left"
-msgstr "שמאלי תחתון"
+msgstr "внизу ліворуч"
 
 #: etc/options.php:68 etc/options.php:117
 msgid "bottom"
-msgstr "למטה"
+msgstr "знизу"
 
 #: etc/options.php:71 etc/options.php:120
 msgid "top right"
-msgstr "ימין למעלה"
+msgstr "вгорі праворуч"
 
 #: etc/options.php:74 etc/options.php:123
 msgid "top"
-msgstr "למעלה"
+msgstr "вгорі"
 
 #: etc/options.php:77 etc/options.php:126
 msgid "top left"
-msgstr "שמאל למעלה"
+msgstr "вгорі ліворуч"
 
 #: etc/options.php:80 etc/options.php:129
 msgid "middle right"
-msgstr "אמצעי ימני"
+msgstr "посередині праворуч"
 
 #: etc/options.php:83 etc/options.php:132
 msgid "middle left"
-msgstr "אמצעי שמאלי"
+msgstr "посередині ліворуч"
 
 #: etc/options.php:100
 msgid "Animation style"
-msgstr "סגנון הנפשה"
+msgstr ""
 
 #: etc/options.php:103
 msgid "flyout"
-msgstr "ריחוף פנימה"
+msgstr ""
 
 #: etc/options.php:104
 msgid "fade in/out"
-msgstr "התבהרות/התעממות"
+msgstr ""
 
 #: etc/options.php:142
 msgid "Margin bottom"
-msgstr "רווח למטה"
+msgstr ""
 
 #: etc/options.php:143 etc/options.php:152 etc/options.php:162
 msgid "px"
-msgstr "פיקסלים"
+msgstr "px"
 
 #: etc/options.php:151
 msgid "Margin side"
-msgstr "רווח בצד"
+msgstr ""
 
 #: etc/options.php:153
 msgid "Left or right depending on position."
-msgstr "שמאל או ימין תלוי במיקום."
+msgstr ""
 
 #: etc/options.php:161
 msgid "Box width"
-msgstr "רוחב תיבה"
+msgstr ""
 
 #: etc/options.php:170
 msgid "Offset"
-msgstr "היסט"
+msgstr "Зміщення"
 
 #: etc/options.php:171
 msgid "%"
@@ -107,11 +108,11 @@ msgstr "%"
 
 #: etc/options.php:172
 msgid "Percentage of the page required to be scrolled to display a box."
-msgstr "אחוז העמוד שצריך להיגלל לפני הצגת התיבה."
+msgstr ""
 
 #: etc/options.php:180
 msgid "Before HTML element."
-msgstr "לפני אלמנט HTML."
+msgstr ""
 
 #: etc/options.php:181
 msgid ""
@@ -119,32 +120,30 @@ msgid ""
 "to use the ID or class of an existing element. Put # \"hash\" before the ID, "
 "or . \"dot\" before a class name."
 msgstr ""
-"אם ריק, כל אורך העמוד יילקח בחשבון. אם לא ריק, היו בטוחים שאתם משתמשים במזהה "
-"או מחלקה של אלמנט קיים. שים # סולמית לפני מזהה או . נקודה לפני שם מחלקה."
 
 #: etc/options.php:188
 msgid "Box header"
-msgstr "כותרת תיבה"
+msgstr ""
 
 #: etc/options.php:189
 msgid "Show box header."
-msgstr "הצג כותרת תיבה."
+msgstr ""
 
 #: etc/options.php:197
 msgid "Header text."
-msgstr "טקסט הכותרת."
+msgstr "Текст заголовку."
 
 #: etc/options.php:198
 msgid "Leave blank to allow plugin set the heading text."
-msgstr "השאירו ריק על מנת שהתוסף יקבע את טקסט הכותרת."
+msgstr ""
 
 #: etc/options.php:205
 msgid "Close button"
-msgstr "כפתור סגירה"
+msgstr "Кнопка закриття"
 
 #: etc/options.php:206
 msgid "Show close button."
-msgstr "הצג כפתור סגירה"
+msgstr ""
 
 #: etc/options.php:213
 msgid "Re-open badge"
@@ -160,183 +159,183 @@ msgstr ""
 
 #: etc/options.php:224
 msgid "Colors"
-msgstr "צבעים"
+msgstr "Кольори"
 
 #: etc/options.php:230
 msgid "Set custom colors"
-msgstr "הגדר צבעים בהתאמה אישית"
+msgstr "Додати власні кольори"
 
 #: etc/options.php:231
 msgid "Turn on custom colors."
-msgstr "הפעל צבעים בהתאמה אישית."
+msgstr "Увімкніть власні кольори."
 
 #: etc/options.php:239
 msgid "Text"
-msgstr "טקסט"
+msgstr "Текст"
 
 #: etc/options.php:248
 msgid "Background"
-msgstr "רקע"
+msgstr "Фон"
 
 #: etc/options.php:257 etc/options.php:399
 msgid "Links"
-msgstr "קישורים"
+msgstr "Посилання"
 
 #: etc/options.php:266
 msgid "Border"
-msgstr "גבול"
+msgstr "Межа"
 
 #: etc/options.php:276
 msgid "Content"
-msgstr "תוכן"
+msgstr "Вміст"
 
 #: etc/options.php:283
 msgid "Number of posts to show"
-msgstr "מספר פוסטים להצגה"
+msgstr "Кількість записів для показу"
 
 #: etc/options.php:284
 msgid "Not affected if using YARPP as choose method."
-msgstr "לא משפיע אם אתם משתמשים ב־YARPP כשיטה נבחרת."
+msgstr ""
 
 #: etc/options.php:291
 msgid "Content filters"
-msgstr "מסנני תוכן"
+msgstr "Фільтри контенту"
 
 #: etc/options.php:292
 msgid "Remove all filters."
-msgstr "הסר את כל המסננים."
+msgstr "Вимкнути фільтри"
 
 #: etc/options.php:293
 msgid ""
 "Untick this if you have some strange things in upPrev box, but unticked have "
 "a lot of chances breaks your layout."
 msgstr ""
-"הסר את הסימון אם קורים דברים מוזרים בתיבת upPrev, אבל רוב הסיכויים שהסרת "
-"הסימון תשבור את הפריסה שלך."
+"Вимкніть цей пункт, якщо upPrev поводиться дивно box, але це може викликати "
+"проблеми з відображенням."
 
 #: etc/options.php:300
 msgid "Previous entry choose method"
-msgstr "שיטת בחירת פוסט קודם"
+msgstr "Метод пошуку попереднього посту"
 
 #: etc/options.php:303
 msgid "Just previous."
-msgstr "פשוט קודם."
+msgstr "Просто попередній"
 
 #: etc/options.php:304
 msgid "Previous in category."
-msgstr "קודם בקטגוריה."
+msgstr "Попередній в категорії"
 
 #: etc/options.php:305
 msgid "Previous in tag."
-msgstr "קודם בתגית."
+msgstr "Попередній з таким тегом"
 
 #: etc/options.php:306
 msgid "Random entry."
-msgstr "פוסט אקראי."
+msgstr "Випадковий пост"
 
 #: etc/options.php:315
 msgid "Taxonomy limit"
-msgstr "הגבלת טקסנומיות"
+msgstr ""
 
 #: etc/options.php:316
 msgid "Number of taxonomies (tags or categories) to show."
-msgstr "מספר טקסונומית (תגיות או קטגוריות) להצגה."
+msgstr ""
 
 #: etc/options.php:317
 msgid "Default value: 0 (no limit)."
-msgstr "ערך בררת מחדל: 0 (ללא הגבלה)."
+msgstr "Значення за замовчуванням: 0 (без ліміту)"
 
 #: etc/options.php:324
 msgid "Match post type"
-msgstr "התאמת סוג פוסט"
+msgstr "Тип запису відповідності"
 
 #: etc/options.php:325
 msgid "Display only for selected post types."
-msgstr "הצג רק מסוגי הפוסט הנבחרים."
+msgstr "Відображати тільки для записів вибраного типу."
 
 #: etc/options.php:332
 msgid "Select post types"
-msgstr "בחר סוגי פוסט"
+msgstr "Виберіть типи записів"
 
 #: etc/options.php:333
 msgid "Show posts."
-msgstr "הצג פוסטים."
+msgstr "Показати записи."
 
 #: etc/options.php:334
 msgid "If not any, then default value is \"post\"."
-msgstr "אם לא נבחר אז ערך בררת המחדל הוא „פוסט”."
+msgstr "Якщо не вибрано, то \"запис\" буде вибраним за замовчуванням."
 
 #: etc/options.php:337
 msgid "Posts."
-msgstr "פוסטים."
+msgstr "Записи."
 
 #: etc/options.php:338
 msgid "Pages."
-msgstr "עמודים."
+msgstr "Cторінки."
 
 #: etc/options.php:339
 msgid "Any post type (include custom post types)."
-msgstr "כל סוג פוסט (כולל סוגי פוסטים מותאמים אישית)."
+msgstr "Будь-який тип запису (включно з користувацькими типами записів)."
 
 #: etc/options.php:349
 msgid "Sticky posts"
-msgstr "פוסטים דביקים"
+msgstr "Приліплені записи"
 
 #: etc/options.php:350
 msgid "Ignore sticky posts."
-msgstr "התעלם מפוסטים דביקים."
+msgstr ""
 
 #: etc/options.php:360
 msgid "Excerpt"
-msgstr "תקציר"
+msgstr "Уривок"
 
 #: etc/options.php:361
 msgid "Show excerpt."
-msgstr "הצג תקציר."
+msgstr "Показувати цитату"
 
 #: etc/options.php:370
 msgid "Number of words to show."
-msgstr "מספר מילים להצגה"
+msgstr "Кількість слів для відображення"
 
 #: etc/options.php:379
 msgid "Featured image"
-msgstr "תמונה ממוזערת"
+msgstr "Обрана картинка"
 
 #: etc/options.php:380
 msgid "Show featured image."
-msgstr "הצג תמונה ממוזערת."
+msgstr "Показувати обрану картинку"
 
 #: etc/options.php:389
 msgid "Featured image width."
-msgstr "רוחב תמונה ממוזערת."
+msgstr "Ширина обраної картинки"
 
 #: etc/options.php:405
 msgid "URL prefix"
-msgstr "תחילית כתובת"
+msgstr ""
 
 #: etc/options.php:407
 msgid "Will be added before link."
-msgstr "יתווסף לפני הקישור"
+msgstr ""
 
 #: etc/options.php:414
 msgid "URL suffix"
-msgstr "סיומת כתובת"
+msgstr ""
 
 #: etc/options.php:416
 msgid "Will be added after link."
-msgstr "יתווסף אחרי הקישור"
+msgstr ""
 
 #: etc/options.php:423
 msgid "Open link"
-msgstr "פתח קישור"
+msgstr ""
 
 #: etc/options.php:424
 msgid "Open link in new window."
-msgstr "פתח קישור בחלון חדש"
+msgstr ""
 
 #: etc/options.php:425
 msgid "Not recommended!"
-msgstr "לא מומלץ!"
+msgstr ""
 
 #: etc/options.php:432
 msgid "Google Analytics"
@@ -344,85 +343,85 @@ msgstr "Google Analytics"
 
 #: etc/options.php:433
 msgid "I don't have GA tracking on site."
-msgstr "אין מעקב של Google Analitics באתר"
+msgstr ""
 
 #: etc/options.php:434 etc/options.php:460
 msgid "Turn it on if you don't use any other GA tracking plugin."
-msgstr "הפעל אם אינך משתמש בתוסף אחר של Google Analitics."
+msgstr ""
 
 #: etc/options.php:441
 msgid "Google Analytics Account"
-msgstr "חשבון Google Anlytics"
+msgstr ""
 
 #: etc/options.php:442
 msgid "Replace UA-XXXXX-X with your web property ID."
-msgstr "החלף את UA-XXXXX-X במזהה שלך."
+msgstr ""
 
 #: etc/options.php:451
 msgid "Track views"
-msgstr "מעקב צפיות"
+msgstr ""
 
 #: etc/options.php:452
 msgid "Track showing of upPrev box."
-msgstr "מעקב אחרי הצגת תיבת upPrev"
+msgstr ""
 
 #: etc/options.php:459
 msgid "Track clicks"
-msgstr "מעקב לחיצות"
+msgstr "Відслідковувати кліки"
 
 #: etc/options.php:467
 msgid "Prevent bounce-rate"
-msgstr "מנע שיעור נטישה"
+msgstr ""
 
 #: etc/options.php:468
 msgid ""
 "Turn it on to indicate that the event hit will not be used in bounce-rate "
 "calculation."
-msgstr "הפעל כדי שלחיצה לא תספר בחישוב שיעור הנטישה."
+msgstr ""
 
 #: etc/options.php:477
 msgid "Other"
-msgstr "אחר"
+msgstr "Інше"
 
 #: etc/options.php:486
 msgid "Mobile devices"
-msgstr "התקנים ניידים"
+msgstr ""
 
 #: etc/options.php:487
 msgid "Hide for mobile devices."
-msgstr "הסתר בטלפונים ניידים"
+msgstr ""
 
 #: etc/options.php:494
 msgid "Tablets"
-msgstr "מחשבי לוח"
+msgstr "Планшети"
 
 #: etc/options.php:495
 msgid "Hide for tablets too."
-msgstr "הסתר גם במחשבי לוח"
+msgstr ""
 
 #: etc/options.php:496
 msgid "Works only when hidding for mobile devices is turn on."
-msgstr "עובד רק כשההסתרה בטלפונים ניידים מופעלת."
+msgstr ""
 
 #: etc/options.php:507
 msgid "Custom CSS"
-msgstr "CSS מותאם אישית"
+msgstr "Користувацький код CSS"
 
 #: etc/options.php:516
 msgid "Excludes"
-msgstr "אל תכליל"
+msgstr "Окрім"
 
 #: etc/options.php:522
 msgid "Categories"
-msgstr "קטגוריות"
+msgstr "Категорії"
 
 #: etc/options.php:529
 msgid "Tags"
-msgstr "תגיות"
+msgstr "Позначки"
 
 #: etc/options.php:536
 msgid "Choose configuration mode"
-msgstr "בחרו מצב קונפיגורציה"
+msgstr ""
 
 #: etc/options.php:542 etc/options.php:679
 msgid "We are waiting for your message"
@@ -434,27 +433,27 @@ msgstr ""
 
 #: etc/options.php:565
 msgid "Custom post type: "
-msgstr "סוג פוסט מותאם אישית:"
+msgstr ""
 
 #: etc/options.php:575 etc/options.php:578
 msgid "Related Posts (YARPP)"
-msgstr "פוסטים קשורים (YARPP)"
+msgstr ""
 
 #: etc/options.php:576
 msgid ". Works only with post and/or pages."
-msgstr ". עובד רק עם פוסט ו/או עמודים."
+msgstr ""
 
 #: etc/options.php:662 etc/options.php:693
 msgid "Below are some links to help spread this plugin to other users"
-msgstr "למטה יש כמה קישורים שיעזרו להפיץ את התוסף הזה למשתמשים אחרים"
+msgstr ""
 
 #: etc/options.php:664
 msgid "simple"
-msgstr "פשוט"
+msgstr "простий"
 
 #: etc/options.php:665
 msgid "advance"
-msgstr "מתקדם"
+msgstr ""
 
 #: etc/options.php:681
 msgid "WordPress Help Forum"
@@ -466,7 +465,7 @@ msgstr ""
 
 #: etc/options.php:696
 msgid "Link to it so others can easily find it"
-msgstr "קשרו אליו כדי שאחרים יוכלו למצוא אותו בקלות"
+msgstr ""
 
 #: includes/iworks/options/options.php:176
 msgid "No Page Title"
@@ -474,32 +473,32 @@ msgstr ""
 
 #: includes/iworks/options/options.php:341
 msgid "An error occurred while getting the configuration."
-msgstr "אירעה שגיאה בעת קבלת התצורה."
+msgstr ""
 
 #: includes/iworks/options/options.php:920
 #: includes/iworks/options/options.php:2383
 msgid "Select Image"
-msgstr ""
+msgstr "Виберіть зображення"
 
 #: includes/iworks/options/options.php:925
 msgid "Delete image"
-msgstr "מחיקת תמונה"
+msgstr "Видалити зображення"
 
 #: includes/iworks/options/options.php:1033
 msgid "Save Changes"
-msgstr "שמור שינויים"
+msgstr "Зберегти зміни"
 
 #: includes/iworks/options/options.php:2256
 msgid "Country"
-msgstr ""
+msgstr "Країна"
 
 #: includes/iworks/options/options.php:2257
 msgid "City"
-msgstr ""
+msgstr "Місто"
 
 #: includes/iworks/options/options.php:2258
 msgid "Street"
-msgstr ""
+msgstr "Вулиця"
 
 #: includes/iworks/options/options.php:2259
 msgid "ZIP code"
@@ -507,11 +506,11 @@ msgstr ""
 
 #: includes/iworks/options/options.php:2443
 msgid "OFF"
-msgstr ""
+msgstr "ВИМК"
 
 #: includes/iworks/options/options.php:2444
 msgid "ON"
-msgstr ""
+msgstr "УВІМК"
 
 #: includes/iworks/options/options.php:2509
 msgid "Failed Security Check"
@@ -519,7 +518,7 @@ msgstr ""
 
 #: includes/iworks/rate/rate.php:133 includes/iworks/upprev.php:307
 msgid "Settings"
-msgstr "הגדרות"
+msgstr "Налаштування"
 
 #: includes/iworks/rate/rate.php:147
 #: includes/iworks/rate/templates/thanks.php:39
@@ -541,7 +540,7 @@ msgstr ""
 
 #: includes/iworks/rate/rate.php:781
 msgid "https://wordpress.org/plugins/og/"
-msgstr ""
+msgstr "https://wordpress.org/plugins/og/"
 
 #: includes/iworks/rate/templates/happy-anniversary/anniversary.php:21
 #: includes/iworks/rate/templates/happy-anniversary/first-year.php:21
@@ -602,12 +601,12 @@ msgstr ""
 #. translators: %s is a plugin name with url
 #: includes/iworks/rate/templates/plugins/og.php:9
 msgid "Don't wait, install plugin %s!"
-msgstr ""
+msgstr "Не чекайте, встановіть плагін %s!"
 
 #. translators: %s is a plugin wp home name, %s plugin name
 #: includes/iworks/rate/templates/plugins/og.php:20
 msgid "Install"
-msgstr ""
+msgstr "Встановити"
 
 #. translators: %s is a plugin name wrapped by strong html tag
 #: includes/iworks/rate/templates/thanks.php:23
@@ -627,12 +626,12 @@ msgstr ""
 #: includes/iworks/rate/templates/thanks.php:35
 #: includes/iworks/rate/templates/widgets/support.php:21
 msgid "Get help"
-msgstr ""
+msgstr "Отримати допомогу"
 
 #: includes/iworks/rate/templates/thanks.php:37
 #: includes/iworks/rate/templates/widgets/support.php:31
 msgid "Add review"
-msgstr ""
+msgstr "Додати відгук"
 
 #: includes/iworks/rate/templates/thanks.php:41
 msgid "I added review, do not show again"
@@ -679,39 +678,37 @@ msgstr ""
 
 #: includes/iworks/upprev.php:166
 msgid "Default simple layout"
-msgstr "סידור פשוט ברירת מחדל"
+msgstr ""
 
 #: includes/iworks/upprev.php:177
 msgid "Vertical Three"
-msgstr "Vertical Three"
+msgstr ""
 
 #: includes/iworks/upprev.php:193
 msgid "\"Bloginity\" style"
-msgstr "\"Bloginity\" סגנון"
+msgstr ""
 
 #: includes/iworks/upprev.php:605
 msgid "More in"
-msgstr "עוד בנושא"
+msgstr ""
 
 #: includes/iworks/upprev.php:617
 msgid "Read more:"
-msgstr "קראו גם את:"
+msgstr ""
 
 #: includes/iworks/upprev.php:619
 msgid "Read previous post:"
-msgstr "קראו את הפוסט הקודם:"
+msgstr ""
 
 #: includes/iworks/upprev.php:729
 msgid "Close"
-msgstr "סגור"
+msgstr "Закрити"
 
 #: includes/iworks/upprev.php:732
 msgid ""
 "Previous posts box brought to you by <a href=\"http://iworks.pl/produkty/"
 "wordpress/wtyczki/upprev/en/\">upPrev plugin</a>."
 msgstr ""
-"תיבת פוסטים קודמים מאת <a href=\"http://iworks.pl/produkty/wordpress/wtyczki/"
-"upprev/en/\">התוסף upPrev</a>."
 
 #. Plugin URI of the plugin/theme
 msgid "PLUGIN_URI"
@@ -728,21 +725,21 @@ msgstr "http://iworks.pl/"
 #: etc/options.php:681
 msgctxt "link to support forum on WordPress.org"
 msgid "https://wordpress.org/support/plugin/upprev/"
-msgstr ""
+msgstr "https://wordpress.org/support/plugin/upprev/"
 
 #: etc/options.php:696
 msgctxt "plugin home page on WordPress.org"
 msgid "https://wordpress.org/plugins/upprev/"
-msgstr ""
+msgstr "https://wordpress.org/plugins/upprev/"
 
 #. translators: %s: plugin slug
 #: includes/iworks/rate/rate.php:613
 msgctxt "plugins home"
 msgid "https://wordpress.org/plugins/%s"
-msgstr ""
+msgstr "https://wordpress.org/plugins/%s"
 
 #. translators: %s: plugin slug
 #: includes/iworks/rate/rate.php:620
 msgctxt "plugins support home"
 msgid "https://wordpress.org/support/plugin/%s"
-msgstr ""
+msgstr "https://wordpress.org/support/plugin/%s"

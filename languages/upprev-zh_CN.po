@@ -1,118 +1,117 @@
-# Translation of Plugins - upPrev - Stable (latest release) in Ukrainian
+# Translation of Plugins - upPrev - Stable (latest release) in Chinese (China)
 # This file is distributed under the same license as the Plugins - upPrev - Stable (latest release) package.
 msgid ""
 msgstr ""
 "Project-Id-Version: Plugins - upPrev - Stable (latest release)\n"
 "Report-Msgid-Bugs-To: http://iworks.pl\n"
-"POT-Creation-Date: 2025-03-24 17:49:15+00:00\n"
-"PO-Revision-Date: 2024-09-05 09:23:56+0000\n"
-"Language: uk_UA\n"
+"POT-Creation-Date: 2025-06-16 07:19:40+00:00\n"
+"PO-Revision-Date: 2017-12-26 10:25:14+0000\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : ((n % "
-"10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: GlotPress/4.0.1\n"
 
 #: etc/options.php:12
 msgid "upPrev configuration"
-msgstr "конфігурація upPrev"
+msgstr ""
 
 #. Plugin Name of the plugin/theme
 msgid "upPrev"
-msgstr "upPrev"
+msgstr ""
 
 #: etc/options.php:41 etc/options.php:94
 msgid "Appearance"
-msgstr "Вигляд"
+msgstr "外观"
 
 #: etc/options.php:47
 msgid "Layout"
-msgstr "Компонування"
+msgstr ""
 
 #: etc/options.php:56 etc/options.php:62 etc/options.php:111
 msgid "Position"
-msgstr "Позиція"
+msgstr "位置"
 
 #: etc/options.php:65 etc/options.php:114
 msgid "bottom right"
-msgstr "внизу праворуч"
+msgstr ""
 
 #: etc/options.php:66 etc/options.php:115
 msgid "bottom left"
-msgstr "внизу ліворуч"
+msgstr ""
 
 #: etc/options.php:68 etc/options.php:117
 msgid "bottom"
-msgstr "знизу"
+msgstr ""
 
 #: etc/options.php:71 etc/options.php:120
 msgid "top right"
-msgstr "вгорі праворуч"
+msgstr ""
 
 #: etc/options.php:74 etc/options.php:123
 msgid "top"
-msgstr "вгорі"
+msgstr ""
 
 #: etc/options.php:77 etc/options.php:126
 msgid "top left"
-msgstr "вгорі ліворуч"
+msgstr ""
 
 #: etc/options.php:80 etc/options.php:129
 msgid "middle right"
-msgstr "посередині праворуч"
+msgstr ""
 
 #: etc/options.php:83 etc/options.php:132
 msgid "middle left"
-msgstr "посередині ліворуч"
+msgstr ""
 
 #: etc/options.php:100
 msgid "Animation style"
-msgstr ""
+msgstr "动画类型"
 
 #: etc/options.php:103
 msgid "flyout"
-msgstr ""
+msgstr "飞进/飞出"
 
 #: etc/options.php:104
 msgid "fade in/out"
-msgstr ""
+msgstr "渐近/渐出"
 
 #: etc/options.php:142
 msgid "Margin bottom"
-msgstr ""
+msgstr "底部外边距 (Margin)"
 
 #: etc/options.php:143 etc/options.php:152 etc/options.php:162
 msgid "px"
-msgstr "px"
+msgstr ""
 
 #: etc/options.php:151
 msgid "Margin side"
-msgstr ""
+msgstr "左/右外边距 (Margin)"
 
 #: etc/options.php:153
 msgid "Left or right depending on position."
-msgstr ""
+msgstr "靠左还是靠右根据上述位置设置而定"
 
 #: etc/options.php:161
 msgid "Box width"
-msgstr ""
+msgstr "宽度"
 
 #: etc/options.php:170
 msgid "Offset"
-msgstr "Зміщення"
+msgstr ""
 
 #: etc/options.php:171
 msgid "%"
-msgstr "%"
+msgstr ""
 
 #: etc/options.php:172
 msgid "Percentage of the page required to be scrolled to display a box."
-msgstr ""
+msgstr "下拉到页面多少时(%)出现对话框"
 
 #: etc/options.php:180
 msgid "Before HTML element."
-msgstr ""
+msgstr "HTML属性"
 
 #: etc/options.php:181
 msgid ""
@@ -120,18 +119,20 @@ msgid ""
 "to use the ID or class of an existing element. Put # \"hash\" before the ID, "
 "or . \"dot\" before a class name."
 msgstr ""
+"如果留空, 将以页面高度为准. 否则, 请指定基准HTML属性的ID或class,在ID前记得加 "
+"# \"井号\" , 或者class前加 . \"点\" ."
 
 #: etc/options.php:188
 msgid "Box header"
-msgstr ""
+msgstr "对话框头部"
 
 #: etc/options.php:189
 msgid "Show box header."
-msgstr ""
+msgstr "显示对话框头部"
 
 #: etc/options.php:197
 msgid "Header text."
-msgstr "Текст заголовку."
+msgstr ""
 
 #: etc/options.php:198
 msgid "Leave blank to allow plugin set the heading text."
@@ -139,11 +140,11 @@ msgstr ""
 
 #: etc/options.php:205
 msgid "Close button"
-msgstr "Кнопка закриття"
+msgstr "关闭按钮"
 
 #: etc/options.php:206
 msgid "Show close button."
-msgstr ""
+msgstr "显示关闭按钮"
 
 #: etc/options.php:213
 msgid "Re-open badge"
@@ -159,39 +160,39 @@ msgstr ""
 
 #: etc/options.php:224
 msgid "Colors"
-msgstr "Кольори"
+msgstr ""
 
 #: etc/options.php:230
 msgid "Set custom colors"
-msgstr "Додати власні кольори"
+msgstr ""
 
 #: etc/options.php:231
 msgid "Turn on custom colors."
-msgstr "Увімкніть власні кольори."
+msgstr ""
 
 #: etc/options.php:239
 msgid "Text"
-msgstr "Текст"
+msgstr ""
 
 #: etc/options.php:248
 msgid "Background"
-msgstr "Фон"
+msgstr ""
 
 #: etc/options.php:257 etc/options.php:399
 msgid "Links"
-msgstr "Посилання"
+msgstr "链接"
 
 #: etc/options.php:266
 msgid "Border"
-msgstr "Межа"
+msgstr ""
 
 #: etc/options.php:276
 msgid "Content"
-msgstr "Вміст"
+msgstr "内容"
 
 #: etc/options.php:283
 msgid "Number of posts to show"
-msgstr "Кількість записів для показу"
+msgstr ""
 
 #: etc/options.php:284
 msgid "Not affected if using YARPP as choose method."
@@ -199,123 +200,121 @@ msgstr ""
 
 #: etc/options.php:291
 msgid "Content filters"
-msgstr "Фільтри контенту"
+msgstr "内容过滤"
 
 #: etc/options.php:292
 msgid "Remove all filters."
-msgstr "Вимкнути фільтри"
+msgstr "移除所有过滤"
 
 #: etc/options.php:293
 msgid ""
 "Untick this if you have some strange things in upPrev box, but unticked have "
 "a lot of chances breaks your layout."
-msgstr ""
-"Вимкніть цей пункт, якщо upPrev поводиться дивно box, але це може викликати "
-"проблеми з відображенням."
+msgstr "建议勾选。如果有奇怪内容可不勾选，但很可能破坏页面结构"
 
 #: etc/options.php:300
 msgid "Previous entry choose method"
-msgstr "Метод пошуку попереднього посту"
+msgstr "上一篇文章选择方法"
 
 #: etc/options.php:303
 msgid "Just previous."
-msgstr "Просто попередній"
+msgstr "上一篇"
 
 #: etc/options.php:304
 msgid "Previous in category."
-msgstr "Попередній в категорії"
+msgstr "同分类下上一篇"
 
 #: etc/options.php:305
 msgid "Previous in tag."
-msgstr "Попередній з таким тегом"
+msgstr "同标签下上一篇"
 
 #: etc/options.php:306
 msgid "Random entry."
-msgstr "Випадковий пост"
+msgstr "随机文章"
 
 #: etc/options.php:315
 msgid "Taxonomy limit"
-msgstr ""
+msgstr "分类限制"
 
 #: etc/options.php:316
 msgid "Number of taxonomies (tags or categories) to show."
-msgstr ""
+msgstr "类型（标签或分类）数量"
 
 #: etc/options.php:317
 msgid "Default value: 0 (no limit)."
-msgstr "Значення за замовчуванням: 0 (без ліміту)"
+msgstr "默认值：0（无限制）"
 
 #: etc/options.php:324
 msgid "Match post type"
-msgstr "Тип запису відповідності"
+msgstr "文章类型匹配"
 
 #: etc/options.php:325
 msgid "Display only for selected post types."
-msgstr "Відображати тільки для записів вибраного типу."
+msgstr "仅显示所选文章类型"
 
 #: etc/options.php:332
 msgid "Select post types"
-msgstr "Виберіть типи записів"
+msgstr "选择文章类型"
 
 #: etc/options.php:333
 msgid "Show posts."
-msgstr "Показати записи."
+msgstr "显示文章."
 
 #: etc/options.php:334
 msgid "If not any, then default value is \"post\"."
-msgstr "Якщо не вибрано, то \"запис\" буде вибраним за замовчуванням."
+msgstr "如果为选择，将默认为 \"文章\"."
 
 #: etc/options.php:337
 msgid "Posts."
-msgstr "Записи."
+msgstr "文章"
 
 #: etc/options.php:338
 msgid "Pages."
-msgstr "Cторінки."
+msgstr "页面"
 
 #: etc/options.php:339
 msgid "Any post type (include custom post types)."
-msgstr "Будь-який тип запису (включно з користувацькими типами записів)."
+msgstr "所有类型（包括自定义类型）"
 
 #: etc/options.php:349
 msgid "Sticky posts"
-msgstr "Приліплені записи"
+msgstr "置顶文章"
 
 #: etc/options.php:350
 msgid "Ignore sticky posts."
-msgstr ""
+msgstr "忽略置顶文章"
 
 #: etc/options.php:360
 msgid "Excerpt"
-msgstr "Уривок"
+msgstr "摘要"
 
 #: etc/options.php:361
 msgid "Show excerpt."
-msgstr "Показувати цитату"
+msgstr "显示摘要"
 
 #: etc/options.php:370
 msgid "Number of words to show."
-msgstr "Кількість слів для відображення"
+msgstr "显示摘要字数"
 
 #: etc/options.php:379
 msgid "Featured image"
-msgstr "Обрана картинка"
+msgstr "特色图像"
 
 #: etc/options.php:380
 msgid "Show featured image."
-msgstr "Показувати обрану картинку"
+msgstr "显示特色图像"
 
 #: etc/options.php:389
 msgid "Featured image width."
-msgstr "Ширина обраної картинки"
+msgstr "特色图像宽度"
 
 #: etc/options.php:405
 msgid "URL prefix"
-msgstr ""
+msgstr "URL前缀"
 
 #: etc/options.php:407
 msgid "Will be added before link."
-msgstr ""
+msgstr "添加在链接前面"
 
 #: etc/options.php:414
 msgid "URL suffix"
@@ -323,15 +322,15 @@ msgstr ""
 
 #: etc/options.php:416
 msgid "Will be added after link."
-msgstr ""
+msgstr "添加在链接后面"
 
 #: etc/options.php:423
 msgid "Open link"
-msgstr ""
+msgstr "链接打开方式"
 
 #: etc/options.php:424
 msgid "Open link in new window."
-msgstr ""
+msgstr "新窗口打开"
 
 #: etc/options.php:425
 msgid "Not recommended!"
@@ -339,15 +338,15 @@ msgstr ""
 
 #: etc/options.php:432
 msgid "Google Analytics"
-msgstr "Google Analytics"
+msgstr ""
 
 #: etc/options.php:433
 msgid "I don't have GA tracking on site."
-msgstr ""
+msgstr "我没有在本站安装谷歌分析代码"
 
 #: etc/options.php:434 etc/options.php:460
 msgid "Turn it on if you don't use any other GA tracking plugin."
-msgstr ""
+msgstr "勾选该项如果你没有使用谷歌分析代码"
 
 #: etc/options.php:441
 msgid "Google Analytics Account"
@@ -355,69 +354,69 @@ msgstr ""
 
 #: etc/options.php:442
 msgid "Replace UA-XXXXX-X with your web property ID."
-msgstr ""
+msgstr "记得将UA-XXXXX-X替换为你实际的账户ID"
 
 #: etc/options.php:451
 msgid "Track views"
-msgstr ""
+msgstr "跟踪显示次数"
 
 #: etc/options.php:452
 msgid "Track showing of upPrev box."
-msgstr ""
+msgstr "跟踪对话框显示的次数"
 
 #: etc/options.php:459
 msgid "Track clicks"
-msgstr "Відслідковувати кліки"
+msgstr "跟踪点击数"
 
 #: etc/options.php:467
 msgid "Prevent bounce-rate"
-msgstr ""
+msgstr "不计入跳转率(bounce-rate)"
 
 #: etc/options.php:468
 msgid ""
 "Turn it on to indicate that the event hit will not be used in bounce-rate "
 "calculation."
-msgstr ""
+msgstr "勾选此项，访客在对话框上的行为不会计入跳转率计算(bounce-rate)"
 
 #: etc/options.php:477
 msgid "Other"
-msgstr "Інше"
+msgstr "其他"
 
 #: etc/options.php:486
 msgid "Mobile devices"
-msgstr ""
+msgstr "移动设备"
 
 #: etc/options.php:487
 msgid "Hide for mobile devices."
-msgstr ""
+msgstr "移动设备下不显示"
 
 #: etc/options.php:494
 msgid "Tablets"
-msgstr "Планшети"
+msgstr "平板设备"
 
 #: etc/options.php:495
 msgid "Hide for tablets too."
-msgstr ""
+msgstr "平板设备下不显示"
 
 #: etc/options.php:496
 msgid "Works only when hidding for mobile devices is turn on."
-msgstr ""
+msgstr "只有当上述移动设备选项勾选后，这个选项才有效"
 
 #: etc/options.php:507
 msgid "Custom CSS"
-msgstr "Користувацький код CSS"
+msgstr "自定义CSS"
 
 #: etc/options.php:516
 msgid "Excludes"
-msgstr "Окрім"
+msgstr ""
 
 #: etc/options.php:522
 msgid "Categories"
-msgstr "Категорії"
+msgstr ""
 
 #: etc/options.php:529
 msgid "Tags"
-msgstr "Позначки"
+msgstr ""
 
 #: etc/options.php:536
 msgid "Choose configuration mode"
@@ -433,23 +432,23 @@ msgstr ""
 
 #: etc/options.php:565
 msgid "Custom post type: "
-msgstr ""
+msgstr "自定义文章类型："
 
 #: etc/options.php:575 etc/options.php:578
 msgid "Related Posts (YARPP)"
-msgstr ""
+msgstr "相关文章(YARPP插件)"
 
 #: etc/options.php:576
 msgid ". Works only with post and/or pages."
-msgstr ""
+msgstr ". 仅在文章和页面下有效."
 
 #: etc/options.php:662 etc/options.php:693
 msgid "Below are some links to help spread this plugin to other users"
-msgstr ""
+msgstr "下面你可以帮忙向大家推荐这个插件"
 
 #: etc/options.php:664
 msgid "simple"
-msgstr "простий"
+msgstr ""
 
 #: etc/options.php:665
 msgid "advance"
@@ -465,56 +464,60 @@ msgstr ""
 
 #: etc/options.php:696
 msgid "Link to it so others can easily find it"
+msgstr "在你的网站上添加这款插件的链接"
+
+#: includes/iworks/options/options.php:176
+msgid "No Page Title"
 msgstr ""
 
-#: includes/iworks/options/options.php:263
+#: includes/iworks/options/options.php:341
 msgid "An error occurred while getting the configuration."
+msgstr "出现错误"
+
+#: includes/iworks/options/options.php:920
+#: includes/iworks/options/options.php:2383
+msgid "Select Image"
 msgstr ""
 
-#: includes/iworks/options/options.php:842
-#: includes/iworks/options/options.php:1965
-msgid "Select Image"
-msgstr "Виберіть зображення"
-
-#: includes/iworks/options/options.php:847
+#: includes/iworks/options/options.php:925
 msgid "Delete image"
-msgstr "Видалити зображення"
+msgstr ""
 
-#: includes/iworks/options/options.php:955
+#: includes/iworks/options/options.php:1033
 msgid "Save Changes"
-msgstr "Зберегти зміни"
+msgstr "保存更改"
 
-#: includes/iworks/options/options.php:1859
+#: includes/iworks/options/options.php:2256
 msgid "Country"
-msgstr "Країна"
+msgstr ""
 
-#: includes/iworks/options/options.php:1860
+#: includes/iworks/options/options.php:2257
 msgid "City"
-msgstr "Місто"
+msgstr ""
 
-#: includes/iworks/options/options.php:1861
+#: includes/iworks/options/options.php:2258
 msgid "Street"
-msgstr "Вулиця"
+msgstr ""
 
-#: includes/iworks/options/options.php:1862
+#: includes/iworks/options/options.php:2259
 msgid "ZIP code"
 msgstr ""
 
-#: includes/iworks/options/options.php:2018
+#: includes/iworks/options/options.php:2443
 msgid "OFF"
-msgstr "ВИМК"
+msgstr ""
 
-#: includes/iworks/options/options.php:2019
+#: includes/iworks/options/options.php:2444
 msgid "ON"
-msgstr "УВІМК"
+msgstr ""
 
-#: includes/iworks/options/options.php:2084
+#: includes/iworks/options/options.php:2509
 msgid "Failed Security Check"
 msgstr ""
 
 #: includes/iworks/rate/rate.php:133 includes/iworks/upprev.php:307
 msgid "Settings"
-msgstr "Налаштування"
+msgstr "设置"
 
 #: includes/iworks/rate/rate.php:147
 #: includes/iworks/rate/templates/thanks.php:39
@@ -522,21 +525,73 @@ msgid "Provide us a coffee"
 msgstr ""
 
 #. translators: %s: plugin id
-#: includes/iworks/rate/rate.php:446
+#: includes/iworks/rate/rate.php:590
 msgid "There is no plugin with id: %s."
 msgstr ""
 
-#: includes/iworks/rate/rate.php:563
+#: includes/iworks/rate/rate.php:764
 msgid "OpenGraph"
 msgstr ""
 
-#: includes/iworks/rate/rate.php:579
+#: includes/iworks/rate/rate.php:780
 msgid "OG — Better Share on Social Media"
 msgstr ""
 
-#: includes/iworks/rate/rate.php:580
+#: includes/iworks/rate/rate.php:781
 msgid "https://wordpress.org/plugins/og/"
-msgstr "https://wordpress.org/plugins/og/"
+msgstr ""
+
+#: includes/iworks/rate/templates/happy-anniversary/anniversary.php:21
+#: includes/iworks/rate/templates/happy-anniversary/first-year.php:21
+msgid "🎉 Happy Anniversary! 🎉"
+msgstr ""
+
+#: includes/iworks/rate/templates/happy-anniversary/anniversary.php:23
+msgid ""
+"Wow, it’s already been a whole year since you’ve been using our plugin—thank "
+"you so much for being part of our journey! We truly appreciate your support "
+"and hope the plugin has made your work easier and more enjoyable."
+msgstr ""
+
+#: includes/iworks/rate/templates/happy-anniversary/anniversary.php:24
+#: includes/iworks/rate/templates/happy-anniversary/first-year.php:24
+msgid ""
+"If you’ve found our plugin helpful and would like to support its continued "
+"development, we’d be incredibly grateful if you’d consider buying us a "
+"coffee. Every little bit helps us keep improving and adding new features for "
+"awesome users like you!"
+msgstr ""
+
+#: includes/iworks/rate/templates/happy-anniversary/anniversary.php:25
+#: includes/iworks/rate/templates/happy-anniversary/first-year.php:25
+msgid "☕ Buy Me a Coffee"
+msgstr ""
+
+#: includes/iworks/rate/templates/happy-anniversary/anniversary.php:26
+#: includes/iworks/rate/templates/happy-anniversary/first-year.php:26
+msgid "Thank you for your support and for making this community amazing!"
+msgstr ""
+
+#: includes/iworks/rate/templates/happy-anniversary/anniversary.php:30
+#: includes/iworks/rate/templates/happy-anniversary/first-year.php:30
+msgid "With gratitude"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Marcin Pietrzak"
+msgstr ""
+
+#: includes/iworks/rate/templates/happy-anniversary/anniversary.php:36
+#: includes/iworks/rate/templates/happy-anniversary/first-year.php:36
+msgid "Plugin Author"
+msgstr ""
+
+#: includes/iworks/rate/templates/happy-anniversary/first-year.php:23
+msgid ""
+"Wow, it’s already been a whole year since you started using our plugin—thank "
+"you so much for being part of our journey! We hope it’s made your work "
+"easier and more enjoyable."
+msgstr ""
 
 #: includes/iworks/rate/templates/plugins/og.php:4
 msgid "Would you like to boost your website sharing abilities?"
@@ -545,12 +600,12 @@ msgstr ""
 #. translators: %s is a plugin name with url
 #: includes/iworks/rate/templates/plugins/og.php:9
 msgid "Don't wait, install plugin %s!"
-msgstr "Не чекайте, встановіть плагін %s!"
+msgstr ""
 
 #. translators: %s is a plugin wp home name, %s plugin name
 #: includes/iworks/rate/templates/plugins/og.php:20
 msgid "Install"
-msgstr "Встановити"
+msgstr ""
 
 #. translators: %s is a plugin name wrapped by strong html tag
 #: includes/iworks/rate/templates/thanks.php:23
@@ -570,12 +625,12 @@ msgstr ""
 #: includes/iworks/rate/templates/thanks.php:35
 #: includes/iworks/rate/templates/widgets/support.php:21
 msgid "Get help"
-msgstr "Отримати допомогу"
+msgstr ""
 
 #: includes/iworks/rate/templates/thanks.php:37
 #: includes/iworks/rate/templates/widgets/support.php:31
 msgid "Add review"
-msgstr "Додати відгук"
+msgstr ""
 
 #: includes/iworks/rate/templates/thanks.php:41
 msgid "I added review, do not show again"
@@ -638,21 +693,23 @@ msgstr ""
 
 #: includes/iworks/upprev.php:617
 msgid "Read more:"
-msgstr ""
+msgstr "查看更多："
 
 #: includes/iworks/upprev.php:619
 msgid "Read previous post:"
-msgstr ""
+msgstr "查看上一篇："
 
 #: includes/iworks/upprev.php:729
 msgid "Close"
-msgstr "Закрити"
+msgstr "关闭"
 
 #: includes/iworks/upprev.php:732
 msgid ""
 "Previous posts box brought to you by <a href=\"http://iworks.pl/produkty/"
 "wordpress/wtyczki/upprev/en/\">upPrev plugin</a>."
 msgstr ""
+"由<a href=\"http://iworks.pl/produkty/wordpress/wtyczki/upprev/en/\">upPrev "
+"plugin</a>提供功能赞助。"
 
 #. Plugin URI of the plugin/theme
 msgid "PLUGIN_URI"
@@ -662,35 +719,28 @@ msgstr ""
 msgid "PLUGIN_TAGLINE"
 msgstr ""
 
-#. Author of the plugin/theme
-msgid "Marcin Pietrzak"
-msgstr "Marcin Pietrzak"
-
 #. Author URI of the plugin/theme
 msgid "http://iworks.pl/"
-msgstr "http://iworks.pl/"
+msgstr ""
 
 #: etc/options.php:681
 msgctxt "link to support forum on WordPress.org"
 msgid "https://wordpress.org/support/plugin/upprev/"
-msgstr "https://wordpress.org/support/plugin/upprev/"
+msgstr ""
 
 #: etc/options.php:696
 msgctxt "plugin home page on WordPress.org"
 msgid "https://wordpress.org/plugins/upprev/"
-msgstr "https://wordpress.org/plugins/upprev/"
+msgstr ""
 
 #. translators: %s: plugin slug
-#: includes/iworks/rate/rate.php:469
+#: includes/iworks/rate/rate.php:613
 msgctxt "plugins home"
 msgid "https://wordpress.org/plugins/%s"
-msgstr "https://wordpress.org/plugins/%s"
+msgstr ""
 
 #. translators: %s: plugin slug
-#: includes/iworks/rate/rate.php:476
+#: includes/iworks/rate/rate.php:620
 msgctxt "plugins support home"
 msgid "https://wordpress.org/support/plugin/%s"
-msgstr "https://wordpress.org/support/plugin/%s"
-
-#~ msgid "http://upprev.iworks.pl/"
-#~ msgstr "http://upprev.iworks.pl/"
+msgstr ""
