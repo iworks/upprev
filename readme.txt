@@ -99,7 +99,7 @@ Project maintained on GitHub at [iworks/upprev](https://github.com/iworks/upprev
 
 = 4.1.2 (2025-06-16) =
 * **iWorks Options Module Updated**: Updated the integrated [iWorks Options](https://github.com/iworks/wordpress-options-class) module to the latest version 3.0.7.
-* **iWorks Rate Module Updated**: Updated the integrated [iWorks Rate](https://github.com/iworks/iworks-rate) module to the latest version 2.9.9.
+* **iWorks Rate Module Updated**: Updated the integrated [iWorks Rate](https://github.com/iworks/iworks-rate) module to the latest version 3.0.1.
 
 = 4.1.1 (2025-03-24) =
 * **Translation Support Added**: Implemented translation support for GitHub releases, making the plugin more accessible to a global audience.
