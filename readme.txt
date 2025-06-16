@@ -12,15 +12,24 @@ PLUGIN_DESCRIPTION
 
 == Description ==
 
-PLUGIN_DESCRIPTION
+**Boost your content engagement with upPrev!**
 
-When a reader scrolls to the bottom of a single post, page, or custom post type, an animate box will be shown allowing the reader to select the previous or random available post or posts in the selected configuration:
+upPrev displays an eye-catching, animated flyout or fade-in box with related or previous content when a reader nears the bottom of a post, page, or custom post type. Keep your visitors exploring your site by suggesting additional content right when their attention is highest.
 
-1. Just previous
-1. Previous in category
-1. Previous in tag
-1. Random
-1. Related using YARPP (only post/pages)
+**Features:**
+
+- Animated flyout or fade-in box for previous, random, or related posts
+- Multiple selection modes:
+    - Previous post
+    - Previous post in the same category
+    - Previous post with the same tag
+    - Random post
+    - Related posts using YARPP (Yet Another Related Posts Plugin)
+- Works with posts, pages, and custom post types
+- Easy customization of appearance and content
+- Mobile and tablet detection for optimal display
+- Integration with YARPP for advanced related post suggestions
+- Translation-ready with 14+ languages supported
 
 == Installation ==
 
