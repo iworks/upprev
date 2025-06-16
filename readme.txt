@@ -2,11 +2,11 @@
 Contributors: iworks
 Donate link: https://ko-fi.com/iworks?utm_source=upprev&utm_medium=readme-donate
 Tags: box, notification, related, SEO, thumbnail
-Requires at least: 5.0
-Tested up to: 6.7
+Requires at least: PLUGIN_REQUIRES_WORDPRESS
+Tested up to: PLUGIN_TESTED_WORDPRESS
 Stable tag: PLUGIN_VERSION
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GPLv3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 PLUGIN_DESCRIPTION
 
