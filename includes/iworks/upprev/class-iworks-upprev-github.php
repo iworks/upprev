@@ -25,8 +25,29 @@ if ( class_exists( 'iworks_upprev_github' ) ) {
 
 class iworks_upprev_github {
 
+	/**
+	 * Repository name
+	 *
+	 * @since 1.0.0
+	 */
 	private string $repository = 'iworks/upprev';
-	private string $basename   = 'upprev';
+	/**
+	 * Plugin base name
+	 *
+	 * @since 1.0.0
+	 */
+	private string $basename = 'upprev';
+	/**
+	 * Plugin file name
+	 *
+	 * @since 1.0.0
+	 */
+	private string $plugin_file = 'aqualog.php';
+	/**
+	 * Github Response
+	 *
+	 * @since 1.0.0
+	 */
 	private $github_response;
 
 	public function __construct() {
@@ -45,7 +66,7 @@ class iworks_upprev_github {
 	 * @since 1.0.0
 	 */
 	public function action_init_load_plugin_textdomain() {
-		$dir = plugin_basename( dirname( dirname( dirname( __DIR__ ) ) ) ) . '/languages';
+		$dir = plugin_basename( dirname( __DIR__, 3 ) ) . '/languages';
 		load_plugin_textdomain( 'upprev', false, $dir );
 	}
 
@@ -247,4 +268,3 @@ class iworks_upprev_github {
 		return $result;
 	}
 }
-
