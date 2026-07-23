@@ -4,13 +4,21 @@
     "tagline": "Display cool, animated fly-out or fade box with related content.",
     "description": "Display cool, animated fly-out or fade box with related content.",
     "version": "4.1.3",
-    "homepage": "https://github.com/iworks/upprev",
+    "homepage": "http://iworks.pl/iw_plugin/upprev/",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:iworks/upprev.git",
+        "website": "https://github.com/iworks/upprev"
+    },
+    "author": "iworks",
     "tags": [
         "seo",
         "related",
-        "notification"
+        "notification",
+        "engagement",
+        "pop-up"
     ],
-    "author": [
+    "contributors": [
         {
             "name": "Marcin Pietrzak",
             "email": "marcin@iworks.pl",
@@ -26,7 +34,7 @@
         "PHP": "8.1"
     },
     "tested": {
-        "WordPress": "7.0"
+        "WordPress": "7.1"
     },
     "devDependencies": {
         "grunt": "^1",
@@ -48,12 +56,6 @@
         "grunt-potomo": "^3",
         "grunt-replace": "^1",
         "grunt-wp-i18n": "^1"
-    },
-    "keywords": [],
-    "repository": {
-        "type": "git",
-        "url": "git@github.com:iworks/upprev.git",
-        "website": "https://github.com/iworks/upprev"
     },
     "license": "GPL-3.0"
 }

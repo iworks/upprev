@@ -17,6 +17,7 @@ module.exports = function(grunt) {
 
 	var buildtime = new Date().toISOString();
 	var buildyear = 1900 + new Date().getYear();
+	var buildtimestamp = new Date().getTime();
 
 	/**
 	 * excludes
@@ -92,10 +93,16 @@ module.exports = function(grunt) {
 
 		replace_patterns: [{
 			match: /AUTHOR_NAME/g,
-			replace: '<%= pkg.author[0].name %>'
+			replace: '<%= pkg.contributors[0].name %>'
 		}, {
 			match: /AUTHOR_URI/g,
-			replace: '<%= pkg.author[0].uri %>'
+			replace: '<%= pkg.contributors[0].uri %>'
+		}, {
+			match: /AUTHOR_URL/g,
+			replace: '<%= pkg.contributors[0].uri %>'
+		}, {
+			match: /BUILDTIMESTAMP/g,
+			replace: buildtimestamp
 		}, {
 			match: /BUILDTIME/g,
 			replace: buildtime
@@ -139,6 +146,9 @@ module.exports = function(grunt) {
 			match: /PLUGIN_URI/g,
 			replace: '<%= pkg.homepage %>'
 		}, {
+			match: /PLUGIN_URL/g,
+			replace: '<%= pkg.homepage %>'
+		}, {
 			match: /PLUGIN_VERSION/g,
 			replace: '<%= pkg.version %>'
 		}, {
@@ -176,10 +186,10 @@ module.exports = function(grunt) {
 			options: {
 				stripBanners: true,
 				banner: '/*! <%= pkg.title %> - <%= pkg.version %>\n' +
-				' * <%= pkg.homepage %>\n' +
-				' * Copyright (c) <%= grunt.template.today("yyyy") %>\n' +
-				' * Licensed <%= pkg.license %>' +
-				' */\n'
+					' * <%= pkg.homepage %>\n' +
+					' * Copyright (c) <%= grunt.template.today("yyyy") %>\n' +
+					' * Licensed <%= pkg.license %>' +
+					' */\n'
 			},
 			scripts: {
 				files: conf.js_files_concat
@@ -224,10 +234,10 @@ module.exports = function(grunt) {
 				}],
 				options: {
 					banner: '/*! <%= pkg.title %> - <%= pkg.version %>\n' +
-					' * <%= pkg.homepage %>\n' +
-					' * Copyright (c) <%= grunt.template.today("yyyy") %>;\n' +
-					' * Licensed <%= pkg.license %>' +
-					' */\n',
+						' * <%= pkg.homepage %>\n' +
+						' * Copyright (c) <%= grunt.template.today("yyyy") %>;\n' +
+						' * Licensed <%= pkg.license %>' +
+						' */\n',
 					mangle: {
 						except: ['jQuery']
 					}
@@ -253,7 +263,6 @@ module.exports = function(grunt) {
 				testsuite: 'default',
 				configuration: 'tests/php/phpunit.xml',
 				colors: true,
-				tap: true,
 				staticBackup: false,
 				noGlobalsBackup: false
 			}
@@ -286,10 +295,10 @@ module.exports = function(grunt) {
 		cssmin: {
 			options: {
 				banner: '/*! <%= pkg.title %> - <%= pkg.version %>\n' +
-				' * <%= pkg.homepage %>\n' +
-				' * Copyright (c) <%= grunt.template.today("yyyy") %>;\n' +
-				' * Licensed <%= pkg.license %>' +
-				' */\n',
+					' * <%= pkg.homepage %>\n' +
+					' * Copyright (c) <%= grunt.template.today("yyyy") %>;\n' +
+					' * Licensed <%= pkg.license %>' +
+					' */\n',
 				mergeIntoShorthands: false
 			},
 			minify: {
@@ -364,10 +373,9 @@ module.exports = function(grunt) {
 						'report-msgid-bugs-to': 'http://iworks.pl',
 						'x-poedit-keywordslist': true // Include a list of all possible gettext functions.
 					},
-					exclude: ['node_modules', '.git', '.sass-cache', 'release'],
 					type: 'wp-plugin',
-					updateTimestamp: true,
-					updatePoFiles: true
+					updateTimestamp: true, // Whether the POT-Creation-Date should be updated without other changes.
+					updatePoFiles: true // Whether to update PO files in the same directory as the POT file.
 				}
 			}
 		},
@@ -445,7 +453,7 @@ module.exports = function(grunt) {
 
 		checktextdomain: {
 			options: {
-				text_domain: ['<%= pkg.name %>', 'IWORKS_RATE_TEXTDOMAIN', 'IWORKS_OPTIONS_TEXTDOMAIN'],
+				text_domain: ['<%= pkg.name %>', 'PLUGIN_NAME', 'IWORKS_RATE_TEXTDOMAIN', 'IWORKS_OPTIONS_TEXTDOMAIN'],
 				keywords: [ //List keyword specifications
 					'__:1,2d',
 					'_e:1,2d',
