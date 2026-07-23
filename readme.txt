@@ -99,7 +99,8 @@ Project maintained on GitHub at [iworks/upprev](https://github.com/iworks/upprev
 
 = 4.1.3 - 2026-07-23 =
 * **Dependencies**: Updated the [iWorks Options](https://github.com/iworks/wordpress-options-class) module to version 3.1.1 and the [iWorks Rate](https://github.com/iworks/iworks-rate) module to version 2.3.2.
-* **Improvement**: Updated build process.
+* **Improvement**: Updated the build process.
+* **Improvement**: Renamed `CSS` files for better recognition.
 
 = 4.1.2 (2025-06-16) =
 * **iWorks Options Module Updated**: Updated the integrated [iWorks Options](https://github.com/iworks/wordpress-options-class) module to the latest version 3.0.7.

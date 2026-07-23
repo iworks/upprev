@@ -4,15 +4,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Plugins - upPrev - Stable (latest release)\n"
 "Report-Msgid-Bugs-To: http://iworks.pl\n"
-"POT-Creation-Date: 2026-06-17 11:50:45+00:00\n"
-"PO-Revision-Date: 2025-06-16 07:43:48+0000\n"
+"POT-Creation-Date: 2026-07-23 15:05:05+00:00\n"
+"PO-Revision-Date: 2026-07-23 15:00:38+0000\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 "
 "&& (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
-"X-Generator: GlotPress/4.0.1\n"
+"X-Generator: GlotPress/4.0.3\n"
 
 #: etc/options.php:12
 msgid "upPrev configuration"
@@ -469,7 +469,7 @@ msgstr "zaawansowany"
 
 #: etc/options.php:681
 msgid "WordPress Help Forum"
-msgstr "Forum Pomocy WordPressa"
+msgstr "Forum pomocy WordPressa"
 
 #: etc/options.php:695
 msgid "Give it a five stars on WordPress.org"
@@ -484,6 +484,8 @@ msgid ""
 "Option \"{option_name}\" has been updated. From \"{old_value}\" to "
 "\"{new_value}\"."
 msgstr ""
+"Wartość opcji „{option_name}” została zmieniona z „{old_value}” na "
+"„{new_value}”."
 
 #: includes/iworks/options/options.php:247
 msgid "No Page Title"
@@ -625,7 +627,7 @@ msgstr ""
 
 #: includes/iworks/rate/templates/plugins/og.php:4
 msgid "Would you like to boost your website sharing abilities?"
-msgstr "Czy chcesz zwiększyć możliwości dzielenia się witryną?"
+msgstr "Chcesz zwiększyć możliwości dzielenia się witryną?"
 
 #. translators: %s is a plugin name with url
 #: includes/iworks/rate/templates/plugins/og.php:9
@@ -794,8 +796,8 @@ msgctxt "plugins support home"
 msgid "https://wordpress.org/support/plugin/%s"
 msgstr "https://wordpress.org/support/plugin/%s"
 
-#~ msgid "https://github.com/iworks/upprev"
-#~ msgstr "https://github.com/iworks/upprev"
+#~ msgid "http://iworks.pl/iw_plugin/upprev/"
+#~ msgstr "http://iworks.pl/iw_plugin/upprev/"
 
 #~ msgid "Display cool, animated fly-out or fade box with related content."
 #~ msgstr "Wyświetla fajny, animowany element z zawartością powiązaną."

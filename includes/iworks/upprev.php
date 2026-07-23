@@ -237,7 +237,7 @@ class IworksUpprev {
 		/**
 		 * styles
 		 */
-		$file = '/assets/styles/frontend' . $this->dev . '.css';
+		$file = '/assets/styles/upprev-frontend' . $this->dev . '.css';
 		wp_register_style(
 			$name,
 			plugins_url( $file, $this->base ),
@@ -283,7 +283,7 @@ class IworksUpprev {
 		);
 		$file = 'assets/styles/frontend' . $this->dev . '.css';
 		wp_register_style( 'upprev', plugins_url( $file, $this->base ), array(), $this->get_version( $file ) );
-		$file = 'assets/styles/admin' . $this->dev . '.css';
+		$file = 'assets/styles/upprev-admin' . $this->dev . '.css';
 		wp_register_style( 'upprev-admin', plugins_url( $file, $this->base ), array( 'farbtastic' ), $this->get_version( $file ) );
 		/**
 		 * Settings on plugin page
