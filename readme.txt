@@ -98,7 +98,7 @@ Visit: [upPrev: snippet archive](http://upprev.iworks.pl/tag/snippet)
 Project maintained on GitHub at [iworks/upprev](https://github.com/iworks/upprev).
 
 = 4.1.4 - 2026-08-28 =
-* **Dependencies**: Updated [Mobile Detect](http://mobiledetect.net/) to 2.8.39.
+* **Dependencies**: Updated [Mobile Detect](http://mobiledetect.net/) to 3.74.4.
 * **Improvement**: Added check to custom CSS value to avoid parsing non-string values. Props for [Der-Bank-Blog](https://wordpress.org/support/users/der-bank-blog/).
 
 = 4.1.3 - 2026-07-23 =
