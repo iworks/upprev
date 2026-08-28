@@ -860,8 +860,15 @@ class IworksUpprev {
 		if ( $this->iworks_upprev_check() ) {
 			return;
 		}
+		$css = $this->options->get_option( 'css' );
+		if ( empty( $css ) ) {
+			return;
+		}
+		if ( ! is_string( $css ) ) {
+			return;
+		}
 		$content  = '<style type="text/css">' . PHP_EOL;
-		$content .= preg_replace( '/\s\s+/s', ' ', preg_replace( '/#[^\{]+ \{ \}/', '', preg_replace( '@/\*[^\*]+\*/@', '', $this->options->get_option( 'css' ) ) ) );
+		$content .= preg_replace( '/\s\s+/s', ' ', preg_replace( '/#[^\{]+ \{ \}/', '', preg_replace( '@/\*[^\*]+\*/@', '', $css ) ) );
 		$content .= '</style>' . PHP_EOL;
 		echo $content;
 	}
