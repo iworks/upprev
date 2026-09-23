@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Plugins - upPrev - Stable (latest release)\n"
 "Report-Msgid-Bugs-To: http://iworks.pl\n"
-"POT-Creation-Date: 2026-08-28 10:49:42+00:00\n"
+"POT-Creation-Date: 2026-09-23 19:28:12+00:00\n"
 "PO-Revision-Date: 2021-11-12 08:55:34+0000\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
@@ -83,6 +83,7 @@ msgid "Margin bottom"
 msgstr "Margine jos"
 
 #: etc/options.php:143 etc/options.php:152 etc/options.php:162
+#: etc/options.php:496 etc/options.php:517
 msgid "px"
 msgstr "px"
 
@@ -392,8 +393,9 @@ msgstr ""
 "ieșirilor rapide din site (bounce-uri)."
 
 #: etc/options.php:477
-msgid "Other"
-msgstr "Altele"
+#, fuzzy
+msgid "Mobile"
+msgstr "Dispozitive mobile"
 
 #: etc/options.php:486
 msgid "Mobile devices"
@@ -403,80 +405,102 @@ msgstr "Dispozitive mobile"
 msgid "Hide for mobile devices."
 msgstr "Ascunde pentru dispozitive mobile."
 
-#: etc/options.php:494
+#: etc/options.php:495
+msgid "Mobile breakpoint"
+msgstr ""
+
+#: etc/options.php:497
+#, fuzzy
+msgid "Maximum width for mobile devices."
+msgstr "Ascunde pentru dispozitive mobile."
+
+#: etc/options.php:506
 msgid "Tablets"
 msgstr "Tablete"
 
-#: etc/options.php:495
+#: etc/options.php:507
 msgid "Hide for tablets too."
 msgstr "Ascunde și pentru tablete."
 
-#: etc/options.php:496
+#: etc/options.php:508
 msgid "Works only when hidding for mobile devices is turn on."
 msgstr ""
 "Funcționează numai dacă este activată ascunderea pe dispozitive mobile."
 
-#: etc/options.php:507
+#: etc/options.php:516
+msgid "Tablet breakpoint"
+msgstr ""
+
+#: etc/options.php:518
+#, fuzzy
+msgid "Maximum width for tablet devices."
+msgstr "Ascunde pentru dispozitive mobile."
+
+#: etc/options.php:529
+msgid "CSS"
+msgstr ""
+
+#: etc/options.php:539
 msgid "Custom CSS"
 msgstr "CSS personalizat"
 
-#: etc/options.php:516
+#: etc/options.php:548
 msgid "Excludes"
 msgstr "Exclude"
 
-#: etc/options.php:522
+#: etc/options.php:554
 msgid "Categories"
 msgstr "Categorii"
 
-#: etc/options.php:529
+#: etc/options.php:561
 msgid "Tags"
 msgstr "Etichete"
 
-#: etc/options.php:536
+#: etc/options.php:568
 msgid "Choose configuration mode"
 msgstr "Alege modul de configurație"
 
-#: etc/options.php:542 etc/options.php:679
+#: etc/options.php:574 etc/options.php:711
 msgid "We are waiting for your message"
 msgstr ""
 
-#: etc/options.php:548
+#: etc/options.php:580
 msgid "I love what I do!"
 msgstr ""
 
-#: etc/options.php:565
+#: etc/options.php:597
 msgid "Custom post type: "
 msgstr "Tip de articol personalizat:"
 
-#: etc/options.php:575 etc/options.php:578
+#: etc/options.php:607 etc/options.php:610
 msgid "Related Posts (YARPP)"
 msgstr "Articole similare (YARPP)"
 
-#: etc/options.php:576
+#: etc/options.php:608
 msgid ". Works only with post and/or pages."
 msgstr ". Funționează doar cu articole și/sau pagini."
 
-#: etc/options.php:662 etc/options.php:693
+#: etc/options.php:694 etc/options.php:725
 msgid "Below are some links to help spread this plugin to other users"
 msgstr "Mai jos găsiți câteva link-uri pentru a ajuta răspândirea plugin-ului"
 
-#: etc/options.php:664
+#: etc/options.php:696
 msgid "simple"
 msgstr "simple"
 
-#: etc/options.php:665
+#: etc/options.php:697
 msgid "advance"
 msgstr "avansate"
 
-#: etc/options.php:681
+#: etc/options.php:713
 msgid "WordPress Help Forum"
 msgstr "Forum WordPress pentru ajutor"
 
-#: etc/options.php:695
+#: etc/options.php:727
 msgid "Give it a five stars on WordPress.org"
 msgstr "Evaluează-ne la 5 stele pe WordPress.org"
 
-#: etc/options.php:696
+#: etc/options.php:728
 msgid "Link to it so others can easily find it"
 msgstr "Pune un link către plugin pentru ca și alții să îl găsească ușor"
 
@@ -535,7 +559,7 @@ msgstr ""
 msgid "Failed Security Check"
 msgstr ""
 
-#: includes/iworks/rate/rate.php:159 includes/iworks/upprev.php:307
+#: includes/iworks/rate/rate.php:159 includes/iworks/upprev.php:298
 msgid "Settings"
 msgstr "Setări"
 
@@ -695,35 +719,35 @@ msgid ""
 "you for all the ratings, reviews and donates."
 msgstr ""
 
-#: includes/iworks/upprev.php:166
+#: includes/iworks/upprev.php:150
 msgid "Default simple layout"
 msgstr "Aranjament simplu implicit"
 
-#: includes/iworks/upprev.php:177
+#: includes/iworks/upprev.php:161
 msgid "Vertical Three"
 msgstr "Arbore vertical"
 
-#: includes/iworks/upprev.php:193
+#: includes/iworks/upprev.php:177
 msgid "\"Bloginity\" style"
 msgstr "Stil \"Bloginity\""
 
-#: includes/iworks/upprev.php:605
+#: includes/iworks/upprev.php:596
 msgid "More in"
 msgstr "Mai multe despre "
 
-#: includes/iworks/upprev.php:617
+#: includes/iworks/upprev.php:608
 msgid "Read more:"
 msgstr "Citește mai multe:"
 
-#: includes/iworks/upprev.php:619
+#: includes/iworks/upprev.php:610
 msgid "Read previous post:"
 msgstr "Citește articolul precedent:"
 
-#: includes/iworks/upprev.php:729
+#: includes/iworks/upprev.php:720
 msgid "Close"
 msgstr "Închide"
 
-#: includes/iworks/upprev.php:732
+#: includes/iworks/upprev.php:723
 msgid ""
 "Previous posts box brought to you by <a href=\"http://iworks.pl/produkty/"
 "wordpress/wtyczki/upprev/en/\">upPrev plugin</a>."
@@ -743,12 +767,12 @@ msgstr ""
 msgid "http://iworks.pl/"
 msgstr "http://iworks.pl/"
 
-#: etc/options.php:681
+#: etc/options.php:713
 msgctxt "link to support forum on WordPress.org"
 msgid "https://wordpress.org/support/plugin/upprev/"
 msgstr ""
 
-#: etc/options.php:696
+#: etc/options.php:728
 msgctxt "plugin home page on WordPress.org"
 msgid "https://wordpress.org/plugins/upprev/"
 msgstr ""
@@ -764,3 +788,6 @@ msgstr "https://wordpress.org/plugins/%s"
 msgctxt "plugins support home"
 msgid "https://wordpress.org/support/plugin/%s"
 msgstr "https://wordpress.org/support/plugin/%s"
+
+#~ msgid "Other"
+#~ msgstr "Altele"

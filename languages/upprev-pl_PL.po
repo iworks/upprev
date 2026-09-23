@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Plugins - upPrev - Stable (latest release)\n"
 "Report-Msgid-Bugs-To: http://iworks.pl\n"
-"POT-Creation-Date: 2026-08-28 10:49:42+00:00\n"
+"POT-Creation-Date: 2026-09-23 19:28:12+00:00\n"
 "PO-Revision-Date: 2026-07-23 15:00:38+0000\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -83,6 +83,7 @@ msgid "Margin bottom"
 msgstr "Dolny margines"
 
 #: etc/options.php:143 etc/options.php:152 etc/options.php:162
+#: etc/options.php:496 etc/options.php:517
 msgid "px"
 msgstr "px"
 
@@ -390,8 +391,9 @@ msgstr ""
 "Włącz, żeby zdarzenia nie były zliczane w obliczaniu odrzuceń. (zalecane)"
 
 #: etc/options.php:477
-msgid "Other"
-msgstr "Inne"
+#, fuzzy
+msgid "Mobile"
+msgstr "Urządzenia przenośne"
 
 #: etc/options.php:486
 msgid "Mobile devices"
@@ -401,81 +403,103 @@ msgstr "Urządzenia przenośne"
 msgid "Hide for mobile devices."
 msgstr "Ukryj dla urządzeń przenośnych."
 
-#: etc/options.php:494
+#: etc/options.php:495
+msgid "Mobile breakpoint"
+msgstr ""
+
+#: etc/options.php:497
+#, fuzzy
+msgid "Maximum width for mobile devices."
+msgstr "Ukryj dla urządzeń przenośnych."
+
+#: etc/options.php:506
 msgid "Tablets"
 msgstr "Tablety"
 
-#: etc/options.php:495
+#: etc/options.php:507
 msgid "Hide for tablets too."
 msgstr "Ukryj również dla tabletów."
 
-#: etc/options.php:496
+#: etc/options.php:508
 msgid "Works only when hidding for mobile devices is turn on."
 msgstr ""
 "Opcja działa tylko wtedy kiedy włączone jest ukrywanie dla urządzeń "
 "mobilnych."
 
-#: etc/options.php:507
+#: etc/options.php:516
+msgid "Tablet breakpoint"
+msgstr ""
+
+#: etc/options.php:518
+#, fuzzy
+msgid "Maximum width for tablet devices."
+msgstr "Ukryj dla urządzeń przenośnych."
+
+#: etc/options.php:529
+msgid "CSS"
+msgstr ""
+
+#: etc/options.php:539
 msgid "Custom CSS"
 msgstr "Własny CSS"
 
-#: etc/options.php:516
+#: etc/options.php:548
 msgid "Excludes"
 msgstr "Nie zawiera"
 
-#: etc/options.php:522
+#: etc/options.php:554
 msgid "Categories"
 msgstr "Kategorie"
 
-#: etc/options.php:529
+#: etc/options.php:561
 msgid "Tags"
 msgstr "Tagi"
 
-#: etc/options.php:536
+#: etc/options.php:568
 msgid "Choose configuration mode"
 msgstr "Wybierz tryb konfiguracji"
 
-#: etc/options.php:542 etc/options.php:679
+#: etc/options.php:574 etc/options.php:711
 msgid "We are waiting for your message"
 msgstr "Czekamy na twoją wiadomość"
 
-#: etc/options.php:548
+#: etc/options.php:580
 msgid "I love what I do!"
 msgstr "Kocham to co robię!"
 
-#: etc/options.php:565
+#: etc/options.php:597
 msgid "Custom post type: "
 msgstr "Wpisy typu: "
 
-#: etc/options.php:575 etc/options.php:578
+#: etc/options.php:607 etc/options.php:610
 msgid "Related Posts (YARPP)"
 msgstr "Powiązane wpisy (YARPP)"
 
-#: etc/options.php:576
+#: etc/options.php:608
 msgid ". Works only with post and/or pages."
 msgstr ". Działa tylko dla wpisów oraz stron."
 
-#: etc/options.php:662 etc/options.php:693
+#: etc/options.php:694 etc/options.php:725
 msgid "Below are some links to help spread this plugin to other users"
 msgstr "Poniższe odnośniki mogą pomóc innym w znalezieniu wtyczki"
 
-#: etc/options.php:664
+#: etc/options.php:696
 msgid "simple"
 msgstr "prosty"
 
-#: etc/options.php:665
+#: etc/options.php:697
 msgid "advance"
 msgstr "zaawansowany"
 
-#: etc/options.php:681
+#: etc/options.php:713
 msgid "WordPress Help Forum"
 msgstr "Forum pomocy WordPressa"
 
-#: etc/options.php:695
+#: etc/options.php:727
 msgid "Give it a five stars on WordPress.org"
 msgstr "Daj wtyczce pięć gwiazdek na WordPress.org"
 
-#: etc/options.php:696
+#: etc/options.php:728
 msgid "Link to it so others can easily find it"
 msgstr "Odnośnik do wtyczki - żeby łatwo było znaleźć"
 
@@ -536,7 +560,7 @@ msgstr "Włącz"
 msgid "Failed Security Check"
 msgstr "Nieudana kontrola bezpieczeństwa"
 
-#: includes/iworks/rate/rate.php:159 includes/iworks/upprev.php:307
+#: includes/iworks/rate/rate.php:159 includes/iworks/upprev.php:298
 msgid "Settings"
 msgstr "Ustawienia"
 
@@ -726,35 +750,35 @@ msgstr ""
 "niej myślisz. To dla nas bardzo ważne, aby móc ją rozwijać. Dziękujemy za "
 "wszystkie oceny, recenzje oraz dodatkowe wsparcie."
 
-#: includes/iworks/upprev.php:166
+#: includes/iworks/upprev.php:150
 msgid "Default simple layout"
 msgstr "Szablon domyślny"
 
-#: includes/iworks/upprev.php:177
+#: includes/iworks/upprev.php:161
 msgid "Vertical Three"
 msgstr "Trzy poziomo"
 
-#: includes/iworks/upprev.php:193
+#: includes/iworks/upprev.php:177
 msgid "\"Bloginity\" style"
 msgstr "Styl: \"Bloginity\""
 
-#: includes/iworks/upprev.php:605
+#: includes/iworks/upprev.php:596
 msgid "More in"
 msgstr "Więcej w"
 
-#: includes/iworks/upprev.php:617
+#: includes/iworks/upprev.php:608
 msgid "Read more:"
 msgstr "Przeczytaj inne:"
 
-#: includes/iworks/upprev.php:619
+#: includes/iworks/upprev.php:610
 msgid "Read previous post:"
 msgstr "Przeczytaj poprzedni wpis:"
 
-#: includes/iworks/upprev.php:729
+#: includes/iworks/upprev.php:720
 msgid "Close"
 msgstr "Zamknij"
 
-#: includes/iworks/upprev.php:732
+#: includes/iworks/upprev.php:723
 msgid ""
 "Previous posts box brought to you by <a href=\"http://iworks.pl/produkty/"
 "wordpress/wtyczki/upprev/en/\">upPrev plugin</a>."
@@ -774,12 +798,12 @@ msgstr ""
 msgid "http://iworks.pl/"
 msgstr "http://iworks.pl/"
 
-#: etc/options.php:681
+#: etc/options.php:713
 msgctxt "link to support forum on WordPress.org"
 msgid "https://wordpress.org/support/plugin/upprev/"
 msgstr "https://wordpress.org/support/plugin/upprev/"
 
-#: etc/options.php:696
+#: etc/options.php:728
 msgctxt "plugin home page on WordPress.org"
 msgid "https://wordpress.org/plugins/upprev/"
 msgstr "https://pl.wordpress.org/plugins/upprev/"
@@ -795,6 +819,9 @@ msgstr "https://pl.wordpress.org/plugins/%s"
 msgctxt "plugins support home"
 msgid "https://wordpress.org/support/plugin/%s"
 msgstr "https://wordpress.org/support/plugin/%s"
+
+#~ msgid "Other"
+#~ msgstr "Inne"
 
 #~ msgid "http://iworks.pl/iw_plugin/upprev/"
 #~ msgstr "http://iworks.pl/iw_plugin/upprev/"
