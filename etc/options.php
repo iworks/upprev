@@ -474,8 +474,8 @@ function iworks_upprev_options() {
 			 */
 			array(
 				'type'          => 'heading',
-				'label'         => __( 'Other', 'upprev' ),
-				'configuration' => 'advance',
+				'label'         => __( 'Mobile', 'upprev' ),
+				'configuration' => 'both',
 			),
 			/**
 			 * Advance: mobile devices
@@ -489,6 +489,18 @@ function iworks_upprev_options() {
 				'sanitize_callback' => 'absint',
 			),
 			array(
+				'name'              => 'mobile_breakpoint',
+				'type'              => 'number',
+				'class'             => 'small-text',
+				'th'                => __( 'Mobile breakpoint', 'upprev' ),
+				'label'             => __( 'px', 'upprev' ),
+				'description'       => __( 'Maximum width for mobile devices.', 'upprev' ),
+				'default'           => 768,
+				'sanitize_callback' => 'absint',
+				'since'             => '4.2.0',
+			),
+
+			array(
 				'name'              => 'mobile_tablets',
 				'type'              => 'checkbox',
 				'th'                => __( 'Tablets', 'upprev' ),
@@ -496,6 +508,26 @@ function iworks_upprev_options() {
 				'description'       => __( 'Works only when hidding for mobile devices is turn on.', 'upprev' ),
 				'default'           => 0,
 				'sanitize_callback' => 'absint',
+			),
+			array(
+				'name'              => 'tablet_breakpoint',
+				'type'              => 'number',
+				'class'             => 'small-text',
+				'th'                => __( 'Tablet breakpoint', 'upprev' ),
+				'label'             => __( 'px', 'upprev' ),
+				'description'       => __( 'Maximum width for tablet devices.', 'upprev' ),
+				'default'           => 1024,
+				'sanitize_callback' => 'absint',
+				'since'             => '4.2.0',
+			),
+
+			/**
+			 * Custom CSS
+			 */
+			array(
+				'type'          => 'heading',
+				'label'         => __( 'CSS', 'upprev' ),
+				'configuration' => 'advance',
 			),
 			/**
 			 * Advance: css
@@ -506,7 +538,7 @@ function iworks_upprev_options() {
 				'classes'           => array( 'large-text', 'code' ),
 				'th'                => __( 'Custom CSS', 'upprev' ),
 				'sanitize_callback' => 'esc_html',
-				'rows'              => 10,
+				'rows'              => 20,
 			),
 			/**
 			 * Excludes

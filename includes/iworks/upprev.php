@@ -55,7 +55,7 @@ class IworksUpprev {
 		 * static settings
 		 */
 		$this->version      = '4.0';
-		$this->base         = dirname( dirname( __FILE__ ) );
+		$this->base         = dirname( __DIR__, 1 );
 		$this->dir          = basename( dirname( $this->base ) );
 		$this->capability   = apply_filters( 'iworks_upprev_capability', 'manage_options' );
 		$this->working_mode = 'site';
@@ -106,21 +106,6 @@ class IworksUpprev {
 			return apply_filters( 'iworks_upprev_check', true );
 		}
 		/**
-		 * check mobile devices
-		 */
-		if ( 1 === intval( $this->options->get_option( 'mobile_hide' ) ) ) {
-			include_once dirname( $this->base ) . '/vendor/Mobile_Detect.php';
-			$detect = new Mobile_Detect;
-			if ( $detect->isMobile() ) {
-				return apply_filters( 'iworks_upprev_check', true );
-			}
-			if ( 1 === intval( $this->options->get_option( 'mobile_tablets' ) ) ) {
-				if ( $detect->isTablet() ) {
-					return apply_filters( 'iworks_upprev_check', true );
-				}
-			}
-		}
-		/**
 		 * get allowed post types
 		 */
 		$post_types = $this->options->get_option( 'post_type' );
@@ -138,7 +123,7 @@ class IworksUpprev {
 	public function get_version( $file = null ) {
 		if ( defined( 'IWORKS_DEV_MODE' ) && IWORKS_DEV_MODE ) {
 			if ( null != $file ) {
-				$file = dirname( dirname( __FILE__ ) ) . $file;
+				$file = dirname( __DIR__, 1 ) . $file;
 				if ( is_file( $file ) ) {
 					return md5_file( $file );
 				}
@@ -151,7 +136,6 @@ class IworksUpprev {
 	public function init() {
 		$this->check_option_object();
 		add_action( 'admin_init', array( $this, 'admin_init' ) );
-		add_action( 'wp_head', array( $this, 'print_custom_style' ), PHP_INT_MAX );
 		add_action( 'wp_enqueue_scripts', array( $this, 'register_assets' ), 0 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_assets' ) );
 		/**
@@ -267,9 +251,16 @@ class IworksUpprev {
 			return;
 		}
 		$name = $this->options->get_option_name( 'frontend' );
-		wp_enqueue_style( $name );
+		/**
+		 * JS
+		 */
 		wp_enqueue_script( $name );
 		wp_localize_script( $name, 'iworks_upprev', $this->get_config_javascript() );
+		/**
+		 * styles
+		 */
+		wp_enqueue_style( $name );
+		$this->wp_add_inline_style( $name );
 	}
 
 	public function admin_init() {
@@ -723,7 +714,7 @@ class IworksUpprev {
 			}
 			$item  .= '</div>';
 			$value .= apply_filters( 'iworks_upprev_box_item', $item );
-			$i++;
+			++$i;
 		}
 		if ( $setttings['close_button_show'] ) {
 			$value .= sprintf( '<a id="upprev_close" href="#" rel="close">%s</a>', __( 'Close', 'upprev' ) );
@@ -856,21 +847,49 @@ class IworksUpprev {
 		return $content;
 	}
 
-	public function print_custom_style() {
-		if ( $this->iworks_upprev_check() ) {
-			return;
-		}
+	/**
+	 * Add inline style to the frontend
+	 *
+	 * @since 4.2.0
+	 */
+	private function wp_add_inline_style( $handle ) {
 		$css = $this->options->get_option( 'css' );
+		if ( ! is_string( $css ) ) {
+			$css = '';
+		}
+		/**
+		 * check mobile devices
+		 */
+		if ( 1 === intval( $this->options->get_option( 'mobile_hide' ) ) ) {
+			$breakpoint = $this->options->get_option( 'mobile_breakpoint' );
+			if ( ! is_numeric( $breakpoint ) ) {
+				$breakpoint = 768;
+			}
+			$css .= PHP_EOL;
+			$css .= '@media (max-width: ' . intval( $breakpoint ) . 'px) { #upprev_box { display: none !important; } }';
+		}
+		/**
+		 * check tablet devices
+		 */
+		if ( 1 === intval( $this->options->get_option( 'mobile_tablets' ) ) ) {
+			$breakpoint = $this->options->get_option( 'tablet_breakpoint' );
+			if ( ! is_numeric( $breakpoint ) ) {
+				$breakpoint = 1024;
+			}
+			$css .= PHP_EOL;
+			$css .= '@media (max-width: ' . intval( $breakpoint ) . 'px) { #upprev_box { display: none !important; } }';
+		}
+		/**
+		 * add filter
+		 */
+		$css = apply_filters( 'iworks/upprev/css', $css );
+		/**
+		 * check css
+		 */
 		if ( empty( $css ) ) {
 			return;
 		}
-		if ( ! is_string( $css ) ) {
-			return;
-		}
-		$content  = '<style type="text/css">' . PHP_EOL;
-		$content .= preg_replace( '/\s\s+/s', ' ', preg_replace( '/#[^\{]+ \{ \}/', '', preg_replace( '@/\*[^\*]+\*/@', '', $css ) ) );
-		$content .= '</style>' . PHP_EOL;
-		echo $content;
+		wp_add_inline_style( $handle, $css );
 	}
 
 	private function get_default_params( $layout = null ) {
@@ -997,7 +1016,7 @@ class IworksUpprev {
 			$plugin = (array) $plugin;
 		}
 		if ( 'upprev' === $plugin['slug'] ) {
-			return plugin_dir_url( dirname( dirname( __FILE__ ) ) ) . '/assets/images/upprev-logo.svg';
+			return plugin_dir_url( dirname( __DIR__, 1 ) ) . '/assets/images/upprev-logo.svg';
 		}
 		return $logo;
 	}
@@ -1084,7 +1103,7 @@ class IworksUpprev {
 	 */
 	public function action_init_register_iworks_rate() {
 		if ( ! class_exists( 'iworks_rate' ) ) {
-			include_once dirname( __FILE__ ) . '/rate/rate.php';
+			include_once __DIR__ . '/rate/rate.php';
 		}
 		do_action(
 			'iworks-register-plugin',
