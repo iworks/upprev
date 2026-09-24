@@ -52,12 +52,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Translation**: Updated Bulgarian translation by [Martin Halachev](http://wordpress.org/support/profile/mhalachev).
 
 ## [3.3.17] - 2015-06-09
-- **Fix**: Move custom CSS after wp_enqueue_style. thx to [007me].(http://wordpress.org/support/profile/007me) [Can't change font size and style and costumize close button].(http://wordpress.org/support/topic/cant-change-font-size-and-style-and-costumize-close-button).
+- **Fix**: Move custom CSS after wp_enqueue_style. thx to [007me](http://wordpress.org/support/profile/007me) [Can't change font size and style and costumize close button](http://wordpress.org/support/topic/cant-change-font-size-and-style-and-costumize-close-button).
 
 ## [3.3.16] - 2015-06-02
-- **Fix**: Excerpt number of words to show option not working for a concrete excerpt. thx to [gyalokai].(http://wordpress.org/support/profile/gyalokai) [Excerpt number of words to show option not working](http://wordpress.org/support/topic/excerpt-number-of-words-to-show-option-not-working).
+- **Fix**: Excerpt number of words to show option not working for a concrete excerpt. thx to [gyalokai](http://wordpress.org/support/profile/gyalokai) [Excerpt number of words to show option not working](http://wordpress.org/support/topic/excerpt-number-of-words-to-show-option-not-working).
 - **Dependencies**: Updated IworksOptionClass to 1.7.2.
-- **Improvement**: Added box to front page thx to [SARed].(http://wordpress.org/support/profile/sared) [Using Upprev on a front page with latest posts?](http://wordpress.org/support/topic/using-upprev-on-a-front-page-with-latest-posts).
+- **Improvement**: Added box to front page thx to [SARed](http://wordpress.org/support/profile/sared) [Using Upprev on a front page with latest posts?](http://wordpress.org/support/topic/using-upprev-on-a-front-page-with-latest-posts).
 
 ## [3.3.15] - 2015-05-26
 - **Translation**: Added Hebrew translation by [עמיעד](http://hatul.info).
