@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Plugins - upPrev - Stable (latest release)\n"
 "Report-Msgid-Bugs-To: http://iworks.pl\n"
-"POT-Creation-Date: 2026-09-23 19:28:12+00:00\n"
+"POT-Creation-Date: 2026-09-24 07:04:10+00:00\n"
 "PO-Revision-Date: 2017-12-26 10:25:14+0000\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -380,9 +380,8 @@ msgid ""
 msgstr "勾选此项，访客在对话框上的行为不会计入跳转率计算(bounce-rate)"
 
 #: etc/options.php:477
-#, fuzzy
 msgid "Mobile"
-msgstr "移动设备"
+msgstr ""
 
 #: etc/options.php:486
 msgid "Mobile devices"
@@ -397,9 +396,8 @@ msgid "Mobile breakpoint"
 msgstr ""
 
 #: etc/options.php:497
-#, fuzzy
 msgid "Maximum width for mobile devices."
-msgstr "移动设备下不显示"
+msgstr ""
 
 #: etc/options.php:506
 msgid "Tablets"
@@ -418,9 +416,8 @@ msgid "Tablet breakpoint"
 msgstr ""
 
 #: etc/options.php:518
-#, fuzzy
 msgid "Maximum width for tablet devices."
-msgstr "移动设备下不显示"
+msgstr ""
 
 #: etc/options.php:529
 msgid "CSS"
@@ -774,6 +771,3 @@ msgstr ""
 msgctxt "plugins support home"
 msgid "https://wordpress.org/support/plugin/%s"
 msgstr ""
-
-#~ msgid "Other"
-#~ msgstr "其他"

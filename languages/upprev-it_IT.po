@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Plugins - upPrev - Stable (latest release)\n"
 "Report-Msgid-Bugs-To: http://iworks.pl\n"
-"POT-Creation-Date: 2026-09-23 19:28:12+00:00\n"
+"POT-Creation-Date: 2026-09-24 07:04:10+00:00\n"
 "PO-Revision-Date: 2023-04-05 09:06:16+0000\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -387,9 +387,8 @@ msgstr ""
 "bounce-rate"
 
 #: etc/options.php:477
-#, fuzzy
 msgid "Mobile"
-msgstr "Dispositivi mobile"
+msgstr ""
 
 #: etc/options.php:486
 msgid "Mobile devices"
@@ -404,9 +403,8 @@ msgid "Mobile breakpoint"
 msgstr ""
 
 #: etc/options.php:497
-#, fuzzy
 msgid "Maximum width for mobile devices."
-msgstr "Nascondi per dispositivi mobile."
+msgstr ""
 
 #: etc/options.php:506
 msgid "Tablets"
@@ -425,9 +423,8 @@ msgid "Tablet breakpoint"
 msgstr ""
 
 #: etc/options.php:518
-#, fuzzy
 msgid "Maximum width for tablet devices."
-msgstr "Nascondi per dispositivi mobile."
+msgstr ""
 
 #: etc/options.php:529
 msgid "CSS"
@@ -783,6 +780,3 @@ msgstr "https://wordpress.org/plugins/%s"
 msgctxt "plugins support home"
 msgid "https://wordpress.org/support/plugin/%s"
 msgstr "https://wordpress.org/support/plugin/%s"
-
-#~ msgid "Other"
-#~ msgstr "Altri"

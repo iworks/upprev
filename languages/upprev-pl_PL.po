@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Plugins - upPrev - Stable (latest release)\n"
 "Report-Msgid-Bugs-To: http://iworks.pl\n"
-"POT-Creation-Date: 2026-09-23 19:28:12+00:00\n"
-"PO-Revision-Date: 2026-07-23 15:00:38+0000\n"
+"POT-Creation-Date: 2026-09-24 07:04:10+00:00\n"
+"PO-Revision-Date: 2026-09-23 19:54:12+0000\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -391,9 +391,8 @@ msgstr ""
 "Włącz, żeby zdarzenia nie były zliczane w obliczaniu odrzuceń. (zalecane)"
 
 #: etc/options.php:477
-#, fuzzy
 msgid "Mobile"
-msgstr "Urządzenia przenośne"
+msgstr "Urządzenie mobilne"
 
 #: etc/options.php:486
 msgid "Mobile devices"
@@ -405,12 +404,11 @@ msgstr "Ukryj dla urządzeń przenośnych."
 
 #: etc/options.php:495
 msgid "Mobile breakpoint"
-msgstr ""
+msgstr "Punkt przełamania dla urządzeń mobilnych"
 
 #: etc/options.php:497
-#, fuzzy
 msgid "Maximum width for mobile devices."
-msgstr "Ukryj dla urządzeń przenośnych."
+msgstr "Maksymalna szerokość dla urządzeń mobilnych."
 
 #: etc/options.php:506
 msgid "Tablets"
@@ -428,16 +426,15 @@ msgstr ""
 
 #: etc/options.php:516
 msgid "Tablet breakpoint"
-msgstr ""
+msgstr "Punkt przełamania dla tabletów"
 
 #: etc/options.php:518
-#, fuzzy
 msgid "Maximum width for tablet devices."
-msgstr "Ukryj dla urządzeń przenośnych."
+msgstr "Maksymalna szerokość dla tabletów."
 
 #: etc/options.php:529
 msgid "CSS"
-msgstr ""
+msgstr "CSS"
 
 #: etc/options.php:539
 msgid "Custom CSS"
@@ -819,9 +816,6 @@ msgstr "https://pl.wordpress.org/plugins/%s"
 msgctxt "plugins support home"
 msgid "https://wordpress.org/support/plugin/%s"
 msgstr "https://wordpress.org/support/plugin/%s"
-
-#~ msgid "Other"
-#~ msgstr "Inne"
 
 #~ msgid "http://iworks.pl/iw_plugin/upprev/"
 #~ msgstr "http://iworks.pl/iw_plugin/upprev/"
