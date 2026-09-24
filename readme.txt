@@ -192,7 +192,7 @@ Project maintained on GitHub at [iworks/upprev](https://github.com/iworks/upprev
 * **Refactoring**: Used a proper way to ajax call.
 * **Fix**: "Anlalitics" should be "Analytics" thx to Knut Sparhell.
 
-For changelog entries older than 4.0.0, please see [CHANGELOG.md](CHANGELOG.md).
+For changelog entries older than 4.0.0, please see [CHANGELOG.md](https://github.com/iworks/upprev/blob/master/CHANGELOG.md).
 
 == Upgrade Notice ==
 
